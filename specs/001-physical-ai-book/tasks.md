@@ -68,15 +68,15 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 
 **Test Criteria**: Code examples run without errors, diagrams are rendered, CI pipeline validates all checks.
 
-- [ ] T009 [P] Create pytest configuration in `tests/pytest.ini` and `tests/conftest.py` for ROS 2 node fixtures
-- [ ] T010 [P] Create `book/static/diagrams/` directory structure and add template for architecture diagrams (SVG/PNG)
-- [ ] T011 [P] Create `book/static/code-examples/` directory and example Python file templates for syntax highlighting
-- [ ] T012 [P] Set up Python environment requirements in `book/examples/requirements.txt` (rclpy, gazebo, opencv, llama, etc.)
-- [ ] T013 Create shared documentation templates in `book/docs/_templates/` (code block formatting, exercise template, code example validation checklist)
-- [ ] T014 Create `book/examples/humanoid-sim/` directory structure with `ros2_nodes/`, `gazebo_models/`, `perception/`, `planning/`, `vla/` folders
-- [ ] T015 Write `CONTRIBUTING.md` with guidelines for code examples: max 30s execution, syntax validation, expected output
-- [ ] T016 Create CI validation script in `.github/scripts/validate-code-examples.py` to pytest all examples (satisfies SC-009)
-- [ ] T017 Create diagram validation script in `.github/scripts/validate-diagrams.py` to check all diagrams are properly referenced
+- [x] T009 [P] Create pytest configuration in `tests/pytest.ini` and `tests/conftest.py` for ROS 2 node fixtures
+- [x] T010 [P] Create `book/static/diagrams/` directory structure and add template for architecture diagrams (SVG/PNG)
+- [x] T011 [P] Create `book/static/code-examples/` directory and example Python file templates for syntax highlighting
+- [x] T012 [P] Set up Python environment requirements in `book/examples/requirements.txt` (rclpy, gazebo, opencv, llama, etc.)
+- [x] T013 Create shared documentation templates in `book/docs/_templates/` (code block formatting, exercise template, code example validation checklist)
+- [x] T014 Create `book/examples/humanoid-sim/` directory structure with `ros2_nodes/`, `gazebo_models/`, `perception/`, `planning/`, `vla/` folders
+- [x] T015 Write `CONTRIBUTING.md` with guidelines for code examples: max 30s execution, syntax validation, expected output
+- [x] T016 Create CI validation script in `.github/scripts/validate-code-examples.py` to pytest all examples (satisfies SC-009)
+- [x] T017 Create diagram validation script in `.github/scripts/validate-diagrams.py` to check all diagrams are properly referenced
 
 ---
 
