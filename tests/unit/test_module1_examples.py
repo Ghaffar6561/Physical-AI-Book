@@ -50,6 +50,20 @@ class TestCodeExampleSyntax:
         except SyntaxError as e:
             pytest.fail(f"Syntax error in minimal_subscriber.py: {e}")
 
+    def test_sensor_loop_diagram_syntax(self):
+        """Test sensor_loop_diagram.py syntax."""
+        example_file = EXAMPLES_DIR / "sensor_loop_diagram.py"
+        assert example_file.exists(), f"Code example not found: {example_file}"
+
+        with open(example_file, 'r') as f:
+            code = f.read()
+
+        # Should parse without SyntaxError
+        try:
+            ast.parse(code)
+        except SyntaxError as e:
+            pytest.fail(f"Syntax error in sensor_loop_diagram.py: {e}")
+
 
 class TestCodeExampleImports:
     """Test that code examples can be imported (syntax + basic structure)."""

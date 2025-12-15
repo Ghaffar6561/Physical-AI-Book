@@ -23,10 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "devDependencies": {
-    "@docusaurus/module-ideal-image": "^3.0.0",
-    "@docusaurus/remark-plugin-npm2yarn": "^3.0.0"
-  },
+  "devDependencies": {},
   "browserslist": {
     "production": [
       ">0.5%",

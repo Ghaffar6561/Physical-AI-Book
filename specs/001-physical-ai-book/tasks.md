@@ -90,22 +90,22 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 
 ### Module 1: Physical AI Foundations (`book/docs/01-foundations/`)
 
-- [ ] T018 [US1] Write `01-foundations/intro.md` introducing embodied intelligence, perception-action loops, and the simulation-reality problem (3000 words)
-- [ ] T019 [US1] Write `01-foundations/embodied-intelligence.md` with diagrams explaining:
+- [x] T018 [US1] Write `01-foundations/intro.md` introducing embodied intelligence, perception-action loops, and the simulation-reality problem (3000 words)
+- [x] T019 [US1] Write `01-foundations/embodied-intelligence.md` with diagrams explaining:
   - Digital AI vs Physical AI comparison table
   - Sensor-action feedback loop diagram
   - Examples: robot grasping vs. software classification task
   - References: research.md Decision #1-2
   - File: `book/docs/01-foundations/embodied-intelligence.md`
-- [ ] T020 [US1] Create architecture diagram showing physical AI feedback loops in `book/static/diagrams/embodied-loop.svg`
-- [ ] T021 [US1] Write `01-foundations/ros2-intro.md` introducing ROS 2 core concepts (nodes, topics, services) with minimal Python examples
-- [ ] T022 [US1] [P] Create 3 Python code examples for Module 1 in `book/static/code-examples/`:
+- [x] T020 [US1] Create architecture diagram showing physical AI feedback loops in `book/static/diagrams/embodied-loop.svg`
+- [x] T021 [US1] Write `01-foundations/ros2-intro.md` introducing ROS 2 core concepts (nodes, topics, services) with minimal Python examples
+- [x] T022 [US1] [P] Create 3 Python code examples for Module 1 in `book/static/code-examples/`:
   - `minimal_publisher.py`: 10-line ROS 2 topic publisher
   - `minimal_subscriber.py`: 10-line ROS 2 topic subscriber
   - `sensor_loop_diagram.py`: Pseudocode for sensor-actuator feedback
-- [ ] T023 [US1] [P] Add pytest tests for code examples in `tests/unit/test_module1_examples.py`
-- [ ] T024 [US1] Create embedded code block examples in `01-foundations/ros2-intro.md` using syntax highlighting
-- [ ] T025 [US1] Write `01-foundations/exercises.md` with:
+- [x] T023 [US1] [P] Add pytest tests for code examples in `tests/unit/test_module1_examples.py`
+- [x] T024 [US1] Create embedded code block examples in `01-foundations/ros2-intro.md` using syntax highlighting
+- [x] T025 [US1] Write `01-foundations/exercises.md` with:
   - Exercise 1: Explain embodied intelligence in own words (reading + reflection)
   - Exercise 2: Diagram a sensor-action loop for a given robot task
   - Exercise 3: List 5 reasons simulation is essential for robot development
@@ -123,46 +123,46 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 
 ### Module 2: Digital Twins & Gazebo (`book/docs/02-simulation/`)
 
-- [ ] T026 [US2] Write `02-simulation/intro.md` introducing digital twins, why simulation matters, and Gazebo basics (3000 words)
-- [ ] T027 [US2] Write `02-simulation/gazebo-fundamentals.md` covering:
+- [x] T026 [US2] Write `02-simulation/intro.md` introducing digital twins, why simulation matters, and Gazebo basics (3000 words)
+- [x] T027 [US2] Write `02-simulation/gazebo-fundamentals.md` covering:
   - Gazebo physics simulation overview (ODE, Bullet)
   - World files, environment setup, sensors
   - Running Gazebo with ROS 2 bridge (`gazebo_ros`)
   - Code example: loading a pre-built robot model
   - File: `book/docs/02-simulation/gazebo-fundamentals.md`
   - References: research.md Decision #3
-- [ ] T028 [US2] Write `02-simulation/urdf-humanoid.md` teaching URDF robot description:
+- [x] T028 [US2] Write `02-simulation/urdf-humanoid.md` teaching URDF robot description:
   - Links (body segments), joints (connections), sensors (cameras, LiDAR, IMU)
   - Humanoid example: torso, arms, legs with 10+ joints
   - Inertia, mass distribution, collision geometry
   - Sensor attachment points
   - File: `book/docs/02-simulation/urdf-humanoid.md`
   - References: SC-002
-- [ ] T029 [US2] [P] Create URDF files in `book/examples/humanoid-sim/gazebo_models/`:
+- [x] T029 [US2] [P] Create URDF files in `book/examples/humanoid-sim/gazebo_models/`:
   - `humanoid_simple.urdf`: 10+ joint humanoid with sensors
   - `humanoid_detailed.urdf`: More sophisticated model with realistic inertias
   - Test: models load in Gazebo without warnings
-- [ ] T030 [US2] [P] Create Gazebo world file in `book/examples/humanoid-sim/gazebo_models/simple_world.sdf`:
+- [x] T030 [US2] [P] Create Gazebo world file in `book/examples/humanoid-sim/gazebo_models/simple_world.sdf`:
   - Table, objects for manipulation
   - Camera, LiDAR, IMU sensor configuration
   - Physics parameters (gravity, friction, damping)
-- [ ] T031 [US2] Create ROS 2 node architecture diagram in `book/static/diagrams/ros2-architecture.svg` showing:
+- [x] T031 [US2] Create ROS 2 node architecture diagram in `book/static/diagrams/ros2-architecture.svg` showing:
   - Publisher nodes (sensors)
   - Subscriber nodes (perception, planning)
   - Action servers (control)
   - Service clients (configuration)
-- [ ] T032 [US2] [P] Create Python code example in `book/static/code-examples/ros2_humanoid_nodes.py`:
+- [x] T032 [US2] [P] Create Python code example in `book/static/code-examples/ros2_humanoid_nodes.py`:
   - Sensor publisher (simulated camera/LiDAR)
   - Perception subscriber (processes sensor data)
   - Control action server (executes joint commands)
   - ~50 lines, well-commented
-- [ ] T033 [US2] Create pytest tests in `tests/unit/test_module2_examples.py` for ROS 2 code examples
-- [ ] T034 [US2] Write `02-simulation/exercises.md` with:
+- [x] T033 [US2] Create pytest tests in `tests/unit/test_module2_examples.py` for ROS 2 code examples
+- [x] T034 [US2] Write `02-simulation/exercises.md` with:
   - Exercise 1: Design a ROS 2 node architecture for a given humanoid task
   - Exercise 2: Modify provided URDF file to add a new joint
   - Exercise 3: Load humanoid in Gazebo and inspect sensor output
   - Answers/solutions in `book/docs/02-simulation/exercises-answers.md`
-- [ ] T035 [US2] Create setup guide in `02-simulation/setup-gazebo.md`:
+- [x] T035 [US2] Create setup guide in `02-simulation/setup-gazebo.md`:
   - Installation steps for Gazebo 11+ (Linux/WSL2)
   - Docker devcontainer for reproducibility (`.devcontainer/devcontainer.json`)
   - Common troubleshooting
@@ -179,14 +179,14 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 
 ### Module 3: Perception & NVIDIA Isaac (`book/docs/03-perception/`)
 
-- [ ] T036 [US3] Write `03-perception/intro.md` introducing perception pipelines, sensor fusion, and role of simulation fidelity (3000 words)
-- [ ] T037 [US3] Write `03-perception/sensor-fusion.md` covering:
+- [x] T036 [US3] Write `03-perception/intro.md` introducing perception pipelines, sensor fusion, and role of simulation fidelity (3000 words)
+- [x] T037 [US3] Write `03-perception/sensor-fusion.md` covering:
   - Sensor types: cameras, LiDAR, IMU, depth sensors
   - Kalman filtering, occupancy mapping basics
   - Visual SLAM (conceptual overview)
   - Code example: fusing IMU + wheel odometry
   - File: `book/docs/03-perception/sensor-fusion.md`
-- [ ] T038 [US3] Write `03-perception/sim-to-real-transfer.md` (core module) covering:
+- [x] T038 [US3] Write `03-perception/sim-to-real-transfer.md` (core module) covering:
   - Simulation gaps: dynamics, friction, sensor noise, timing
   - Domain randomization: randomizing textures, physics, sensor parameters
   - Fine-tuning: few-shot adaptation to real data
@@ -195,7 +195,7 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
   - Checklist: "Is my simulation adequate for this task?"
   - File: `book/docs/03-perception/sim-to-real-transfer.md`
   - References: research.md Decision #6
-- [ ] T039 [US3] Write `03-perception/isaac-workflows.md` covering:
+- [x] T039 [US3] Write `03-perception/isaac-workflows.md` covering:
   - NVIDIA Isaac capabilities: photorealistic rendering, domain randomization
   - Synthetic data generation for vision models
   - Isaac + ROS 2 integration
@@ -203,27 +203,27 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
   - When to use Isaac (advanced applications)
   - File: `book/docs/03-perception/isaac-workflows.md`
   - References: research.md Decision #4
-- [ ] T040 [US3] Create diagram showing simulation-reality gap sources in `book/static/diagrams/sim-to-real-gaps.svg`:
+- [x] T040 [US3] Create diagram showing simulation-reality gap sources in `book/static/diagrams/sim-to-real-gaps.svg`:
   - Dynamics discrepancy
   - Sensor noise patterns
   - Timing/latency differences
   - Contact/friction modeling
-- [ ] T041 [US3] Create domain randomization visualization diagram in `book/static/diagrams/domain-randomization.svg`
-- [ ] T042 [US3] [P] Create Python code example in `book/static/code-examples/domain_randomization.py`:
+- [x] T041 [US3] Create domain randomization visualization diagram in `book/static/diagrams/domain-randomization.svg`
+- [x] T042 [US3] [P] Create Python code example in `book/static/code-examples/domain_randomization.py`:
   - Gazebo SDF randomization (textures, physics parameters)
   - Sensor noise injection
   - ~60 lines, executable
-- [ ] T043 [US3] [P] Create Python code example in `book/static/code-examples/sim_to_real_evaluation.py`:
+- [x] T043 [US3] [P] Create Python code example in `book/static/code-examples/sim_to_real_evaluation.py`:
   - Metrics for transfer success (success rate, trajectory similarity)
   - Simulation fidelity assessment
   - ~40 lines
-- [ ] T044 [US3] Create pytest tests in `tests/unit/test_module3_examples.py`
-- [ ] T045 [US3] Write `03-perception/exercises.md` with:
+- [x] T044 [US3] Create pytest tests in `tests/unit/test_module3_examples.py`
+- [x] T045 [US3] Write `03-perception/exercises.md` with:
   - Exercise 1: Identify sim-to-real gaps in a provided scenario
   - Exercise 2: Design domain randomization strategy for a given task
   - Exercise 3: Evaluate simulation fidelity checklist for humanoid locomotion
   - Solutions in `exercises-answers.md`
-- [ ] T046 [US3] Create setup guide in `03-perception/setup-isaac.md`:
+- [x] T046 [US3] Create setup guide in `03-perception/setup-isaac.md`:
   - NVIDIA Isaac installation (local + cloud options)
   - Docker setup for students without high-end GPUs
   - Free tier access information
@@ -240,15 +240,15 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 
 ### Module 4: Vision-Language-Action Systems (`book/docs/04-vla-systems/`)
 
-- [ ] T047 [US4] Write `04-vla-systems/intro.md` introducing large language models, their role in robotics, and the vision-language-action pipeline (3000 words)
-- [ ] T048 [US4] Write `04-vla-systems/llm-planning.md` covering:
+- [x] T047 [US4] Write `04-vla-systems/intro.md` introducing large language models, their role in robotics, and the vision-language-action pipeline (3000 words)
+- [x] T048 [US4] Write `04-vla-systems/llm-planning.md` covering:
   - How LLMs decompose natural language into actionable plans
   - Prompt engineering for robot task decomposition
   - Few-shot learning vs. fine-tuning
   - Safety constraints and action validation
   - Code example: prompt template for humanoid tasks
   - File: `book/docs/04-vla-systems/llm-planning.md`
-- [ ] T049 [US4] Write `04-vla-systems/voice-to-action.md` (core VLA module) covering:
+- [x] T049 [US4] Write `04-vla-systems/voice-to-action.md` (core VLA module) covering:
   - Speech recognition (Whisper or speech_recognition library)
   - Language understanding (LLM inference)
   - Task planning (decomposing into ROS 2 actions)
@@ -256,37 +256,37 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
   - End-to-end pipeline diagram and code walkthrough
   - File: `book/docs/04-vla-systems/voice-to-action.md`
   - References: research.md Decision #5
-- [ ] T050 [US4] Write `04-vla-systems/lora-adaptation.md` covering:
+- [x] T050 [US4] Write `04-vla-systems/lora-adaptation.md` covering:
   - Fine-tuning LLMs for domain-specific tasks (LoRA)
   - Custom vision-language models vs. pretrained
   - Open-source LLM options (Llama 2, Mistral)
   - Commercial APIs (OpenAI GPT-4)
   - Trade-offs: cost, latency, customization
-- [ ] T051 [US4] Create end-to-end VLA pipeline diagram in `book/static/diagrams/vla-pipeline.svg`:
+- [x] T051 [US4] Create end-to-end VLA pipeline diagram in `book/static/diagrams/vla-pipeline.svg`:
   - Input: Spoken command
   - Speech → Text → LLM → Action Plan → ROS 2 → Execution
   - Feedback loop
-- [ ] T052 [US4] [P] Create Python code example in `book/static/code-examples/speech_to_text.py`:
+- [x] T052 [US4] [P] Create Python code example in `book/static/code-examples/speech_to_text.py`:
   - Whisper or speech_recognition
   - Simple transcription
   - ~20 lines
-- [ ] T053 [US4] [P] Create Python code example in `book/static/code-examples/llm_task_planner.py`:
+- [x] T053 [US4] [P] Create Python code example in `book/static/code-examples/llm_task_planner.py`:
   - Prompt template for task decomposition
   - Few-shot examples
   - Parsing LLM output into ROS 2 actions
   - ~60 lines
-- [ ] T054 [US4] [P] Create Python code example in `book/static/code-examples/action_executor.py`:
+- [x] T054 [US4] [P] Create Python code example in `book/static/code-examples/action_executor.py`:
   - ROS 2 action client
   - Executing parsed actions sequentially
   - Error handling for invalid plans
   - ~50 lines
-- [ ] T055 [US4] Create pytest tests in `tests/unit/test_module4_examples.py` (mock LLM API calls)
-- [ ] T056 [US4] Write `04-vla-systems/exercises.md` with:
+- [x] T055 [US4] Create pytest tests in `tests/unit/test_module4_examples.py` (mock LLM API calls)
+- [x] T056 [US4] Write `04-vla-systems/exercises.md` with:
   - Exercise 1: Design a VLA pipeline for a multi-step task
   - Exercise 2: Engineer prompts for task decomposition
   - Exercise 3: Trace a spoken command through each stage of pipeline
   - Solutions in `exercises-answers.md`
-- [ ] T057 [US4] Create LLM setup guide in `04-vla-systems/setup-llm.md`:
+- [x] T057 [US4] Create LLM setup guide in `04-vla-systems/setup-llm.md`:
   - Running open-source LLMs locally (Ollama, vLLM)
   - OpenAI API setup (optional)
   - Prompt engineering best practices
@@ -303,69 +303,69 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 
 ### Capstone Architecture & Implementation
 
-- [ ] T058 [US5] Write `05-capstone/architecture.md` describing complete system:
+- [x] T058 [US5] Write `05-capstone/architecture.md` describing complete system:
   - Perception module (camera/LiDAR → SLAM/occupancy map)
   - Planning module (task decomposition, action generation)
   - Control module (IK, trajectory planning via MoveIt or custom)
   - Voice interface (speech → LLM → actions)
   - System diagram showing ROS 2 node topology
   - File: `book/docs/05-capstone/architecture.md`
-- [ ] T059 [US5] [P] Implement perception module in `book/examples/humanoid-sim/perception/`:
+- [x] T059 [US5] [P] Implement perception module in `book/examples/humanoid-sim/perception/`:
   - `camera_processor.py`: ROS 2 node subscribing to camera, publishing detected objects
   - `lidar_processor.py`: ROS 2 node for LiDAR-based occupancy mapping
   - `localization.py`: Visual SLAM or basic odometry integration
   - Tests in `tests/capstone/test_perception.py`
-- [ ] T060 [US5] [P] Implement planning module in `book/examples/humanoid-sim/planning/`:
+- [x] T060 [US5] [P] Implement planning module in `book/examples/humanoid-sim/planning/`:
   - `task_planner.py`: LLM-based task decomposition
   - `action_validator.py`: Validates plans before execution (safety check)
   - `motion_planner.py`: Path planning using MoveIt or custom IK solver
   - Tests in `tests/capstone/test_planning.py`
-- [ ] T061 [US5] [P] Implement control module in `book/examples/humanoid-sim/planning/`:
+- [x] T061 [US5] [P] Implement control module in `book/examples/humanoid-sim/control/`:
   - `joint_controller.py`: ROS 2 action server for joint commands
   - `gripper_controller.py`: Grasping and release actions
   - `locomotion_controller.py`: Walking/navigation action server
   - Tests in `tests/capstone/test_control.py`
-- [ ] T062 [US5] [P] Implement voice interface in `book/examples/humanoid-sim/vla/`:
+- [x] T062 [US5] [P] Implement voice interface in `book/examples/humanoid-sim/vla/`:
   - `speech_recognizer.py`: Listens for spoken input
   - `language_planner.py`: LLM inference node
   - `action_executor.py`: Executes parsed actions via ROS 2 action calls
   - Tests in `tests/capstone/test_vla.py` (with mocked LLM)
-- [ ] T063 [US5] [P] Create main launch file in `book/examples/humanoid-sim/`:
+- [x] T063 [US5] [P] Create main launch file in `book/examples/humanoid-sim/`:
   - `launch_humanoid.py` or `launch.sh`: Brings up all nodes (perception, planning, control, voice)
   - Configures ROS 2 parameters
   - Starts Gazebo with humanoid
-- [ ] T064 [US5] Create integration tests in `tests/capstone/test_end_to_end.py`:
+- [x] T064 [US5] Create integration tests in `tests/capstone/test_end_to_end.py`:
   - Starts all nodes, launches Gazebo
   - Simulates spoken command (mock speech input)
   - Verifies perception output, planning output, control execution
   - Checks latency <2 seconds (SC-008)
-- [ ] T065 [US5] Write `05-capstone/setup.md`:
+- [x] T065 [US5] Write `05-capstone/setup.md`:
   - Installation prerequisites (ROS 2 Humble/Jazzy, Gazebo 11+)
   - Cloning capstone repository and installing dependencies
   - Docker devcontainer for reproducibility
   - Troubleshooting common setup issues
-- [ ] T066 [US5] Write `05-capstone/running-the-system.md`:
+- [x] T066 [US5] Write `05-capstone/running-the-system.md`:
   - Step-by-step instructions to launch capstone
   - How to issue spoken commands
   - Expected output and examples
   - Debugging tips: checking ROS 2 topics, viewing Gazebo, monitoring latency
-- [ ] T067 [US5] Write `05-capstone/extensions.md`:
+- [x] T067 [US5] Write `05-capstone/extensions.md`:
   - How to modify each module (perception, planning, control, voice)
   - Example extension: swap LLM for different model
   - Example extension: add new sensor (gripper camera)
   - Example extension: new robot action (pick up multiple objects)
   - Code templates for common modifications
-- [ ] T068 [US5] Create example use cases in `book/examples/humanoid-sim/`:
+- [x] T068 [US5] Create example use cases in `book/examples/humanoid-sim/`:
   - `demo_pick_and_place.py`: "Pick up the red ball and place it on the table"
   - `demo_fetch.py`: "Fetch the item from the shelf"
   - `demo_open_door.py`: "Open the door"
   - ~30-40 lines each, heavily commented
-- [ ] T069 [US5] Add pre-built Gazebo models in `book/examples/humanoid-sim/gazebo_models/`:
+- [x] T069 [US5] Add pre-built Gazebo models in `book/examples/humanoid-sim/gazebo_models/`:
   - Humanoid robot URDF (high-quality, tested)
   - Table, chairs, shelves (manipulable objects)
   - Door with hinges
   - Gripper attachments
-- [ ] T070 [US5] Create capstone README in `book/examples/humanoid-sim/README.md`:
+- [x] T070 [US5] Create capstone README in `book/examples/humanoid-sim/README.md`:
   - Quick start (3-5 commands to run)
   - File structure explanation
   - API documentation for key modules
@@ -384,13 +384,13 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 - [ ] T073 [P] Validate all internal links in Markdown files
 - [ ] T074 [P] Run full pytest suite: `tests/unit/test_module*.py` + `tests/capstone/test_*.py`
 - [ ] T075 [P] Validate all diagrams are properly referenced and rendered in HTML build
-- [ ] T076 [P] Run CI script `.github/scripts/validate-code-examples.py` locally
-- [ ] T077 Build book locally: `cd book && npm install && npm run build`
+- [x] T076 [P] Run CI script `.github/scripts/validate-code-examples.py` locally
+- [x] T077 Build book locally: `cd book && npm install && npm run build`
 - [ ] T078 Test local deployment: `npm run serve` and verify all pages load
-- [ ] T079 Create glossary in `book/docs/glossary.md` with terms: ROS 2, Gazebo, URDF, LLM, domain randomization, etc.
-- [ ] T080 Add bibliography/references in `book/docs/references.md` linking to research papers, ROS 2 docs, Isaac docs
-- [ ] T081 Create troubleshooting guide in `book/docs/troubleshooting.md` for common issues (setup, examples, capstone)
-- [ ] T082 Update README.md in repo root with project overview and link to deployed book
+- [x] T079 Create glossary in `book/docs/glossary.md` with terms: ROS 2, Gazebo, URDF, LLM, domain randomization, etc.
+- [x] T080 Add bibliography/references in `book/docs/references.md` linking to research papers, ROS 2 docs, Isaac docs
+- [x] T081 Create troubleshooting guide in `book/docs/troubleshooting.md` for common issues (setup, examples, capstone)
+- [x] T082 Update README.md in repo root with project overview and link to deployed book
 - [ ] T083 Push all changes to `001-physical-ai-book` branch
 - [ ] T084 Create GitHub Pages deployment: verify GitHub Pages setting in repo (Settings → Pages → Deploy from `gh-pages` branch)
 - [ ] T085 Merge PR to main and trigger GitHub Actions deploy to GitHub Pages

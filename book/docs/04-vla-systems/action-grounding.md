@@ -1,498 +1,962 @@
-# Action Grounding: From Language to Motor Commands
+# Action Grounding in Robotics
 
-The hardest part of embodied AI is closing the **semantic gap**: translating language concepts ("pick up") into continuous motor commands (7 joint angles + gripper force + timing). This chapter covers the techniques that make this translation work.
+## Introduction
 
----
+Action grounding is the critical process of connecting abstract language concepts or high-level commands to concrete, executable robot actions. This bridging of semantic understanding and physical execution is fundamental to Vision-Language-Action (VLA) systems. Without proper action grounding, a robot might understand the command "pick up the red cup" linguistically but be unable to execute the corresponding motor commands.
 
-## The Semantic Gap Problem
+## The Action Grounding Problem
 
-### The Challenge
+The action grounding problem can be framed as a mapping between:
+- **Semantic space**: Natural language commands, concepts, intentions
+- **Action space**: Executable robot commands, trajectories, motor programs
+- **Perceptual space**: Sensor observations, object detections, environmental states
 
-**Language Understanding** → "Pick up the red cup"
+The challenge lies in creating robust mappings that work across diverse environments, objects, and task formulations.
 
-**Motor Control** → [θ₁=0.45, θ₂=0.32, θ₃=0.18, θ₄=-1.2, θ₅=0.8, θ₆=2.1, θ₇=0.05, gripper=0.08m, force=50N]
+## Types of Action Grounding
 
-**The gap**: How do we get from the first to the second?
+### 1. Symbolic Action Grounding
 
-### Why It's Hard
-
-1. **Abstraction mismatch**: Language is semantic ("pick up"), control is continuous (7D joint space)
-2. **Many solutions**: Infinite ways to pick up a cup (top grasp, side grasp, two-handed, etc.)
-3. **Context dependent**: Same word means different things (pick up ≠ pick up a spider)
-4. **Real-time constraints**: Must generate actions fast (~100ms), not slowly reason (1-5s)
-
-### Three Approaches
-
-**Approach 1: Action Tokenization** (Discrete actions)
-```
-Language: "Pick up"
-  ↓
-LLM outputs: "ACTION_GRASP_FROM_TOP"
-  ↓
-Decode to motor commands (pre-defined trajectories)
-```
-
-**Approach 2: Action Regression** (Continuous prediction)
-```
-Language: "Pick up"
-  ↓
-LLM outputs: "target_position=[0.3, 0.2, 0.8], gripper_width=0.08, force=50"
-  ↓
-Neural network converts to joint angles via inverse kinematics
-```
-
-**Approach 3: Diffusion-Based** (Iterative refinement)
-```
-Language: "Pick up"
-  ↓
-Start with random action noise
-  ↓
-Iteratively refine using language guidance + physics simulation
-  ↓
-Final action predicted
-```
-
----
-
-## Approach 1: Action Tokenization
-
-### Idea
-
-Treat actions like words in language. Instead of 7 continuous joint values, learn a finite vocabulary of discrete actions.
-
-### Example Vocabulary
+Traditional robotics approaches use symbolic mappings between language and discrete actions:
 
 ```python
-ACTION_TOKENS = {
-    # Grasping actions
-    0: "APPROACH_FROM_TOP",           # Reach object from above
-    1: "APPROACH_FROM_SIDE",          # Reach from side
-    2: "APPROACH_FROM_FRONT",         # Reach from front
-    3: "GRASP_AND_LIFT",              # Close gripper and lift
-    4: "GRASP_GENTLE",                # Close gripper slowly (fragile)
-
-    # Movement actions
-    5: "MOVE_TO_POSITION_FAST",       # 0.8 m/s
-    6: "MOVE_TO_POSITION_SLOW",       # 0.2 m/s (precision)
-    7: "ROTATE_GRIPPER_CW",           # Rotate 15°
-    8: "ROTATE_GRIPPER_CCW",          # Rotate -15°
-
-    # Release actions
-    9: "RELEASE_NORMAL",              # Open gripper (normal speed)
-    10: "RELEASE_GENTLE",             # Open gripper slowly
-
-    # Safety
-    11: "RETREAT_VERTICAL",           # Pull straight up
-    12: "STOP_EMERGENCY",             # Stop and hold position
-}
-```
-
-### How It Works
-
-```python
-class ActionTokenizerPolicy(nn.Module):
-    """Predict discrete action tokens given language + vision."""
-
+class SymbolicActionGrounding:
     def __init__(self):
-        # Vision encoder
-        self.vision_encoder = load_pretrained_vit()  # [B, 2048]
-
-        # Language encoder
-        self.language_encoder = load_pretrained_bert()  # [B, 768]
-
-        # Fusion and action head
-        self.fusion = nn.Sequential(
-            nn.Linear(2048 + 768, 512),
-            nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-        )
-
-        self.action_head = nn.Linear(256, num_action_tokens)  # 13 tokens
-
-    def forward(self, image, language):
+        # Define mappings from language to robot actions
+        self.action_map = {
+            'grasp': ['grasp', 'pick up', 'take', 'grab'],
+            'navigate': ['go to', 'move to', 'navigate to', 'approach'],
+            'release': ['release', 'drop', 'put down', 'place'],
+            'open': ['open', 'uncover'],
+            'close': ['close', 'shut']
+        }
+        
+        # Define object property mappings
+        self.property_map = {
+            'color': ['red', 'blue', 'green', 'yellow', 'black', 'white'],
+            'size': ['small', 'large', 'big', 'tiny', 'medium'],
+            'shape': ['cube', 'ball', 'cylinder', 'box', 'bottle']
+        }
+    
+    def ground_command(self, command):
         """
+        Ground a natural language command to symbolic robot actions.
+        
         Args:
-            image: [B, 3, 224, 224]
-            language: [B, seq_len] token IDs
-
+            command: Natural language command string
+            
         Returns:
-            action_logits: [B, num_actions]
-            action_token: [B] predicted action token
+            List of grounded actions with parameters
         """
-        # Encode
-        vision_feat = self.vision_encoder(image)  # [B, 2048]
-        language_feat = self.language_encoder(language)  # [B, 768]
-
-        # Fuse
-        fused = torch.cat([vision_feat, language_feat], dim=1)  # [B, 2816]
-        hidden = self.fusion(fused)  # [B, 256]
-
-        # Predict action
-        action_logits = self.action_head(hidden)  # [B, 13]
-        action_token = torch.argmax(action_logits, dim=1)  # [B]
-
-        return action_logits, action_token
-
-def decode_action_token(action_token, object_position, robot_state):
-    """Convert action token to motor command."""
-
-    if action_token == 0:  # APPROACH_FROM_TOP
-        # Plan trajectory from current position to above object
-        target = object_position + [0, 0, 0.15]  # 15cm above
-        trajectory = plan_trajectory(robot_state, target, approach_height=0.5m/s)
-
-    elif action_token == 3:  # GRASP_AND_LIFT
-        # Close gripper (width → 0), then lift 0.3m
-        gripper_trajectory = close_gripper_trajectory(speed=0.1)  # Slow
-        lift_trajectory = lift_trajectory(height=0.3, speed=0.2m/s)
-        trajectory = gripper_trajectory + lift_trajectory
-
-    # ... more cases ...
-
-    return trajectory
+        command_lower = command.lower()
+        
+        # Identify action type
+        action_type = None
+        for action_key, action_phrases in self.action_map.items():
+            if any(phrase in command_lower for phrase in action_phrases):
+                action_type = action_key
+                break
+        
+        if not action_type:
+            return [{'error': 'Unknown action type', 'command': command}]
+        
+        # Extract object and properties
+        object_info = self.extract_object_info(command_lower)
+        
+        # Create grounded action
+        grounded_action = {
+            'action_type': action_type,
+            'object': object_info,
+            'raw_command': command
+        }
+        
+        return [grounded_action]
+    
+    def extract_object_info(self, command):
+        """
+        Extract object description from command.
+        
+        Args:
+            command: Lowercase command string
+            
+        Returns:
+            Dictionary with object properties
+        """
+        words = command.split()
+        
+        # Extract properties based on predefined lists
+        properties = {
+            'color': None,
+            'size': None,
+            'shape': None,
+            'name': []
+        }
+        
+        for word in words:
+            if word in self.property_map['color']:
+                properties['color'] = word
+            elif word in self.property_map['size']:
+                properties['size'] = word
+            elif word in self.property_map['shape']:
+                properties['shape'] = word
+            else:
+                # Assume it's the object name if not a property
+                if word not in ['the', 'a', 'an', 'to', 'and', 'with']:
+                    properties['name'].append(word)
+        
+        return properties
 ```
 
-### Advantages & Disadvantages
+### 2. Learning-Based Action Grounding
 
-| Advantage | Disadvantage |
-|-----------|--------------|
-| Fast inference (single token prediction) | Limited expressiveness (finite actions) |
-| Interpretable (can see what LLM chose) | Doesn't adapt to novel situations |
-| Easy to constrain (only allow safe tokens) | Requires pre-defining all actions |
-| Works with small models (Phi 3.8B) | Struggles with continuous variations |
-
-**Best for**: Repetitive, well-defined tasks (pick-and-place, assembly lines)
-
----
-
-## Approach 2: Action Regression
-
-### Idea
-
-LLM outputs semantic parameters (target position, gripper force), then neural network translates to joint angles.
-
-### Architecture
+More sophisticated approaches use machine learning to learn grounding from data:
 
 ```python
-class ActionRegressionPolicy(nn.Module):
-    """Predict continuous action parameters."""
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
-    def __init__(self, robot_dof=7):
-        # Vision + Language backbone (shared)
-        self.vision_encoder = load_pretrained_vit()    # 2048-dim
-        self.language_encoder = load_pretrained_bert()  # 768-dim
-
-        # Fusion network
-        self.fusion = nn.Sequential(
-            nn.Linear(2048 + 768 + robot_dof, 512),  # Add current joint angles
-            nn.LayerNorm(512),
+class LearningBasedGrounding(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, hidden_dim, action_space_dim):
+        super().__init__()
+        
+        # Embedding layers
+        self.word_embedding = nn.Embedding(vocab_size, embedding_dim)
+        
+        # LSTM for language processing
+        self.lstm = nn.LSTM(embedding_dim, hidden_dim, batch_first=True)
+        
+        # Vision processing
+        self.vision_encoder = nn.Sequential(
+            nn.Linear(2048, 512),  # Assuming ResNet-style features
             nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
+            nn.Linear(512, hidden_dim)
         )
-
-        # Output semantic action parameters
-        self.semantic_head = nn.Sequential(
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.Linear(128, 7),  # [x, y, z, roll, pitch, yaw, gripper_width]
-        )
-
-        # Inverse kinematics network (learned or analytical)
-        self.ik_network = LearnedIK(dof=robot_dof)
-
-    def forward(self, image, language, joint_state):
+        
+        # Multimodal fusion
+        self.fusion_layer = nn.Linear(hidden_dim * 2, hidden_dim)
+        
+        # Action output layer
+        self.action_head = nn.Linear(hidden_dim, action_space_dim)
+        
+    def forward(self, language_input, vision_input):
         """
+        Ground language command with visual context to actions.
+        
         Args:
-            image: [B, 3, 224, 224]
-            language: [B, seq_len]
-            joint_state: [B, 7]
-
+            language_input: Tokenized language sequence
+            vision_input: Visual features from environment
+            
         Returns:
-            joint_trajectory: [B, T, 7] (T timesteps)
+            Action probabilities
         """
-        # Encode
-        vision_feat = self.vision_encoder(image)
-        language_feat = self.language_encoder(language)
-
-        # Fuse with proprioception
-        fused_input = torch.cat(
-            [vision_feat, language_feat, joint_state],
-            dim=1
-        )
-        hidden = self.fusion(fused_input)
-
-        # Predict semantic action
-        semantic_action = self.semantic_head(hidden)  # [B, 7]
-        # [target_x, target_y, target_z, roll, pitch, yaw, gripper_width]
-
-        # Convert to joint angles via IK
-        joint_solution = self.ik_network(semantic_action)  # [B, 7]
-
-        # Generate trajectory (e.g., linear interpolation)
-        current_joints = joint_state  # [B, 7]
-        trajectory = interpolate_trajectory(
-            start=current_joints,
-            end=joint_solution,
-            num_steps=50  # 50 timesteps (2.5s at 20Hz)
-        )
-
-        return trajectory  # [B, 50, 7]
+        # Process language
+        lang_embeds = self.word_embedding(language_input)
+        lang_features, _ = self.lstm(lang_embeds)
+        # Take the last state
+        lang_features = lang_features[:, -1, :]  # (batch, hidden_dim)
+        
+        # Process vision
+        vision_features = self.vision_encoder(vision_input)
+        
+        # Fuse modalities
+        fused_features = torch.cat([lang_features, vision_features], dim=1)
+        fused_features = F.relu(self.fusion_layer(fused_features))
+        
+        # Generate actions
+        action_probs = self.action_head(fused_features)
+        
+        return action_probs
 ```
 
-### Training
+### 3. Skill-Based Action Grounding
+
+Break down complex actions into reusable skills:
 
 ```python
-def train_action_regression(model, dataset):
-    """Train on robot demonstrations."""
-
-    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
-
-    for epoch in range(100):
-        for batch in dataset:
-            images = batch['images']              # [B, 3, 224, 224]
-            languages = batch['instructions']     # [B, seq_len]
-            joint_states = batch['joint_states']  # [B, 7]
-            expert_actions = batch['actions']     # [B, 7] (target positions/forces)
-
-            # Forward
-            predicted_trajectory = model(images, languages, joint_states)
-            last_prediction = predicted_trajectory[:, -1, :]  # Final action [B, 7]
-
-            # Loss: L1 distance between predicted and expert
-            loss = F.l1_loss(last_prediction, expert_actions)
-
-            # Backward
-            loss.backward()
-            optimizer.step()
-            optimizer.zero_grad()
-
-    return model
-```
-
-### Advantages & Disadvantages
-
-| Advantage | Disadvantage |
-|-----------|--------------|
-| Continuous, adaptive output | More complex (requires IK solver) |
-| Generalizes to novel objects | Slower (multiple networks in series) |
-| Outputs interpretable parameters | IK errors propagate to final action |
-
-**Best for**: Flexible manipulation tasks (grasp any object, place anywhere)
-
----
-
-## Approach 3: Diffusion-Based Actions
-
-### Idea
-
-Use diffusion models (like DALL-E) but for robot actions instead of images.
-
-**Diffusion Process**:
-```
-Step 1: Start with random action noise
-        a₀ ~ N(0, I)
-
-Step 2: Iteratively refine using:
-        a_t = a_{t-1} - λ * ∇_a L(a, instruction, image)
-
-Step 3: After K iterations, a_K is the final action
-
-This is like asking "what action would a good robot take?"
-and gradually refining the answer.
-```
-
-### Architecture
-
-```python
-class DiffusionActionPolicy(nn.Module):
-    """Learn to generate actions via diffusion process."""
-
-    def __init__(self, num_diffusion_steps=20):
-        self.num_steps = num_diffusion_steps
-
-        # Noise prediction network (U-Net style)
-        self.noise_predictor = nn.Sequential(
-            nn.Linear(7 + 2048 + 768 + num_diffusion_steps, 256),  # action + vision + lang + timestep
-            nn.ReLU(),
-            nn.Linear(256, 256),
-            nn.ReLU(),
-            nn.Linear(256, 7),  # Predict noise in action space
-        )
-
-    def forward(self, image, language, num_steps=20):
+class SkillLibrary:
+    def __init__(self):
+        self.skills = {
+            'grasp_skill': GraspSkill(),
+            'navigate_skill': NavigateSkill(), 
+            'place_skill': PlaceSkill(),
+            'open_skill': OpenSkill(),
+            'close_skill': CloseSkill()
+        }
+    
+    def execute_skill(self, skill_name, parameters):
         """
+        Execute a specific skill with given parameters.
+        
         Args:
-            image: [B, 3, 224, 224]
-            language: [B, seq_len]
-            num_steps: Number of diffusion iterations
-
+            skill_name: Name of the skill to execute
+            parameters: Parameters for the skill
+            
         Returns:
-            action: [B, 7] final denoised action
+            Execution result
         """
+        if skill_name in self.skills:
+            return self.skills[skill_name].execute(parameters)
+        else:
+            raise ValueError(f"Unknown skill: {skill_name}")
 
-        # Encode
-        vision_feat = self.encode_vision(image)   # [B, 2048]
-        language_feat = self.encode_language(language)  # [B, 768]
+class GraspSkill:
+    def execute(self, parameters):
+        """
+        Execute grasp skill with parameters.
+        
+        Args:
+            parameters: Dictionary with grasp parameters
+                - object_id: ID of object to grasp
+                - grasp_type: Type of grasp (pinch, power, etc.)
+                - approach_vector: Direction to approach object
+                - grasp_width: Distance between grippers
+        """
+        object_id = parameters.get('object_id')
+        grasp_type = parameters.get('grasp_type', 'pinch')
+        approach_vector = parameters.get('approach_vector', [0, 0, 1])
+        grasp_width = parameters.get('grasp_width', 0.08)
+        
+        # Execute grasp sequence
+        result = self.approach_object(object_id, approach_vector)
+        if result['success']:
+            result = self.execute_grasp(object_id, grasp_width, grasp_type)
+        
+        return result
+    
+    def approach_object(self, object_id, approach_vector):
+        """Approach the object from a safe distance."""
+        # Implementation would use robot's motion planning
+        return {'success': True, 'message': 'Successfully approached object'}
+    
+    def execute_grasp(self, object_id, grasp_width, grasp_type):
+        """Execute the grasp."""
+        # Implementation would control robot gripper
+        return {'success': True, 'message': 'Successfully grasped object'}
 
-        # Initialize with noise
-        action = torch.randn(image.shape[0], 7)  # [B, 7]
+class NavigateSkill:
+    def execute(self, parameters):
+        """
+        Navigate to a target location.
+        
+        Args:
+            parameters: Dictionary with navigation parameters
+                - target_location: Target (x, y, z) coordinates
+                - navigation_mode: How to navigate (avoid_obstacles, etc.)
+        """
+        target_location = parameters['target_location']
+        navigation_mode = parameters.get('navigation_mode', 'avoid_obstacles')
+        
+        # Plan and execute navigation
+        path = self.plan_path_to_target(target_location)
+        result = self.follow_path(path, navigation_mode)
+        
+        return result
+    
+    def plan_path_to_target(self, target_location):
+        """Plan collision-free path to target."""
+        # In practice, this would interface with a path planner
+        return [target_location]  # Simplified
+    
+    def follow_path(self, path, mode):
+        """Follow the planned path."""
+        # Execute navigation
+        return {'success': True, 'message': 'Successfully navigated to target'}
 
-        # Iterative denoising
-        for t in range(num_steps):
-            # Concatenate with noise level encoding
-            t_embedding = self.encode_timestep(t, num_steps)  # [B, num_steps]
-
-            # Predict noise
-            noise_pred = self.noise_predictor(
-                torch.cat([action, vision_feat, language_feat, t_embedding], dim=1)
+class ActionGroundingWithSkills:
+    def __init__(self):
+        self.skill_library = SkillLibrary()
+        self.language_parser = LanguageParser()
+        
+    def ground_and_execute(self, command, world_state):
+        """
+        Ground language command and execute with skills.
+        
+        Args:
+            command: Natural language command
+            world_state: Current state of the world
+            
+        Returns:
+            Execution result
+        """
+        # Parse command into actions
+        parsed_actions = self.language_parser.parse_command(command, world_state)
+        
+        # Execute each action
+        results = []
+        for action in parsed_actions:
+            result = self.skill_library.execute_skill(
+                action['skill'], 
+                action['parameters']
             )
+            results.append(result)
+            
+            # Check if action failed
+            if not result['success']:
+                return {
+                    'success': False, 
+                    'error': f"Action failed: {result['message']}",
+                    'partial_results': results
+                }
+        
+        return {
+            'success': True,
+            'results': results,
+            'message': 'Successfully executed command'
+        }
 
-            # Update action (remove predicted noise)
-            alpha = 0.1  # Step size
-            action = action - alpha * noise_pred
-
-            # Add small random noise for exploration (optional)
-            if t < num_steps - 1:
-                action += 0.01 * torch.randn_like(action)
-
-        return action
-```
-
-### Advantages & Disadvantages
-
-| Advantage | Disadvantage |
-|-----------|--------------|
-| Flexible and powerful | Slow (K iterations of inference) |
-| Can model multimodal actions | Complex to train |
-| Handles uncertainty naturally | Requires large dataset |
-
-**Best for**: Complex manipulation tasks with multiple valid solutions
-
----
-
-## Comparison of Approaches
-
-| Method | Speed | Generalization | Expressiveness | Training Data |
-|--------|-------|---|---|---|
-| **Tokenization** | Fastest (1 forward pass) | Low (only learned tokens) | Limited | Smallest |
-| **Regression** | Medium (1-2 forward passes) | Medium-High | Moderate | Medium |
-| **Diffusion** | Slowest (K forward passes) | High | High | Largest |
-
-**Recommendation**:
-- Start with **tokenization** if tasks are repetitive
-- Use **regression** for flexible manipulation
-- Use **diffusion** if you have data and need best results
-
----
-
-## Beyond Raw Actions: Skill Libraries
-
-### Idea
-
-Instead of predicting low-level joint angles, predict **high-level skills** that are pre-learned.
-
-```python
-SKILL_LIBRARY = {
-    "grasp_from_top": GraspSkill(approach_height=0.15, force=50),
-    "grasp_from_side": GraspSkill(approach_height=0.0, force=50),
-    "push": PushSkill(distance=0.2, force=30),
-    "place_gently": PlaceSkill(descent_speed=0.1, force=20),
-    "open_drawer": DrawerSkill(pull_distance=0.3),
-}
-
-class SkillBasedPolicy:
-    def forward(self, image, language):
-        # LLM predicts which skill to use
-        skill_name = self.llm(image, language)  # "grasp_from_top"
-
-        # Get skill and object parameters
-        skill = SKILL_LIBRARY[skill_name]
-        target = self.detect_object(image)
-
-        # Execute skill with target
-        trajectory = skill(target_position=target)
-
-        return trajectory
-```
-
-**Advantages**:
-- Modular and reusable
-- Each skill is proven to work
-- LLM only needs to choose skill (simpler)
-- Easy to add new skills
-
-**Disadvantages**:
-- Requires manual skill engineering
-- Doesn't handle novel situations
-- Skills must have clear semantics
-
----
-
-## End-to-End Learning: The Alternative
-
-### Raw Neural Network Policy
-
-```python
-class EndToEndPolicy(nn.Module):
-    """Single neural network: Image + Language → Motor Commands"""
-
+class LanguageParser:
     def __init__(self):
-        self.vision_encoder = ResNet50(pretrained=True)
-        self.language_encoder = BERT.from_pretrained("bert-base")
-
-        self.fusion = nn.Sequential(
-            nn.Linear(2048 + 768 + 7, 512),  # vision + language + proprioception
-            nn.LayerNorm(512),
-            nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.LayerNorm(256),
-            nn.ReLU(),
-        )
-
-        # Direct output: 7 joint angles + gripper width + 50 timesteps
-        self.action_head = nn.Linear(256, (7 + 1) * 50)
-
-    def forward(self, image, language, joint_state):
-        vision = self.vision_encoder(image)
-        language = self.language_encoder(language)
-        fused = self.fusion(torch.cat([vision, language, joint_state], dim=1))
-
-        # Output 50-step trajectory
-        action_sequence = self.action_head(fused)
-        action_sequence = action_sequence.reshape(-1, 50, 8)  # [B, 50, 8]
-
-        return action_sequence
+        # Define patterns for different commands
+        self.patterns = [
+            {
+                'pattern': r'grasp|pick up|take|grab',
+                'skill': 'grasp_skill',
+                'params': self.extract_grasp_params
+            },
+            {
+                'pattern': r'go to|navigate to|move to|approach',
+                'skill': 'navigate_skill', 
+                'params': self.extract_navigate_params
+            },
+            {
+                'pattern': r'release|drop|put down|place',
+                'skill': 'place_skill',
+                'params': self.extract_place_params
+            }
+        ]
+    
+    def parse_command(self, command, world_state):
+        """
+        Parse natural language command into executable actions.
+        
+        Args:
+            command: Natural language command
+            world_state: Current world state with object information
+            
+        Returns:
+            List of actions with parameters
+        """
+        actions = []
+        command_lower = command.lower()
+        
+        for pattern_info in self.patterns:
+            if pattern_info['pattern'] in command_lower:
+                params = pattern_info['params'](command_lower, world_state)
+                
+                actions.append({
+                    'skill': pattern_info['skill'],
+                    'parameters': params,
+                    'raw_command': command
+                })
+                break  # For simplicity, assume single action per command
+        
+        return actions
+    
+    def extract_grasp_params(self, command, world_state):
+        """Extract grasp parameters from command."""
+        # Find object to grasp based on command and world state
+        object_to_grasp = self.find_object_in_command(command, world_state)
+        
+        return {
+            'object_id': object_to_grasp['id'] if object_to_grasp else None,
+            'grasp_type': 'pinch',  # Default grasp type
+            'grasp_width': 0.08  # Default grasp width
+        }
+    
+    def extract_navigate_params(self, command, world_state):
+        """Extract navigation parameters from command."""
+        # Find target location based on command and world state
+        target_location = self.find_target_location(command, world_state)
+        
+        return {
+            'target_location': target_location or [0, 0, 0],
+            'navigation_mode': 'avoid_obstacles'
+        }
+    
+    def extract_place_params(self, command, world_state):
+        """Extract place parameters from command."""
+        # Find placement location based on command and world state
+        placement_location = self.find_placement_location(command, world_state)
+        
+        return {
+            'placement_location': placement_location or [0, 0, 0]
+        }
+    
+    def find_object_in_command(self, command, world_state):
+        """Find object in world state that matches command description."""
+        # Extract object descriptors from command
+        object_desc = self.extract_object_descriptor(command)
+        
+        # Look for matching object in world state
+        for obj in world_state.get('objects', []):
+            if self.object_matches_descriptor(obj, object_desc):
+                return obj
+        
+        return None
+    
+    def extract_object_descriptor(self, command):
+        """Extract object descriptor from command."""
+        # Simple implementation - in practice, use NLP
+        words = command.split()
+        descriptor = {
+            'color': None,
+            'shape': None,
+            'size': None
+        }
+        
+        for word in words:
+            if word in ['red', 'blue', 'green', 'yellow']:
+                descriptor['color'] = word
+            elif word in ['ball', 'cube', 'cylinder', 'box']:
+                descriptor['shape'] = word
+            elif word in ['big', 'small', 'large', 'tiny']:
+                descriptor['size'] = word
+        
+        return descriptor
+    
+    def object_matches_descriptor(self, obj, descriptor):
+        """Check if object matches descriptor."""
+        matches = True
+        
+        if descriptor['color'] and obj.get('color') != descriptor['color']:
+            matches = False
+        if descriptor['shape'] and obj.get('shape') != descriptor['shape']:
+            matches = False
+        if descriptor['size'] and obj.get('size') != descriptor['size']:
+            matches = False
+            
+        return matches
+    
+    def find_target_location(self, command, world_state):
+        """Find target location from command and world state."""
+        # Look for location references in command
+        if 'kitchen' in command:
+            return world_state.get('locations', {}).get('kitchen', [0, 0, 0])
+        elif 'table' in command:
+            return world_state.get('locations', {}).get('table', [0, 0, 0])
+        elif 'door' in command:
+            return world_state.get('locations', {}).get('door', [0, 0, 0])
+        
+        # Default to origin if no specific location found
+        return [0, 0, 0]
+    
+    def find_placement_location(self, command, world_state):
+        """Find placement location from command and world state."""
+        # Similar to find_target_location
+        if 'table' in command:
+            return world_state.get('locations', {}).get('table', [0, 0, 0])
+        elif 'shelf' in command:
+            return world_state.get('locations', {}).get('shelf', [0, 0, 0])
+        elif 'floor' in command:
+            # Place on floor at current robot location
+            robot_pos = world_state.get('robot', {}).get('position', [0, 0, 0])
+            robot_pos[2] = 0.1  # Place slightly above floor
+            return robot_pos
+        
+        return [0, 0, 0]
 ```
 
-**Pros**: No semantic bottleneck, learns implicit representations
-**Cons**: Black box, requires massive training data (millions of demos)
+## Action Tokenization
 
----
+For neural network-based VLA systems, actions are often tokenized:
 
-## Key Takeaways
+```python
+class ActionTokenizer:
+    def __init__(self):
+        # Define action vocabulary
+        self.action_to_id = {
+            'stop': 0,
+            'forward': 1,
+            'backward': 2,
+            'turn_left': 3,
+            'turn_right': 4,
+            'grasp': 5,
+            'release': 6,
+            'lift': 7,
+            'lower': 8,
+            'open_gripper': 9,
+            'close_gripper': 10,
+            'detect_object': 11,
+            'navigate_to': 12,
+            'look_at': 13,
+            'point_to': 14,
+            # Add more as needed
+        }
+        
+        self.id_to_action = {v: k for k, v in self.action_to_id.items()}
+        
+        # Define parameter ranges for continuous actions
+        self.param_ranges = {
+            'x_translation': (-1.0, 1.0),  # meters
+            'y_translation': (-1.0, 1.0),
+            'z_translation': (-1.0, 1.0),
+            'rotation': (-3.14, 3.14),    # radians
+            'gripper_width': (0.0, 0.1),  # meters
+            'grasp_force': (0.0, 100.0)   # Newtons
+        }
+    
+    def tokenize_action(self, action_dict):
+        """
+        Convert action dictionary to token sequence.
+        
+        Args:
+            action_dict: Dictionary with action and parameters
+            
+        Returns:
+            Token sequence suitable for neural network
+        """
+        tokens = []
+        
+        # Add action token
+        action_name = action_dict['action']
+        if action_name in self.action_to_id:
+            tokens.append(self.action_to_id[action_name])
+        else:
+            tokens.append(-1)  # Unknown action token
+        
+        # Add parameter tokens
+        for param_name, param_value in action_dict.get('parameters', {}).items():
+            if param_name in self.param_ranges:
+                # Normalize parameter to range [0, 1]
+                min_val, max_val = self.param_ranges[param_name]
+                normalized = (param_value - min_val) / (max_val - min_val)
+                
+                # Tokenize to discrete value (e.g., 256 bins)
+                tokenized_param = int(normalized * 255)
+                tokens.append(1000 + param_name[0])  # Use offset for param tokens
+                tokens.append(tokenized_param)
+        
+        return tokens
+    
+    def detokenize_action(self, token_sequence):
+        """
+        Convert token sequence back to action dictionary.
+        
+        Args:
+            token_sequence: List of action tokens
+            
+        Returns:
+            Action dictionary
+        """
+        if not token_sequence:
+            return {}
+        
+        action_id = token_sequence[0]
+        action_name = self.id_to_action.get(action_id, 'unknown')
+        
+        action_dict = {'action': action_name, 'parameters': {}}
+        
+        # Process parameter tokens
+        i = 1
+        while i < len(token_sequence):
+            if token_sequence[i] >= 1000:  # Parameter token
+                param_key = chr(token_sequence[i] - 1000 + ord('x'))  # Simple mapping
+                if i + 1 < len(token_sequence):
+                    param_token = token_sequence[i + 1]
+                    # Convert back to original range
+                    param_range = self.param_ranges.get(f"{param_key}_translation", (0, 1))
+                    param_value = param_range[0] + (param_token / 255.0) * (param_range[1] - param_range[0])
+                    action_dict['parameters'][f"{param_key}_translation"] = param_value
+                i += 2
+            else:
+                i += 1
+        
+        return action_dict
+```
 
-| Approach | Best For | Key Insight |
-|----------|----------|---|
-| **Tokenization** | Discrete, repetitive tasks | Simplify action space |
-| **Regression** | Flexible manipulation | Use intermediate representations |
-| **Diffusion** | Complex, multi-solution tasks | Iteratively refine actions |
-| **Skill Libraries** | Modular, reusable behaviors | Combine learned primitives |
-| **End-to-End** | When you have massive data | Learn everything jointly |
+## Handling Uncertainty in Grounding
 
----
+Robots must handle uncertainty in both perception and action execution:
 
-## Next Steps
+```python
+class UncertainActionGrounding:
+    def __init__(self):
+        self.confidence_threshold = 0.7
+        self.skill_library = SkillLibrary()
+        self.parser = LanguageParser()
+        
+    def ground_with_uncertainty(self, command, world_state):
+        """
+        Ground command with uncertainty quantification.
+        
+        Args:
+            command: Natural language command
+            world_state: Current uncertain world state
+            
+        Returns:
+            Grounded action with confidence estimates
+        """
+        # Parse command with uncertainty
+        parsed_actions = self.parser.parse_command(command, world_state)
+        
+        for action in parsed_actions:
+            # Estimate confidence in action grounding
+            action['confidence'] = self.estimate_grounding_confidence(
+                action, 
+                world_state
+            )
+            
+            # Check if confidence is above threshold
+            if action['confidence'] < self.confidence_threshold:
+                action['requires_clarification'] = True
+        
+        return parsed_actions
+    
+    def estimate_grounding_confidence(self, action, world_state):
+        """
+        Estimate confidence in action grounding.
+        
+        Args:
+            action: Parsed action
+            world_state: Current world state with uncertainty
+            
+        Returns:
+            Confidence value between 0 and 1
+        """
+        confidence = 1.0
+        
+        # Reduce confidence if object detection is uncertain
+        object_id = action['parameters'].get('object_id')
+        if object_id:
+            obj_certainty = world_state.get('object_certainties', {}).get(object_id, 1.0)
+            confidence *= obj_certainty
+        
+        # Reduce confidence for complex actions
+        if action['skill'] in ['grasp_skill', 'place_skill']:
+            confidence *= 0.9  # Manipulation is inherently uncertain
+        
+        # Consider action complexity
+        params = action['parameters']
+        if len(params) > 3:  # More parameters = more uncertainty
+            confidence *= 0.8
+        
+        return max(0.0, min(1.0, confidence))
+    
+    def handle_uncertain_execution(self, command, world_state):
+        """
+        Handle execution when grounding has uncertainty.
+        """
+        grounded_actions = self.ground_with_uncertainty(command, world_state)
+        
+        for action in grounded_actions:
+            if action.get('requires_clarification'):
+                # Ask for clarification or use fallback strategy
+                clarified_action = self.request_clarification(action, command)
+                if clarified_action:
+                    action.update(clarified_action)
+                else:
+                    # Use fallback behavior
+                    action = self.get_fallback_action(action)
+            
+            # Execute action if confidence is sufficient
+            if action.get('confidence', 0) >= self.confidence_threshold:
+                try:
+                    result = self.skill_library.execute_skill(
+                        action['skill'], 
+                        action['parameters']
+                    )
+                    action['execution_result'] = result
+                except Exception as e:
+                    action['execution_error'] = str(e)
+                    action['success'] = False
+            else:
+                action['success'] = False
+                action['error'] = "Confidence too low for safe execution"
+        
+        return grounded_actions
+    
+    def request_clarification(self, action, original_command):
+        """
+        Request clarification for uncertain action.
+        """
+        # In practice, this would interact with a human user
+        # For simulation, we'll return a mock clarification
+        print(f"Requesting clarification for action: {action['skill']}")
+        print(f"Original command: {original_command}")
+        
+        # Mock clarification - in real system, get from user
+        return action  # Return original for now
+    
+    def get_fallback_action(self, action):
+        """
+        Get a safer fallback action for uncertain situations.
+        """
+        fallback_actions = {
+            'grasp_skill': {
+                'skill': 'detect_object',
+                'parameters': action['parameters']
+            },
+            'navigate_skill': {
+                'skill': 'navigate_skill',
+                'parameters': {**action['parameters'], 'safe_mode': True}
+            }
+        }
+        
+        return fallback_actions.get(action['skill'], action)
+```
 
-1. **See system architecture** → Read vla-architecture.md
-2. **Implement it** → Study vla_policy_learner.py
-3. **Evaluate performance** → Use vla_evaluation.py
-4. **Apply to real task** → Complete exercises
+## Integration with Large Language Models
 
----
+For VLA systems using LLMs, action grounding involves interpreting model outputs:
 
-**Further Reading**:
-- RT-1 (Action Tokens): https://robotics-transformer.github.io/
-- Diffusion Policies: https://diffusion-policy.cs.columbia.edu/
-- Skill Discovery: https://arxiv.org/abs/2304.04435
+```python
+import json
+
+class LLMActionGrounding:
+    def __init__(self, llm_client):
+        self.llm = llm_client
+        self.tokenizer = ActionTokenizer()
+        
+    def ground_with_llm(self, command, world_state):
+        """
+        Use LLM to ground command to actions.
+        
+        Args:
+            command: Natural language command
+            world_state: Current world state
+            
+        Returns:
+            List of grounded actions
+        """
+        # Create prompt for LLM
+        prompt = self.create_grounding_prompt(command, world_state)
+        
+        # Get response from LLM
+        response = self.llm.generate(prompt)
+        
+        # Parse LLM response
+        actions = self.parse_llm_response(response)
+        
+        return actions
+    
+    def create_grounding_prompt(self, command, world_state):
+        """
+        Create prompt for LLM to ground command to actions.
+        """
+        # Format world state for LLM
+        world_description = self.format_world_state(world_state)
+        
+        prompt = f"""
+        You are a robot action planner. Convert the user's command into specific robot actions.
+        
+        World state:
+        {world_description}
+        
+        Command: {command}
+        
+        Output format: JSON list of actions with the following format:
+        [
+          {{
+            "action": "<action_name>",
+            "parameters": {{
+              "param1": value1,
+              "param2": value2
+            }}
+          }}
+        ]
+        
+        Available actions: navigate_to, grasp, release, detect_object, look_at
+        
+        Actions:"""
+        
+        return prompt
+    
+    def format_world_state(self, world_state):
+        """
+        Format world state for LLM consumption.
+        """
+        objects_desc = []
+        for obj in world_state.get('objects', []):
+            obj_desc = f"- {obj.get('name', 'object')} at position {obj.get('position')}"
+            if obj.get('color'):
+                obj_desc += f" ({obj['color']})"
+            objects_desc.append(obj_desc)
+        
+        locations_desc = []
+        for name, pos in world_state.get('locations', {}).items():
+            locations_desc.append(f"- {name} at {pos}")
+        
+        formatted = f"""
+        Objects: {', '.join(objects_desc)}
+        Locations: {', '.join(locations_desc)}
+        Robot position: {world_state.get('robot', {}).get('position', 'unknown')}
+        """
+        
+        return formatted
+    
+    def parse_llm_response(self, response):
+        """
+        Parse LLM response into structured actions.
+        """
+        try:
+            # Extract JSON from response
+            json_start = response.find('[')
+            json_end = response.rfind(']') + 1
+            
+            if json_start != -1 and json_end != 0:
+                json_str = response[json_start:json_end]
+                actions = json.loads(json_str)
+                
+                # Validate actions
+                for action in actions:
+                    if 'action' not in action:
+                        action['action'] = 'unknown'
+                    if 'parameters' not in action:
+                        action['parameters'] = {}
+                
+                return actions
+        except json.JSONDecodeError:
+            print(f"Failed to parse LLM response as JSON: {response}")
+        
+        # Fallback: try to extract action information with regex
+        return self.extract_actions_with_regex(response)
+    
+    def extract_actions_with_regex(self, response):
+        """
+        Extract actions from LLM response using regex as fallback.
+        """
+        import re
+        
+        # Look for action patterns in the text
+        actions = []
+        
+        # Pattern for simple actions
+        action_patterns = [
+            (r'go to|navigate to', 'navigate_to'),
+            (r'pick up|grasp|take', 'grasp'),
+            (r'drop|release|put down', 'release'),
+            (r'look at|detect', 'detect_object')
+        ]
+        
+        for pattern, action_name in action_patterns:
+            if re.search(pattern, response, re.IGNORECASE):
+                actions.append({
+                    'action': action_name,
+                    'parameters': {}
+                })
+        
+        return actions
+```
+
+## Evaluation of Action Grounding
+
+To evaluate action grounding systems:
+
+```python
+class ActionGroundingEvaluator:
+    def __init__(self):
+        self.metrics = {
+            'grounding_accuracy': self.compute_grounding_accuracy,
+            'execution_success': self.compute_execution_success,
+            'semantic_similarity': self.compute_semantic_similarity,
+            'timing_performance': self.compute_timing_performance
+        }
+    
+    def evaluate_system(self, grounding_system, test_dataset):
+        """
+        Evaluate action grounding system on test dataset.
+        
+        Args:
+            grounding_system: System to evaluate
+            test_dataset: Dataset of (command, expected_actions, world_state) tuples
+            
+        Returns:
+            Evaluation metrics
+        """
+        results = {}
+        
+        for metric_name, metric_fn in self.metrics.items():
+            results[metric_name] = metric_fn(grounding_system, test_dataset)
+        
+        return results
+    
+    def compute_grounding_accuracy(self, grounding_system, test_dataset):
+        """
+        Compute accuracy of action grounding.
+        """
+        correct = 0
+        total = len(test_dataset)
+        
+        for command, expected_actions, world_state in test_dataset:
+            try:
+                predicted_actions = grounding_system.ground_command(command, world_state)
+                
+                # Compare predicted vs expected (simplified)
+                if self.actions_match(predicted_actions, expected_actions):
+                    correct += 1
+            except:
+                continue  # Count as incorrect if system crashes
+        
+        return correct / total if total > 0 else 0
+    
+    def actions_match(self, pred_actions, expected_actions):
+        """
+        Check if predicted actions match expected actions.
+        """
+        # Simplified comparison - in practice, this would be more sophisticated
+        if len(pred_actions) != len(expected_actions):
+            return False
+        
+        for p_action, e_action in zip(pred_actions, expected_actions):
+            if p_action.get('action') != e_action.get('action'):
+                return False
+            # Additional parameter checking could be added here
+        
+        return True
+    
+    def compute_execution_success(self, grounding_system, test_dataset):
+        """
+        Compute success rate of action execution.
+        """
+        # This would require a simulator or real robot to execute actions
+        # For simulation purposes, we'll return a placeholder
+        return 0.85  # Placeholder success rate
+    
+    def compute_semantic_similarity(self, grounding_system, test_dataset):
+        """
+        Compute semantic similarity between commands and grounded actions.
+        """
+        # This would use embedding models to measure semantic similarity
+        # For now, return a placeholder
+        return 0.92  # Placeholder similarity
+    
+    def compute_timing_performance(self, grounding_system, test_dataset):
+        """
+        Compute timing performance of the grounding system.
+        """
+        import time
+        
+        total_time = 0
+        count = 0
+        
+        for command, expected_actions, world_state in test_dataset:
+            start_time = time.time()
+            try:
+                grounding_system.ground_command(command, world_state)
+                end_time = time.time()
+                total_time += (end_time - start_time)
+                count += 1
+            except:
+                continue
+        
+        return total_time / count if count > 0 else float('inf')
+```
+
+## Best Practices
+
+1. **Multi-modal Consistency**: Ensure that action grounding is consistent across vision, language, and motor modalities
+
+2. **Uncertainty Awareness**: Model and propagate uncertainty through the grounding process
+
+3. **Compositionality**: Design grounding systems that can compose simple actions into complex behaviors
+
+4. **Robustness**: Handle ambiguous or underspecified commands gracefully
+
+5. **Learnability**: Design grounding systems that can be improved with experience
+
+6. **Safety**: Incorporate safety checks and fallback behaviors
+
+## Conclusion
+
+Action grounding is the bridge between high-level language commands and low-level robot execution. Effective action grounding systems must handle the complexities of natural language, perceptual uncertainty, and physical constraints. The integration of modern machine learning approaches with traditional robotics methods provides promising pathways for developing more capable and intuitive human-robot interaction systems.
