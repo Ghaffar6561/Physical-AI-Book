@@ -166,6 +166,21 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
   - Installation steps for Gazebo 11+ (Linux/WSL2)
   - Docker devcontainer for reproducibility (`.devcontainer/devcontainer.json`)
   - Common troubleshooting
+- [ ] T035a [US2] [P] Write `02-simulation/unity-exercises.md` covering:
+  - Unity 3D for high-fidelity humanoid robot visualization
+  - Creating interactive simulation environments
+  - Unity-ROS bridge for communication
+  - Performance considerations vs. Gazebo
+  - File: `book/docs/02-simulation/unity-exercises.md`
+  - Covers: FR-006
+- [ ] T035b [US3] Write `03-perception/isaac-sim-workflows.md` covering:
+  - NVIDIA Isaac Sim platform capabilities for photorealistic simulation
+  - Synthetic data generation workflows
+  - Isaac Sim + ROS 2 integration techniques
+  - Domain randomization with realistic physics
+  - Hardware requirements and setup
+  - File: `book/docs/03-perception/isaac-sim-workflows.md`
+  - Covers: FR-007
 
 ---
 
@@ -381,6 +396,8 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 
 - [ ] T071 Create module navigation in `book/docs/intro.md` with learning path recommendations
 - [ ] T072 [P] Review all code examples against SC-009 (95% must run without errors)
+- [ ] T072a [P] Add performance validation for all code examples to ensure <30s execution time on target hardware
+- [ ] T072b [P] Create performance benchmark framework for capstone project to validate <2s latency requirement (SC-008)
 - [ ] T073 [P] Validate all internal links in Markdown files
 - [ ] T074 [P] Run full pytest suite: `tests/unit/test_module*.py` + `tests/capstone/test_*.py`
 - [ ] T075 [P] Validate all diagrams are properly referenced and rendered in HTML build
@@ -406,12 +423,12 @@ Phase 3 (US1: Foundations) ←─→ Phase 4 (US2: Humanoid Stack) ←─→ Pha
 | 1 | Setup | T001-T008 (8) | Docusaurus initialization, folder structure |
 | 2 | Foundations | T009-T017 (9) | Testing, shared resources, CI setup |
 | 3 | US1 | T018-T025 (8) | Physical AI fundamentals, embodied intelligence |
-| 4 | US2 | T026-T035 (10) | ROS 2, Gazebo, URDF, humanoid design |
+| 4 | US2 | T026-T035b (12) | ROS 2, Gazebo, URDF, humanoid design, Unity exercises |
 | 5 | US3 | T036-T046 (11) | Perception, sim-to-real transfer, Isaac |
 | 6 | US4 | T047-T057 (11) | VLA systems, LLM planning, voice-to-action |
 | 7 | US5 | T058-T070 (13) | Capstone project implementation, integration |
-| 8 | Polish | T071-T087 (17) | Refinement, validation, deployment |
-| **Total** | | **87 tasks** | End-to-end book creation |
+| 8 | Polish | T071-T087, T072a-T072b (19) | Refinement, validation, deployment, performance |
+| **Total** | | **90 tasks** | End-to-end book creation |
 
 ---
 

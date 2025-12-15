@@ -25,13 +25,15 @@ Build a comprehensive, spec-driven technical book that teaches Physical AI and h
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-No constitution file exists yet. This project is initiated in draft state. Key principles to establish:
-- **Spec-Driven Content**: All book chapters must be derived from and traceable to spec.md requirements
-- **Executable Examples**: Every code example in the book must be tested and runnable
-- **Progressive Complexity**: Modules build sequentially; foundations before applications
-- **Sim-to-Real Grounding**: All concepts must connect to real robotics challenges, not pure theory
+All implementation must comply with principles in `.specify/memory/constitution.md`:
+- **I. Spec-Driven Development**: All implementation traceable to spec.md requirements
+- **II. Executable Examples**: All code examples tested and runnable
+- **III. Progressive Complexity**: Modules build sequentially with foundations before applications
+- **IV. Performance Standards**: Capstone latency <2s, examples <30s execution, build <5min
+- **V. Pedagogical Coherence**: Content serves learning objectives in user stories
+- **VI. Open Source First**: Prefer open-source tools and libraries
 
-**Violations Check**: None detected at Phase 0.
+**Violations Check**: All principles are supported by this plan.
 
 ## Project Structure
 
@@ -120,7 +122,7 @@ No complexity violations detected. The project structure is justified:
 1. **Docusaurus Deployment**: Best practices for GitHub Pages, build optimization, SEO
 2. **ROS 2 Teaching**: Most effective ways to introduce nodes, topics, services, actions to beginners
 3. **Gazebo for Pedagogy**: Best practices for creating simple, runnable simulations for learning
-4. **NVIDIA Isaac**: High-level overview of capabilities most relevant to roboticists (photorealistic sim, domain randomization)
+4. **NVIDIA Isaac Sim**: In-depth exploration of capabilities for photorealistic simulation and synthetic data generation, including practical exercises
 5. **VLA System Architecture**: How language models, vision, and robot control integrate (existing reference implementations)
 6. **Sim-to-Real Transfer**: Best practices for teaching domain randomization and sim-to-real gap mitigation
 7. **Python Code Testing**: Framework and patterns for validating code examples in the book
