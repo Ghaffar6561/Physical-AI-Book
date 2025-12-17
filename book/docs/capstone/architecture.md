@@ -14,7 +14,7 @@ The high-level data flow is as follows:
 4.  This action plan is sent to the **Control Module**.
 5.  The Control Module executes the actions, using the **Perception Module** to get information about the world.
 
-![Capstone System Diagram](book/static/diagrams/capstone-architecture.svg)  
+![Capstone System Diagram](/diagrams/capstone-architecture.svg)  
 *(A detailed version of this diagram will be created later)*
 
 ## Core Modules (ROS 2 Nodes)

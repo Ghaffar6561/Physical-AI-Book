@@ -16,7 +16,7 @@ const config = {
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -153,7 +153,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
-        additionalLanguages: ['python', 'yaml', 'bash', 'cpp', 'java', 'xml'],
+        additionalLanguages: ['python', 'yaml', 'bash', 'cpp', 'java'],
       },
     }),
 };

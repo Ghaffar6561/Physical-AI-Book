@@ -147,7 +147,7 @@ Test accuracy: 45% (on novel objects)
 ↑ High variance - distribution mismatch
 ```
 
-**When to use**: Quick deployment, <100 demonstrations available
+**When to use**: Quick deployment, {'<'}100 demonstrations available
 
 **Results**: 60-75% success on in-distribution tasks
 

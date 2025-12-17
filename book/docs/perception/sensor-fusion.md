@@ -65,7 +65,7 @@ Most modern robots use the **Kalman Filter** for sensor fusion. It's elegant and
 
 The Kalman filter iterates two steps:
 
-**1. Prediction Phase**
+1. **Prediction Phase**
 ```
 Model: "Based on last position and commanded velocity, where should the robot be now?"
 
@@ -77,7 +77,7 @@ Example:
   Uncertainty: ±0.05 m (model is roughly accurate)
 ```
 
-**2. Correction Phase**
+2. **Correction Phase**
 ```
 Sensor measurement: "What does the sensor actually measure?"
 
@@ -140,7 +140,7 @@ x_fused = x_pred + K × (z - H × x_pred)
 ### Why Kalman Filter?
 
 - **Optimal** for linear systems (minimizes error variance)
-- **Fast** (runs in <1 ms even for high-dimensional state)
+- **Fast** (runs in {'<'}1 ms even for high-dimensional state)
 - **Principled** (based on probability theory, not heuristics)
 - **Extensible** (Extended KF for nonlinear, Particle filters for non-Gaussian, etc.)
 

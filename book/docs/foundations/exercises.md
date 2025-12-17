@@ -375,7 +375,7 @@ For the coffee cup grasping scenario:
 
 ---
 
-**Ready for the next module?** → [Module 2: Digital Twins & Gazebo](../02-simulation/intro.md)
+**Ready for the next module?** → [Module 2: Digital Twins & Gazebo](../simulation/intro.md)
 
 You've completed the foundations of Physical AI! You understand why robots are different, how they communicate via ROS 2, and why embodied intelligence requires closed-loop feedback.
 

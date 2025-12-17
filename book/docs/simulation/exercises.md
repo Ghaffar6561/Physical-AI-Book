@@ -433,6 +433,6 @@ You've now learned:
 
 ---
 
-**Ready for the next module?** → [Module 3: Perception & Sim-to-Real Transfer](../03-perception/intro.md)
+**Ready for the next module?** → [Module 3: Perception & Sim-to-Real Transfer](../perception/intro.md)
 
 You've completed the foundations of humanoid robotics simulation. Next, we'll learn how to perceive the environment and transfer what we learned in simulation to real robots.

@@ -10,7 +10,7 @@ The pipeline can be broken down into four main stages:
 Spoken Command -> [1. Speech Recognition] -> Text -> [2. Language Understanding] -> Action Plan -> [3. Task Execution] -> Robot Actions -> [4. Feedback Loop]
 ```
 
-![VLA Pipeline](book/static/diagrams/vla-pipeline.svg)  
+![VLA Pipeline](/diagrams/vla-pipeline.svg)  
 *(This diagram will be created in a later task)*
 
 ### 1. Speech Recognition

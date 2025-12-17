@@ -353,4 +353,4 @@ The gap between "research prototype" and "production system" is narrowing. By un
 
 ---
 
-**Next Module**: [Module 5: End-to-End Learning & Diffusion Models](../05-embodied-learning/intro.md) (Coming soon)
+**Next Module**: [Module 5: End-to-End Learning & Diffusion Models](../embodied-learning/intro.md) (Coming soon)

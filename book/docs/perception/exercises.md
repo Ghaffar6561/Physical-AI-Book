@@ -367,4 +367,4 @@ Congratulations! You now understand how to deploy simulation-trained policies to
 
 ---
 
-**Next Module**: [Module 4: VLA Systems](../04-vla-systems/intro.md) (Coming soon)
+**Next Module**: [Module 4: VLA Systems](../vla-systems/intro.md) (Coming soon)

@@ -217,7 +217,7 @@ You have:
 ✅ >80% success on held-out test objects
 ✅ Trajectories are smooth (no jerky motions)
 ✅ Better generalization than BC (60-75% on novel)
-✅ Inference completes in <500ms
+✅ Inference completes in {'<'}500ms
 
 ### Key Insight
 
