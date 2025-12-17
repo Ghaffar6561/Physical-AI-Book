@@ -89,23 +89,23 @@ const config = {
             items: [
               {
                 label: 'Foundations',
-                to: '/01-foundations/intro',
+                to: '/foundations/intro',
               },
               {
                 label: 'Simulation',
-                to: '/02-simulation/intro',
+                to: '/simulation/intro',
               },
               {
                 label: 'Perception',
-                to: '/03-perception/intro',
+                to: '/perception/intro',
               },
               {
                 label: 'VLA Systems',
-                to: '/04-vla-systems/intro',
+                to: '/vla-systems/intro',
               },
               {
                 label: 'Capstone',
-                to: '/05-capstone/architecture',
+                to: '/capstone/architecture',
               },
             ],
           },
