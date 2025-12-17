@@ -70,7 +70,7 @@ const sidebars = {
       ],
     },
     {
-	type: 'category'
+	type: 'category',
       label: 'Module 5: Capstone Project',
       collapsible: true,
       collapsed: false,
@@ -82,6 +82,7 @@ const sidebars = {
       ],
     },
     {
+	type: 'category',
       label: 'Appendices',
       collapsible: true,
       collapsed: true,
