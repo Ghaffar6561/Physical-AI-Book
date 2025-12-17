@@ -17,6 +17,7 @@ const sidebars = {
   tutorialSidebar: [
     'intro',
     {
+	type: 'category',
       label: 'Module 1: Physical AI Foundations',
       collapsible: true,
       collapsed: false,
@@ -28,6 +29,7 @@ const sidebars = {
       ],
     },
     {
+	type: 'category',
       label: 'Module 2: Digital Twins & Gazebo',
       collapsible: true,
       collapsed: false,
@@ -40,6 +42,7 @@ const sidebars = {
       ],
     },
     {
+	type: 'category',
       label: 'Module 3: Perception & NVIDIA Isaac',
       collapsible: true,
       collapsed: false,
@@ -53,6 +56,7 @@ const sidebars = {
       ],
     },
     {
+	type: 'category',
       label: 'Module 4: Vision-Language-Action Systems',
       collapsible: true,
       collapsed: false,
