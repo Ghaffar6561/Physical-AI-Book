@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="simple_shelf">
+    <static>true</static>
+    <link name="base">
+      <!-- Bottom shelf -->
+      <visual name="v_bottom"><geometry><box><size>1.2 0.4 0.05</size></box></geometry></visual>
+      <collision name="c_bottom"><geometry><box><size>1.2 0.4 0.05</size></box></geometry></collision>
+      <pose>0 0 0.025 0 0 0</pose>
+    </link>
+    <!-- Uprights -->
+    <link name="upright1"><pose>-0.58 0 0.75 0 0 0</pose><visual name="v_u1"><geometry><box><size>0.04 0.4 1.5</size></box></geometry></visual><collision name="c_u1"><geometry><box><size>0.04 0.4 1.5</size></box></geometry></collision></link>
+    <link name="upright2"><pose>0.58 0 0.75 0 0 0</pose><visual name="v_u2"><geometry><box><size>0.04 0.4 1.5</size></box></geometry></visual><collision name="c_u2"><geometry><box><size>0.04 0.4 1.5</size></box></geometry></collision></link>
+    <!-- Middle shelf -->
+    <link name="middle_shelf"><pose>0 0 0.75 0 0 0</pose><visual name="v_mid"><geometry><box><size>1.16 0.4 0.05</size></box></geometry></visual><collision name="c_mid"><geometry><box><size>1.16 0.4 0.05</size></box></geometry></collision></link>
+    <!-- Top shelf -->
+    <link name="top_shelf"><pose>0 0 1.5 0 0 0</pose><visual name="v_top"><geometry><box><size>1.2 0.4 0.05</size></box></geometry></visual><collision name="c_top"><geometry><box><size>1.2 0.4 0.05</size></box></geometry></collision></link>
+    
+    <joint name="j_u1" type="fixed"><parent>base</parent><child>upright1</child></joint>
+    <joint name="j_u2" type="fixed"><parent>base</parent><child>upright2</child></joint>
+    <joint name="j_mid" type="fixed"><parent>base</parent><child>middle_shelf</child></joint>
+    <joint name="j_top" type="fixed"><parent>base</parent><child>top_shelf</child></joint>
+  </model>
+</sdf>
