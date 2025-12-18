@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://physical-ai-book-ph51obdf-ghaffar-ahmeds-projects.vercel.app',
   baseUrl: '/',
 
   onBrokenLinks: 'warn',
@@ -36,7 +36,7 @@ const config = {
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/',
+          editUrl: 'https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/',
           path: 'docs',
           routeBasePath: '/',
           showLastUpdateAuthor: true,
@@ -75,7 +75,7 @@ const config = {
             label: 'Modules',
           },
           {
-            href: 'https://github.com/asad/PhysicalAI-Book',
+            href: 'https://github.com/Ghaffar6561/Physical-AI-Book',
             label: 'GitHub',
             position: 'right',
           },
@@ -126,7 +126,7 @@ const config = {
               },
               {
                 label: 'GitHub Repository',
-                href: 'https://github.com/asad/PhysicalAI-Book',
+                href: 'https://github.com/Ghaffar6561/Physical-AI-Book',
               },
             ],
           },
@@ -143,7 +143,7 @@ const config = {
               },
               {
                 label: 'Issues & Feedback',
-                href: 'https://github.com/asad/PhysicalAI-Book/issues',
+                href: 'https://github.com/Ghaffar6561/Physical-AI-Book/issues',
               },
             ],
           },
