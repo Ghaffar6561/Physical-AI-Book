@@ -1,8 +1,4 @@
 ---
 slug: /
+redirect: /foundations/intro
 ---
-
-import Redirect from '@docusaurus/Redirect';
-
-
-<Redirect to="/foundations/intro" />
