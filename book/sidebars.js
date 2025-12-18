@@ -1,6 +1,6 @@
 const sidebars = {
   tutorialSidebar: [
-    'intro',
+    'index',
 
     {
       type: 'category',
