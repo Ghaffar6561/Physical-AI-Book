@@ -505,7 +505,4 @@ Successful robotics deployments share common patterns:
 
 ---
 
-## Next: Failure Analysis & Recovery
-
-[→ Continue to Section 5: Failure Analysis & Recovery](failure-analysis.md)
 

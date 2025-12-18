@@ -382,9 +382,8 @@ This module is structured as:
 
 1. **[Gazebo Fundamentals](gazebo-fundamentals.md)** — Core concepts, world files, sensors
 2. **[URDF for Humanoids](urdf-humanoid.md)** — Modeling robots, joints, inertias
-3. **[Code Examples](../../../static/code-examples/ros2_humanoid_nodes.py)** — ROS 2 nodes that control simulated robots
-4. **[Exercises](exercises.md)** — Design, simulate, and validate your own systems
-5. **[Setup Guide](setup-gazebo.md)** — Installation and troubleshooting
+3. **[Exercises](exercises.md)** — Design, simulate, and validate your own systems
+4. **[Setup Guide](setup-gazebo.md)** — Installation and troubleshooting
 
 By the end, you'll have:
 

@@ -360,15 +360,11 @@ This module is organized as:
    - Synthetic data generation
    - Isaac + ROS 2 integration
 
-4. **[Code Examples](../../../static/code-examples/)** — Practical implementations
-   - Domain randomization code
-   - Sim-to-real evaluation metrics
-
-5. **[Exercises](exercises.md)** — Apply concepts
+4. **[Exercises](exercises.md)** — Apply concepts
    - Design domain randomization for a task
    - Evaluate simulation adequacy
 
-6. **[Setup Guide](setup-isaac.md)** — Environment configuration
+5. **[Setup Guide](setup-isaac.md)** — Environment configuration
    - NVIDIA Isaac installation
    - Docker setup for low-end hardware
 

@@ -130,20 +130,6 @@ This module bridges the gap between research prototypes and deployed systems tha
 - Business outcomes and ROI
 - Scaling patterns
 
-### Section 5: Failure Analysis & Recovery
-
-**File**: [failure-analysis.md](failure-analysis.md)
-
-- Catastrophic failures and prevention
-- Graceful degradation
-- Self-healing systems
-- Safety certification and compliance
-
-**Key Concepts**:
-- Failure modes and effects analysis (FMEA)
-- Safety integrity levels (SIL)
-- Recovery mechanisms
-- Fault tolerance patterns
 
 ---
 

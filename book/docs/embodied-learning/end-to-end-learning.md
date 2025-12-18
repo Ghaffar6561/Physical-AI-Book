@@ -573,7 +573,6 @@ Output: 10-step action sequence [a₀, a₁, ..., a₉]
 ## Navigation
 
 - **[Back to Learning Overview →](intro.md)**
-- **[Code Examples →](../static/code-examples/)**
 - **[Exercises →](exercises.md)**
 
 ---

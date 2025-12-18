@@ -445,5 +445,5 @@ You now understand:
 
 **Congratulations!** You've completed Module 5. You now understand the complete pipeline from raw sensory data to robot motor commands.
 
-**Next Module**: [Module 6: Scaling & Production Systems](../06-scaling) - How to train policies on thousands of tasks and deploy at scale.
+**Next Module**: [Module 6: Scaling & Production Systems](../scaling-systems/intro.md) - How to train policies on thousands of tasks and deploy at scale.
 
