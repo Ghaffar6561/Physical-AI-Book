@@ -18,7 +18,9 @@ const sidebars = {
       label: 'Module 2: Digital Twins & Gazebo',
       items: [
         'simulation/intro',
+        'simulation/gazebo-fundamentals',
         'simulation/setup-gazebo',
+        'simulation/urdf-humanoid',
         'simulation/exercises',
       ],
     },
@@ -32,6 +34,14 @@ const sidebars = {
         'perception/sim-to-real-transfer',
         'perception/isaac-workflows',
         'perception/setup-isaac',
+        {
+          type: 'category',
+          label: 'Diagrams',
+          items: [
+            'perception/diagrams/domain-randomization',
+            'perception/diagrams/sim-to-real-gaps',
+          ],
+        },
         'perception/exercises',
       ],
     },
@@ -75,10 +85,13 @@ const sidebars = {
       label: 'Module 6: Scaling Systems & Production',
       items: [
         'scaling-systems/intro',
+        'scaling-systems/scaling-pipeline',
         'scaling-systems/distributed-training',
+        'scaling-systems/multi-task-learning',
         'scaling-systems/benchmarking-framework',
         'scaling-systems/cost-analysis',
         'scaling-systems/fleet-architecture',
+        'scaling-systems/real-robot-deployment',
         'scaling-systems/exercises',
       ],
     },
