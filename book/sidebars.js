@@ -1,5 +1,6 @@
 const sidebars = {
   tutorialSidebar: [
+    'index',
     {
       type: 'category',
       label: 'Module 1: Physical AI Foundations',
