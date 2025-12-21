@@ -43,7 +43,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/',
           path: 'docs',
-          routeBasePath: '/',
+          routeBasePath: 'docs',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
@@ -94,23 +94,23 @@ const config = {
             items: [
               {
                 label: 'Foundations',
-                to: '/foundations/intro',
+                to: '/docs/foundations/intro',
               },
               {
                 label: 'Simulation',
-                to: '/simulation/intro',
+                to: '/docs/simulation/intro',
               },
               {
                 label: 'Perception',
-                to: '/perception/intro',
+                to: '/docs/perception/intro',
               },
               {
                 label: 'VLA Systems',
-                to: '/vla-systems/intro',
+                to: '/docs/vla-systems/intro',
               },
               {
                 label: 'Capstone',
-                to: '/capstone/architecture',
+                to: '/docs/capstone/architecture',
               },
             ],
           },
