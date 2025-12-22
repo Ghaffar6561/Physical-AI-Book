@@ -93,24 +93,20 @@ const config = {
             title: 'Modules',
             items: [
               {
-                label: 'Foundations',
-                to: '/docs/foundations/intro',
+                label: 'Module 1: ROS 2',
+                to: '/docs/module-1-ros2/intro',
               },
               {
-                label: 'Simulation',
-                to: '/docs/simulation/intro',
+                label: 'Module 2: Digital Twin',
+                to: '/docs/module-2-digital-twin/intro',
               },
               {
-                label: 'Perception',
-                to: '/docs/perception/intro',
+                label: 'Module 3: Isaac',
+                to: '/docs/module-3-isaac/intro',
               },
               {
-                label: 'VLA Systems',
-                to: '/docs/vla-systems/intro',
-              },
-              {
-                label: 'Capstone',
-                to: '/docs/capstone/architecture',
+                label: 'Module 4: VLA',
+                to: '/docs/module-4-vla/intro',
               },
             ],
           },

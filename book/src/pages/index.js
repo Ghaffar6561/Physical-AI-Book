@@ -26,32 +26,42 @@ function HomepageHeader() {
 
 const FeatureList = [
   {
-    title: 'ROS 2 & Robotics Foundations',
+    title: 'ROS 2: The Robotic Nervous System',
     icon: '🤖',
     description: (
       <>
-        Master the Robot Operating System 2, understand embodied intelligence,
-        and build the foundation for humanoid robotics development.
+        Master ROS 2 nodes, topics, services, and actions. Bridge Python AI
+        agents to robot controllers using rclpy and URDF.
       </>
     ),
   },
   {
-    title: 'Simulation with Gazebo & Isaac',
+    title: 'Digital Twins with Gazebo & Unity',
     icon: '🎮',
     description: (
       <>
-        Create digital twins, design URDF humanoid models, and leverage
-        NVIDIA Isaac for high-fidelity physics simulation and training.
+        Build physics-accurate simulations in Gazebo and photorealistic
+        environments in Unity for human-robot interaction.
       </>
     ),
   },
   {
-    title: 'Vision-Language-Action Systems',
-    icon: '🧠',
+    title: 'NVIDIA Isaac & Navigation',
+    icon: '🧭',
     description: (
       <>
-        Implement cutting-edge VLA architectures that combine vision, language
-        understanding, and action generation for intelligent robots.
+        Deploy GPU-accelerated perception with Isaac ROS, VSLAM, and Nav2
+        for autonomous bipedal locomotion and balance control.
+      </>
+    ),
+  },
+  {
+    title: 'Voice-to-Action with VLA',
+    icon: '🗣️',
+    description: (
+      <>
+        Integrate Whisper for speech recognition and GPT for cognitive
+        planning to create conversational humanoid robots.
       </>
     ),
   },
@@ -59,7 +69,7 @@ const FeatureList = [
 
 function Feature({icon, title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className={styles.featureCard}>
         <div className={styles.featureIcon}>{icon}</div>
         <h3>{title}</h3>
@@ -85,39 +95,24 @@ function HomepageFeatures() {
 
 const ModuleList = [
   {
-    title: 'Module 1: Physical AI Foundations',
-    link: '/docs/foundations/intro',
-    description: 'Embodied intelligence, ROS 2 fundamentals, and core concepts.',
+    title: 'Module 1: The Robotic Nervous System',
+    link: '/docs/module-1-ros2/intro',
+    description: 'ROS 2 architecture, nodes, topics, services, Python agents, and URDF for humanoids.',
   },
   {
-    title: 'Module 2: Digital Twins & Gazebo',
-    link: '/docs/simulation/intro',
-    description: 'Simulation environments, URDF modeling, and physics engines.',
+    title: 'Module 2: The Digital Twin',
+    link: '/docs/module-2-digital-twin/intro',
+    description: 'Gazebo physics simulation, Unity integration, and sensor simulation.',
   },
   {
-    title: 'Module 3: Perception & NVIDIA Isaac',
-    link: '/docs/perception/intro',
-    description: 'Sensor fusion, sim-to-real transfer, and Isaac workflows.',
+    title: 'Module 3: The AI-Robot Brain',
+    link: '/docs/module-3-isaac/intro',
+    description: 'NVIDIA Isaac, VSLAM, Nav2 for bipedal robots, and humanoid kinematics.',
   },
   {
     title: 'Module 4: Vision-Language-Action',
-    link: '/docs/vla-systems/intro',
-    description: 'VLA architectures, LLM planning, and embodied reasoning.',
-  },
-  {
-    title: 'Module 5: End-to-End Learning',
-    link: '/docs/embodied-learning/intro',
-    description: 'Imitation learning, RL, and diffusion models for robotics.',
-  },
-  {
-    title: 'Module 6: Scaling & Production',
-    link: '/docs/scaling-systems/intro',
-    description: 'Distributed training, fleet management, and deployment.',
-  },
-  {
-    title: 'Module 7: Capstone & Deployment',
-    link: '/docs/capstone-deployment/intro',
-    description: 'Production architecture, operations, and case studies.',
+    link: '/docs/module-4-vla/intro',
+    description: 'Whisper voice-to-action, GPT planning, conversational robotics, and capstone project.',
   },
 ];
 
