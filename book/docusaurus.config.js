@@ -13,7 +13,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://physical-ai-book-ph51obdf-ghaffar-ahmeds-projects.vercel.app',
+  url: 'https://ghaffar-physical-ai-book.vercel.app',
   baseUrl: '/',
 
   onBrokenLinks: 'warn',
