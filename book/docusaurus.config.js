@@ -13,8 +13,13 @@ const config = {
   favicon: 'img/logo.svg',
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-robotics-orpin.vercel.app',
+  url: 'https://ghaffar-physical-ai-book.vercel.app',
   baseUrl: '/',
+
+  // Custom fields for runtime configuration
+  customFields: {
+    apiBaseUrl: process.env.API_BASE_URL || 'https://physical-ai-backend.onrender.com',
+  },
 
   onBrokenLinks: 'warn',
 

@@ -17,15 +17,27 @@ app = FastAPI(
 # Add rate limiting
 add_rate_limiting(app)
 
-# Configure CORS middleware for local development
-# Note: CORS must be added after rate limiting to run before it (LIFO order)
+# Configure CORS middleware
+# Allow both localhost for development and Vercel for production
+allowed_origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3001",
+    "https://ghaffar-physical-ai-book.vercel.app",
+    "https://physical-ai-humanoid-robotics-orpin.vercel.app",
+]
+
+# Also allow origins from environment variable
+if os.getenv("ALLOWED_ORIGINS"):
+    allowed_origins.extend(os.getenv("ALLOWED_ORIGINS").split(","))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins in development
-    allow_credentials=False,  # Must be False when allow_origins is "*"
-    allow_methods=["*"],  # Allow all methods including OPTIONS
+    allow_origins=allowed_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
     allow_headers=["*"],
-    # In production, you would want to be more specific about allowed origins
 )
 
 # Include routers

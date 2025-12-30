@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
-const API_BASE_URL = 'http://localhost:8001';
-
 export default function ChatWidget() {
+  const { siteConfig } = useDocusaurusContext();
+  const API_BASE_URL = siteConfig.customFields?.apiBaseUrl || 'http://localhost:8001';
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
