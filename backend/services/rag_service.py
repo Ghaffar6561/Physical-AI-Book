@@ -13,34 +13,33 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 class RAGService:
     """
     Service class to handle RAG (Retrieval-Augmented Generation) operations
-    Connects to the actual RAG agent for real answers
+    Uses direct retrieval + completion for fast responses
     """
 
     def __init__(self):
-        self._agent = None
-        self._config = None
         self._initialized = False
+        self._openai_client = None
 
     def _ensure_initialized(self):
-        """Lazy initialization of the agent."""
+        """Lazy initialization of retrieval clients."""
         if self._initialized:
             return
 
         try:
-            # Import agent components
-            from backend.agent import create_agent, AgentConfig, search_book_content, init_retrieval_clients
+            from backend.agent import init_retrieval_clients
+            from openai import OpenAI
+            import os
 
-            self._config = AgentConfig.from_env()
-            self._agent = create_agent(self._config)
-
-            # Initialize retrieval clients
+            # Initialize retrieval clients once
             init_retrieval_clients()
 
-            self._search_book_content = search_book_content
+            # Create OpenAI client once
+            self._openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
             self._initialized = True
-            logger.info("RAG Service initialized successfully with real agent")
+            logger.info("RAG Service initialized successfully")
         except Exception as e:
-            logger.warning(f"Failed to initialize real RAG agent: {e}. Using fallback mode.")
+            logger.warning(f"Failed to initialize RAG service: {e}. Using fallback mode.")
             self._initialized = False
 
     @monitor_performance
@@ -75,38 +74,33 @@ class RAGService:
         top_k: int
     ) -> Dict:
         """
-        Internal method to process the question using the real RAG agent
+        Process the question using direct RAG (search + completion)
         """
-        # Try to use the real agent
         try:
             self._ensure_initialized()
 
-            if self._initialized and self._agent:
-                # Run the real agent in a thread pool to not block
+            if self._initialized:
+                # Run in thread pool to not block
                 loop = asyncio.get_event_loop()
                 result = await loop.run_in_executor(
                     None,
-                    self._run_real_agent,
+                    self._run_direct_rag,
                     message,
                     selected_text,
                     top_k
                 )
                 return result
         except Exception as e:
-            logger.error(f"Real agent failed, using fallback: {e}")
+            logger.error(f"Direct RAG failed, using fallback: {e}")
 
-        # Fallback to basic retrieval if agent fails
+        # Fallback to basic retrieval if direct RAG fails
         return await self._fallback_response(message, selected_text, top_k)
 
-    def _run_real_agent(self, message: str, selected_text: Optional[str], top_k: int) -> Dict:
+    def _run_direct_rag(self, message: str, selected_text: Optional[str], top_k: int) -> Dict:
         """
-        Fast direct RAG without agent overhead - searches and generates in one pass
+        Fast direct RAG - searches and generates in one pass
         """
-        from backend.agent import search_book_content, init_retrieval_clients
-        from openai import OpenAI
-        import os
-
-        init_retrieval_clients()
+        from backend.agent import search_book_content
 
         # Construct query with selected text context if provided
         if selected_text:
@@ -133,9 +127,7 @@ class RAGService:
                 context_text += f"\n\n{r['content'][:500]}"
 
         # Direct OpenAI completion (faster than agent)
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-        response = client.chat.completions.create(
+        response = self._openai_client.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant answering questions about a Physical AI and Robotics book. Answer based only on the provided context. Be concise and direct. Do not include citations or source references."},
