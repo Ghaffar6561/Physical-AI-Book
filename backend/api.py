@@ -18,11 +18,12 @@ app = FastAPI(
 add_rate_limiting(app)
 
 # Configure CORS middleware for local development
+# Note: CORS must be added after rate limiting to run before it (LIFO order)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Docusaurus default
-    allow_credentials=True,
-    allow_methods=["GET", "POST"],
+    allow_origins=["*"],  # Allow all origins in development
+    allow_credentials=False,  # Must be False when allow_origins is "*"
+    allow_methods=["*"],  # Allow all methods including OPTIONS
     allow_headers=["*"],
     # In production, you would want to be more specific about allowed origins
 )

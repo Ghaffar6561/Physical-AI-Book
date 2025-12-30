@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ApiService from '../services/api';
 import config from '../services/config';
+import './ChatInterface.css';
 
 const ChatInterface = () => {
   const [messages, setMessages] = useState([]);

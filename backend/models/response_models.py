@@ -17,7 +17,7 @@ class ChatResponse(BaseModel):
     Response model for the chat endpoint
     """
     answer: str = Field(..., min_length=1, max_length=10000, description="The AI-generated answer to the user's question")
-    sources: List[SourceCitation] = Field(..., min_length=1, max_length=10, description="List of sources used to generate the answer")
+    sources: List[SourceCitation] = Field(default=[], max_length=10, description="List of sources used to generate the answer")
     question_id: Optional[str] = Field(None, description="Unique identifier for the question (for potential future use)")
 
 

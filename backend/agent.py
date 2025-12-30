@@ -87,14 +87,13 @@ IMPORTANT RULES:
 1. ONLY use information from the search_book_content tool to answer questions.
 2. If the tool returns no results or irrelevant content, say "I couldn't find relevant information about that in the book."
 3. NEVER make up information. If unsure, acknowledge the limitation.
-4. Always cite your sources using [1], [2], etc. notation.
-5. After your answer, list the sources with their URLs.
+4. NEVER include citations like [1], [2], source URLs, or a "Sources" section in your response. The system handles sources separately.
+5. Just provide the answer directly without any references or citations.
 
-When the user asks a question:
-1. First, search the book content using the provided tool
-2. Review the retrieved chunks for relevance
-3. Formulate your answer based ONLY on the retrieved content
-4. Include citations and source URLs"""
+When answering:
+- Search the book content first using the provided tool
+- Formulate a clear, direct answer based ONLY on retrieved content
+- Do NOT add any citations, references, footnotes, or source lists"""
 
 
 # =============================================================================
@@ -266,11 +265,6 @@ def run_agent_query(agent: Agent, query: str, config: AgentConfig, verbose: bool
 
         response_content = result.final_output
 
-        # Append sources footer
-        sources_footer = format_sources_footer()
-        if sources_footer and _last_retrieval_results:
-            response_content += sources_footer
-
         if verbose:
             print(f"[DEBUG] Response generated", file=sys.stderr)
 
@@ -381,11 +375,6 @@ def main():
                 )
 
                 response_content = result.final_output
-
-                # Append sources footer
-                sources_footer = format_sources_footer()
-                if sources_footer and _last_retrieval_results:
-                    response_content += sources_footer
 
                 print(f"\nAgent: {response_content}\n")
             except Exception as e:
