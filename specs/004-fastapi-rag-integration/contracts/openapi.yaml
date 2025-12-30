@@ -1,0 +1,153 @@
+openapi: 3.0.0
+info:
+  title: Book Content Chat API
+  description: API for interacting with the RAG system to ask questions about book content
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns the health status of the service
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2025-12-29T10:00:00Z"
+        '500':
+          $ref: '#/components/responses/ErrorResponse'
+  /chat:
+    post:
+      summary: Submit a question about book content
+      description: Sends a question to the RAG agent and returns an answer with source citations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Successfully processed the question and returned an answer
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '400':
+          $ref: '#/components/responses/ErrorResponse'
+        '500':
+          $ref: '#/components/responses/ErrorResponse'
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: The user's question text
+          example: "What are the main concepts in this book?"
+          minLength: 1
+          maxLength: 1000
+        selected_text:
+          type: string
+          description: Optional text selected by the user on the page (for selected-text mode)
+          example: "The book focuses on building AI-powered applications..."
+          minLength: 1
+          maxLength: 5000
+        top_k:
+          type: integer
+          description: Number of top results to retrieve from the RAG system
+          example: 5
+          minimum: 1
+          maximum: 20
+          default: 5
+    ChatResponse:
+      type: object
+      required:
+        - answer
+        - sources
+      properties:
+        answer:
+          type: string
+          description: The AI-generated answer to the user's question
+          example: "The main concepts in this book include RAG systems, AI agents, and..."
+          minLength: 1
+          maxLength: 10000
+        sources:
+          type: array
+          description: List of sources used to generate the answer
+          items:
+            $ref: '#/components/schemas/SourceCitation'
+          minItems: 1
+          maxItems: 10
+        question_id:
+          type: string
+          description: Unique identifier for the question (for potential future use)
+          example: "123e4567-e89b-12d3-a456-426614174000"
+    SourceCitation:
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          type: string
+          description: The text content from the source
+          example: "The book focuses on building AI-powered applications..."
+          minLength: 1
+          maxLength: 2000
+        page_number:
+          type: integer
+          description: Page number where the content appears
+          example: 15
+          minimum: 1
+        section_title:
+          type: string
+          description: Title of the section containing the content
+          example: "Introduction"
+        url:
+          type: string
+          format: uri
+          description: URL to the specific location in the online book
+          example: "http://localhost:3000/docs/intro"
+        confidence_score:
+          type: number
+          format: float
+          description: Confidence score of the citation relevance
+          example: 0.95
+          minimum: 0.0
+          maximum: 1.0
+    ErrorResponse:
+      type: object
+      required:
+        - error
+        - code
+      properties:
+        error:
+          type: string
+          description: Error message describing what went wrong
+          example: "Invalid request parameters"
+        code:
+          type: string
+          description: Error code for the specific error condition
+          example: "INVALID_REQUEST"
+  responses:
+    ErrorResponse:
+      description: An error occurred while processing the request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
