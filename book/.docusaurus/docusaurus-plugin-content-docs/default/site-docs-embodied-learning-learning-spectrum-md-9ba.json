@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/learning-spectrum",
+  "title": "The Learning Spectrum: BC vs Diffusion vs RL",
+  "description": "Visualization of the complete learning paradigm spectrum for embodied AI.",
+  "source": "@site/docs/embodied-learning/learning-spectrum.md",
+  "sourceDirName": "embodied-learning",
+  "slug": "/embodied-learning/learning-spectrum",
+  "permalink": "/docs/embodied-learning/learning-spectrum",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/embodied-learning/learning-spectrum.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 5: End-to-End Learning & Diffusion Models",
+    "permalink": "/docs/embodied-learning/intro"
+  },
+  "next": {
+    "title": "Imitation Learning: Learning from Demonstrations",
+    "permalink": "/docs/embodied-learning/imitation-learning"
+  }
+}

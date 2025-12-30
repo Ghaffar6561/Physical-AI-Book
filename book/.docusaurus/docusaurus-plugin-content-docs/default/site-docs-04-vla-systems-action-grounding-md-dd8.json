@@ -1,0 +1,17 @@
+{
+  "id": "vla-systems/action-grounding",
+  "title": "Action Grounding in Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/04-vla-systems/action-grounding.md",
+  "sourceDirName": "04-vla-systems",
+  "slug": "/vla-systems/action-grounding",
+  "permalink": "/vla-systems/action-grounding",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/04-vla-systems/action-grounding.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {}
+}

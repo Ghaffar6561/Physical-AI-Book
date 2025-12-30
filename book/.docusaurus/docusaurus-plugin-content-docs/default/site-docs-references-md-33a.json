@@ -1,0 +1,26 @@
+{
+  "id": "references",
+  "title": "References & Further Reading",
+  "description": "This page contains citations and resources referenced throughout the Physical AI & Humanoid Robotics textbook.",
+  "source": "@site/docs/references.md",
+  "sourceDirName": ".",
+  "slug": "/references",
+  "permalink": "/docs/references",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/references.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Glossary",
+    "permalink": "/docs/glossary"
+  },
+  "next": {
+    "title": "Troubleshooting",
+    "permalink": "/docs/troubleshooting"
+  }
+}

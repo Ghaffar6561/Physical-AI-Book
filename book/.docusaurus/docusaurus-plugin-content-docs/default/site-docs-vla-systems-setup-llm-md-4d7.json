@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/setup-llm",
+  "title": "Setup Guide: Large Language Models for Robotics",
+  "description": "This guide provides instructions for setting up and running Large Language Models (LLMs) locally for use in your robotics projects. Running models locally is crucial for applications requiring low latency, data privacy, and high customization.",
+  "source": "@site/docs/vla-systems/setup-llm.md",
+  "sourceDirName": "vla-systems",
+  "slug": "/vla-systems/setup-llm",
+  "permalink": "/docs/vla-systems/setup-llm",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/vla-systems/setup-llm.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fine-Tuning LLMs with LoRA Adaptation",
+    "permalink": "/docs/vla-systems/lora-adaptation"
+  },
+  "next": {
+    "title": "Module 4 Exercises: Vision-Language-Action Systems",
+    "permalink": "/docs/vla-systems/exercises"
+  }
+}

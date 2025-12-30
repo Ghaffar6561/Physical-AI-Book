@@ -1,0 +1,235 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "glossary",
+              "path": "/docs/glossary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "index",
+              "path": "/docs/",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/exercises",
+              "path": "/docs/module-1-ros2/exercises",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/intro",
+              "path": "/docs/module-1-ros2/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/launch-files",
+              "path": "/docs/module-1-ros2/launch-files",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/nodes-topics-services",
+              "path": "/docs/module-1-ros2/nodes-topics-services",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/physical-ai-foundations",
+              "path": "/docs/module-1-ros2/physical-ai-foundations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/rclpy-python-agents",
+              "path": "/docs/module-1-ros2/rclpy-python-agents",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/ros2-architecture",
+              "path": "/docs/module-1-ros2/ros2-architecture",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-1-ros2/urdf-humanoids",
+              "path": "/docs/module-1-ros2/urdf-humanoids",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-digital-twin/exercises",
+              "path": "/docs/module-2-digital-twin/exercises",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-digital-twin/gazebo-fundamentals",
+              "path": "/docs/module-2-digital-twin/gazebo-fundamentals",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-digital-twin/intro",
+              "path": "/docs/module-2-digital-twin/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-digital-twin/setup-gazebo",
+              "path": "/docs/module-2-digital-twin/setup-gazebo",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-2-digital-twin/unity-integration",
+              "path": "/docs/module-2-digital-twin/unity-integration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/bipedal-locomotion",
+              "path": "/docs/module-3-isaac/bipedal-locomotion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/exercises",
+              "path": "/docs/module-3-isaac/exercises",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/humanoid-kinematics",
+              "path": "/docs/module-3-isaac/humanoid-kinematics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/intro",
+              "path": "/docs/module-3-isaac/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/isaac-ros-vslam",
+              "path": "/docs/module-3-isaac/isaac-ros-vslam",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/isaac-sim",
+              "path": "/docs/module-3-isaac/isaac-sim",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/nav2-bipedal",
+              "path": "/docs/module-3-isaac/nav2-bipedal",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/sensor-fusion",
+              "path": "/docs/module-3-isaac/sensor-fusion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/setup-isaac",
+              "path": "/docs/module-3-isaac/setup-isaac",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-3-isaac/sim-to-real-transfer",
+              "path": "/docs/module-3-isaac/sim-to-real-transfer",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/action-grounding",
+              "path": "/docs/module-4-vla/action-grounding",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/capstone-project",
+              "path": "/docs/module-4-vla/capstone-project",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/conversational-robotics",
+              "path": "/docs/module-4-vla/conversational-robotics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/embodied-reasoning",
+              "path": "/docs/module-4-vla/embodied-reasoning",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/end-to-end-pipeline",
+              "path": "/docs/module-4-vla/end-to-end-pipeline",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/exercises",
+              "path": "/docs/module-4-vla/exercises",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/intro",
+              "path": "/docs/module-4-vla/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/llm-planning",
+              "path": "/docs/module-4-vla/llm-planning",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/lora-adaptation",
+              "path": "/docs/module-4-vla/lora-adaptation"
+            },
+            {
+              "id": "module-4-vla/prompting-strategies",
+              "path": "/docs/module-4-vla/prompting-strategies"
+            },
+            {
+              "id": "module-4-vla/setup-llm",
+              "path": "/docs/module-4-vla/setup-llm",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/vision-language-models",
+              "path": "/docs/module-4-vla/vision-language-models",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/vla-architecture",
+              "path": "/docs/module-4-vla/vla-architecture",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "module-4-vla/voice-to-action",
+              "path": "/docs/module-4-vla/voice-to-action"
+            },
+            {
+              "id": "module-4-vla/whisper-integration",
+              "path": "/docs/module-4-vla/whisper-integration",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "references",
+              "path": "/docs/references",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "troubleshooting",
+              "path": "/docs/troubleshooting",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "index"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

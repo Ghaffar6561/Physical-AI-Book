@@ -1,0 +1,26 @@
+{
+  "id": "simulation/setup-gazebo",
+  "title": "Setting Up Gazebo for Humanoid Robotics",
+  "description": "This guide covers installing Gazebo 11+, configuring ROS 2 integration, and setting up the development environment for the Physical AI book exercises.",
+  "source": "@site/docs/02-simulation/setup-gazebo.md",
+  "sourceDirName": "02-simulation",
+  "slug": "/simulation/setup-gazebo",
+  "permalink": "/simulation/setup-gazebo",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/02-simulation/setup-gazebo.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "URDF: Describing Humanoid Robots",
+    "permalink": "/simulation/urdf-humanoid"
+  },
+  "next": {
+    "title": "Module 2: Exercises & Solutions",
+    "permalink": "/simulation/exercises"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-3-isaac/sensor-fusion",
+  "title": "Sensor Fusion & Localization",
+  "description": "Humanoid robots live in complex, dynamic environments. A single sensor cannot see everything. Cameras see colors and shapes but fail in darkness. LiDAR sees depth but ignores texture. IMU detects motion but drifts over time. The solution: sensor fusion—combining multiple sensors to get a complete, accurate picture of the world.",
+  "source": "@site/docs/module-3-isaac/sensor-fusion.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/sensor-fusion",
+  "permalink": "/docs/module-3-isaac/sensor-fusion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/sensor-fusion.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Nav2 for Bipedal Robots",
+    "permalink": "/docs/module-3-isaac/nav2-bipedal"
+  },
+  "next": {
+    "title": "Sim-to-Real Transfer: Bridging Simulation and Reality",
+    "permalink": "/docs/module-3-isaac/sim-to-real-transfer"
+  }
+}

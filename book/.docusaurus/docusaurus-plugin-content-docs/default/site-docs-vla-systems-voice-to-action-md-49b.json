@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/voice-to-action",
+  "title": "End-to-End Voice-to-Action Pipeline",
+  "description": "The ultimate goal of many VLA (Vision-Language-Action) systems is to enable natural, spoken-language interaction with a robot. This section details the architecture and implementation of a complete voice-to-action pipeline, integrating the concepts from the previous sections.",
+  "source": "@site/docs/vla-systems/voice-to-action.md",
+  "sourceDirName": "vla-systems",
+  "slug": "/vla-systems/voice-to-action",
+  "permalink": "/docs/vla-systems/voice-to-action",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/vla-systems/voice-to-action.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Vision-Language-Action Systems: End-to-End Pipeline",
+    "permalink": "/docs/vla-systems/end-to-end-pipeline"
+  },
+  "next": {
+    "title": "Fine-Tuning LLMs with LoRA Adaptation",
+    "permalink": "/docs/vla-systems/lora-adaptation"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-1-ros2/exercises",
+  "title": "Module 1: Exercises & Solutions",
+  "description": "These exercises reinforce the key concepts from Module 1: embodied intelligence, perception-action loops, and ROS 2 fundamentals.",
+  "source": "@site/docs/module-1-ros2/exercises.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/exercises",
+  "permalink": "/docs/module-1-ros2/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-1-ros2/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "URDF: Describing Humanoid Robots",
+    "permalink": "/docs/module-1-ros2/urdf-humanoids"
+  },
+  "next": {
+    "title": "Module 2: The Digital Twin",
+    "permalink": "/docs/module-2-digital-twin/intro"
+  }
+}

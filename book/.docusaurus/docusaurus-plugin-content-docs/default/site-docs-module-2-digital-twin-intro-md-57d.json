@@ -1,0 +1,30 @@
+{
+  "id": "module-2-digital-twin/intro",
+  "title": "Module 2: The Digital Twin",
+  "description": "Overview",
+  "source": "@site/docs/module-2-digital-twin/intro.md",
+  "sourceDirName": "module-2-digital-twin",
+  "slug": "/module-2-digital-twin/intro",
+  "permalink": "/docs/module-2-digital-twin/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-2-digital-twin/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Module 2: The Digital Twin"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 1: Exercises & Solutions",
+    "permalink": "/docs/module-1-ros2/exercises"
+  },
+  "next": {
+    "title": "Gazebo Fundamentals",
+    "permalink": "/docs/module-2-digital-twin/gazebo-fundamentals"
+  }
+}

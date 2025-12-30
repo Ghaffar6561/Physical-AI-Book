@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/exercises",
+  "title": "Module 4 Exercises: Vision-Language-Action Systems",
+  "description": "These exercises are designed to test your understanding of how to design, build, and debug Vision-Language-Action (VLA) systems.",
+  "source": "@site/docs/vla-systems/exercises.md",
+  "sourceDirName": "vla-systems",
+  "slug": "/vla-systems/exercises",
+  "permalink": "/docs/vla-systems/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/vla-systems/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Setup Guide: Large Language Models for Robotics",
+    "permalink": "/docs/vla-systems/setup-llm"
+  },
+  "next": {
+    "title": "Module 5: End-to-End Learning & Diffusion Models",
+    "permalink": "/docs/embodied-learning/intro"
+  }
+}

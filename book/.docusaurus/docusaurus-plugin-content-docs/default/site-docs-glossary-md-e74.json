@@ -1,0 +1,26 @@
+{
+  "id": "glossary",
+  "title": "Glossary",
+  "description": "This is a comprehensive glossary of terms used throughout the Physical AI & Humanoid Robotics textbook.",
+  "source": "@site/docs/glossary.md",
+  "sourceDirName": ".",
+  "slug": "/glossary",
+  "permalink": "/docs/glossary",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/glossary.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 4 Exercises: Vision-Language-Action Systems",
+    "permalink": "/docs/module-4-vla/exercises"
+  },
+  "next": {
+    "title": "References & Further Reading",
+    "permalink": "/docs/references"
+  }
+}

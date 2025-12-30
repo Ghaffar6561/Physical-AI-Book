@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/action-grounding",
+  "title": "Action Grounding in Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/vla-systems/action-grounding.md",
+  "sourceDirName": "vla-systems",
+  "slug": "/vla-systems/action-grounding",
+  "permalink": "/docs/vla-systems/action-grounding",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/vla-systems/action-grounding.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Prompting Strategies for Robotics",
+    "permalink": "/docs/vla-systems/prompting-strategies"
+  },
+  "next": {
+    "title": "Embodied Reasoning in Robotics",
+    "permalink": "/docs/vla-systems/embodied-reasoning"
+  }
+}

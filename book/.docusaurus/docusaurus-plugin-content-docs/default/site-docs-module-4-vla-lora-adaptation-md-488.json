@@ -1,0 +1,17 @@
+{
+  "id": "module-4-vla/lora-adaptation",
+  "title": "Fine-Tuning LLMs with LoRA Adaptation",
+  "description": "While few-shot prompting is powerful, sometimes you need to adapt a base Large Language Model (LLM) to a very specific domain or task. Fine-tuning is the process of updating the model's weights on a custom dataset. However, fine-tuning a full LLM with billions of parameters is computationally expensive and produces a massive new model file.",
+  "source": "@site/docs/module-4-vla/lora-adaptation.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/lora-adaptation",
+  "permalink": "/docs/module-4-vla/lora-adaptation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/lora-adaptation.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {}
+}

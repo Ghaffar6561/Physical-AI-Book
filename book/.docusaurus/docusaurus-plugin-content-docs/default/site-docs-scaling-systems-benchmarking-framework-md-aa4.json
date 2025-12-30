@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/benchmarking-framework",
+  "title": "Benchmarking at Scale: Evaluation Framework",
+  "description": "Measuring performance across 150+ tasks fairly and systematically.",
+  "source": "@site/docs/scaling-systems/benchmarking-framework.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/benchmarking-framework",
+  "permalink": "/docs/scaling-systems/benchmarking-framework",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/benchmarking-framework.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Multi-Task Learning: Training at Scale",
+    "permalink": "/docs/scaling-systems/multi-task-learning"
+  },
+  "next": {
+    "title": "Cost Analysis: Economics of Robotic Automation",
+    "permalink": "/docs/scaling-systems/cost-analysis"
+  }
+}

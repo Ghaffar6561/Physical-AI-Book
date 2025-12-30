@@ -1,0 +1,26 @@
+{
+  "id": "module-3-isaac/exercises",
+  "title": "Module 3: Perception & Sim-to-Real Transfer Exercises",
+  "description": "These exercises guide you through applying sensor fusion, sim-to-real transfer, and domain randomization to real robotics challenges. Work through them in order, and compare your solutions with the provided solutions.",
+  "source": "@site/docs/module-3-isaac/exercises.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/exercises",
+  "permalink": "/docs/module-3-isaac/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Setting Up NVIDIA Isaac Sim",
+    "permalink": "/docs/module-3-isaac/setup-isaac"
+  },
+  "next": {
+    "title": "Module 4: Vision-Language-Action Systems & Embodied AI",
+    "permalink": "/docs/module-4-vla/intro"
+  }
+}

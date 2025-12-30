@@ -1,0 +1,26 @@
+{
+  "id": "perception/setup-isaac",
+  "title": "Setting Up NVIDIA Isaac Sim",
+  "description": "This guide covers installing NVIDIA Isaac Sim and configuring it for the Physical AI book exercises. Isaac Sim is the industry-standard photorealistic robot simulator used by companies like Boston Dynamics, Tesla, and major AI labs.",
+  "source": "@site/docs/03-perception/setup-isaac.md",
+  "sourceDirName": "03-perception",
+  "slug": "/perception/setup-isaac",
+  "permalink": "/perception/setup-isaac",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/03-perception/setup-isaac.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "NVIDIA Isaac: Photorealistic Simulation & Synthetic Data Generation",
+    "permalink": "/perception/isaac-workflows"
+  },
+  "next": {
+    "title": "Module 3: Perception & Sim-to-Real Transfer Exercises",
+    "permalink": "/perception/exercises"
+  }
+}

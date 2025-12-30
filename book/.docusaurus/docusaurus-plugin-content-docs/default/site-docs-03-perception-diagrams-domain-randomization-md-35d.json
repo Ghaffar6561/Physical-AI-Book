@@ -1,0 +1,17 @@
+{
+  "id": "perception/diagrams/domain-randomization",
+  "title": "Domain Randomization Visualization",
+  "description": "This document describes the domain randomization process and its effect on policy robustness.",
+  "source": "@site/docs/03-perception/diagrams/domain-randomization.md",
+  "sourceDirName": "03-perception/diagrams",
+  "slug": "/perception/diagrams/domain-randomization",
+  "permalink": "/perception/diagrams/domain-randomization",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/03-perception/diagrams/domain-randomization.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {}
+}

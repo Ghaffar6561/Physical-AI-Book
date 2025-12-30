@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/multi-task-learning",
+  "title": "Multi-Task Learning: Training at Scale",
+  "description": "Training on 150+ manipulation tasks simultaneously.",
+  "source": "@site/docs/scaling-systems/multi-task-learning.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/multi-task-learning",
+  "permalink": "/docs/scaling-systems/multi-task-learning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/multi-task-learning.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Distributed Training: Multi-GPU & Multi-Robot Systems",
+    "permalink": "/docs/scaling-systems/distributed-training"
+  },
+  "next": {
+    "title": "Benchmarking at Scale: Evaluation Framework",
+    "permalink": "/docs/scaling-systems/benchmarking-framework"
+  }
+}

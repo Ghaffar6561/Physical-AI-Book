@@ -1,0 +1,26 @@
+{
+  "id": "capstone/setup",
+  "title": "Capstone Project: Setup Guide",
+  "description": "This guide provides step-by-step instructions for setting up the environment to run the full capstone project. The project is designed to run in a ROS 2 and Gazebo environment on a Linux-based system (or WSL 2 on Windows).",
+  "source": "@site/docs/08-capstone/setup.md",
+  "sourceDirName": "08-capstone",
+  "slug": "/capstone/setup",
+  "permalink": "/capstone/setup",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/08-capstone/setup.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Capstone Project: System Architecture",
+    "permalink": "/capstone/architecture"
+  },
+  "next": {
+    "title": "Capstone Project: Running the System",
+    "permalink": "/capstone/running-the-system"
+  }
+}

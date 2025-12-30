@@ -1,0 +1,30 @@
+{
+  "id": "module-4-vla/conversational-robotics",
+  "title": "Conversational Robotics",
+  "description": "Overview",
+  "source": "@site/docs/module-4-vla/conversational-robotics.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/conversational-robotics",
+  "permalink": "/docs/module-4-vla/conversational-robotics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/conversational-robotics.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Conversational Robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "LLM-Based Task Planning for Robotics",
+    "permalink": "/docs/module-4-vla/llm-planning"
+  },
+  "next": {
+    "title": "Action Grounding in Robotics",
+    "permalink": "/docs/module-4-vla/action-grounding"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "perception/diagrams/domain-randomization",
+  "title": "Domain Randomization Visualization",
+  "description": "This document describes the domain randomization process and its effect on policy robustness.",
+  "source": "@site/docs/perception/diagrams/domain-randomization.md",
+  "sourceDirName": "perception/diagrams",
+  "slug": "/perception/diagrams/domain-randomization",
+  "permalink": "/docs/perception/diagrams/domain-randomization",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/perception/diagrams/domain-randomization.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Setting Up NVIDIA Isaac Sim",
+    "permalink": "/docs/perception/setup-isaac"
+  },
+  "next": {
+    "title": "Sim-to-Real Transfer Gaps Visualization",
+    "permalink": "/docs/perception/diagrams/sim-to-real-gaps"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "module-1-ros2/ros2-architecture",
+  "title": "ROS 2 Introduction",
+  "description": "What is ROS 2?",
+  "source": "@site/docs/module-1-ros2/ros2-architecture.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/ros2-architecture",
+  "permalink": "/docs/module-1-ros2/ros2-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-1-ros2/ros2-architecture.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Embodied Intelligence",
+    "permalink": "/docs/module-1-ros2/physical-ai-foundations"
+  },
+  "next": {
+    "title": "Nodes, Topics, and Services",
+    "permalink": "/docs/module-1-ros2/nodes-topics-services"
+  }
+}

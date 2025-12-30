@@ -1,0 +1,22 @@
+{
+  "id": "troubleshooting",
+  "title": "Troubleshooting",
+  "description": "This guide covers common issues and solutions for the Physical AI & Humanoid Robotics textbook.",
+  "source": "@site/docs/troubleshooting.md",
+  "sourceDirName": ".",
+  "slug": "/troubleshooting",
+  "permalink": "/docs/troubleshooting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/troubleshooting.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "References & Further Reading",
+    "permalink": "/docs/references"
+  }
+}

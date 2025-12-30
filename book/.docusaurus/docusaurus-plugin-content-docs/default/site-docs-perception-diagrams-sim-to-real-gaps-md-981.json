@@ -1,0 +1,26 @@
+{
+  "id": "perception/diagrams/sim-to-real-gaps",
+  "title": "Sim-to-Real Transfer Gaps Visualization",
+  "description": "This document describes the diagram showing the four major gaps between simulation and reality.",
+  "source": "@site/docs/perception/diagrams/sim-to-real-gaps.md",
+  "sourceDirName": "perception/diagrams",
+  "slug": "/perception/diagrams/sim-to-real-gaps",
+  "permalink": "/docs/perception/diagrams/sim-to-real-gaps",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/perception/diagrams/sim-to-real-gaps.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Domain Randomization Visualization",
+    "permalink": "/docs/perception/diagrams/domain-randomization"
+  },
+  "next": {
+    "title": "Module 3: Perception & Sim-to-Real Transfer Exercises",
+    "permalink": "/docs/perception/exercises"
+  }
+}

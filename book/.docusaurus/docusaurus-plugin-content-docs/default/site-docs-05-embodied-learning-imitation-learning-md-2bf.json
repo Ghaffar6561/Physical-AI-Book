@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/imitation-learning",
+  "title": "Imitation Learning: Learning from Demonstrations",
+  "description": "Imitation learning is the simplest approach: watch demonstrations, predict actions, that's it. No reward signals. No trial-and-error. Just supervised learning.",
+  "source": "@site/docs/05-embodied-learning/imitation-learning.md",
+  "sourceDirName": "05-embodied-learning",
+  "slug": "/embodied-learning/imitation-learning",
+  "permalink": "/embodied-learning/imitation-learning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/05-embodied-learning/imitation-learning.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "The Learning Spectrum: BC vs Diffusion vs RL",
+    "permalink": "/embodied-learning/learning-spectrum"
+  },
+  "next": {
+    "title": "Reinforcement Learning for Embodied AI",
+    "permalink": "/embodied-learning/reinforcement-learning"
+  }
+}

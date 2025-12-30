@@ -1,0 +1,26 @@
+{
+  "id": "simulation/exercises",
+  "title": "Module 2: Exercises & Solutions",
+  "description": "These exercises guide you through using Gazebo to simulate a humanoid robot. You'll load models, inspect sensor output, modify URDFs, and understand sim-to-real transfer challenges.",
+  "source": "@site/docs/02-simulation/exercises.md",
+  "sourceDirName": "02-simulation",
+  "slug": "/simulation/exercises",
+  "permalink": "/simulation/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/02-simulation/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Setting Up Gazebo for Humanoid Robotics",
+    "permalink": "/simulation/setup-gazebo"
+  },
+  "next": {
+    "title": "Module 3: Perception & Sim-to-Real Transfer",
+    "permalink": "/perception/intro"
+  }
+}

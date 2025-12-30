@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -PathsOnly)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)",
+      "Bash(powershell -ExecutionPolicy Bypass -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json)",
+      "Bash(python -c:*)",
+      "Bash(python retrieve.py:*)",
+      "Bash(if not exist \"D:\\\\PhysicalAI\\\\history\\\\prompts\\\\002-rag-retrieval-validation\" mkdir \"D:\\\\PhysicalAI\\\\history\\\\prompts\\\\002-rag-retrieval-validation\")",
+      "Bash(powershell -Command \"New-Item -ItemType Directory -Force -Path ''D:\\\\PhysicalAI\\\\history\\\\prompts\\\\002-rag-retrieval-validation''\")",
+      "Bash(git fetch:*)",
+      "Bash(ls:*)",
+      "Bash(powershell:*)",
+      "Bash(echo:*)",
+      "Bash(cat:*)",
+      "Bash(pip install:*)",
+      "Bash(python agent.py:*)",
+      "Bash(python -m py_compile:*)"
+    ]
+  }
+}

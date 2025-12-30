@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/lora-adaptation",
+  "title": "Fine-Tuning LLMs with LoRA Adaptation",
+  "description": "While few-shot prompting is powerful, sometimes you need to adapt a base Large Language Model (LLM) to a very specific domain or task. Fine-tuning is the process of updating the model's weights on a custom dataset. However, fine-tuning a full LLM with billions of parameters is computationally expensive and produces a massive new model file.",
+  "source": "@site/docs/04-vla-systems/lora-adaptation.md",
+  "sourceDirName": "04-vla-systems",
+  "slug": "/vla-systems/lora-adaptation",
+  "permalink": "/vla-systems/lora-adaptation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/04-vla-systems/lora-adaptation.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "End-to-End Voice-to-Action Pipeline",
+    "permalink": "/vla-systems/voice-to-action"
+  },
+  "next": {
+    "title": "Setup Guide: Large Language Models for Robotics",
+    "permalink": "/vla-systems/setup-llm"
+  }
+}

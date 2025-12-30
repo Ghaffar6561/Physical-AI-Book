@@ -1,0 +1,27 @@
+# Render Blueprint for Physical AI Backend
+# Deploy at: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: physical-ai-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_Key
+        sync: false
+      - key: COHERE_API_KEY
+        sync: false
+      - key: QDRANT_COLLECTION_NAME
+        value: physical-ai-book
+      - key: BOOK_BASE_URL
+        value: https://ghaffar-physical-ai-book.vercel.app/
+    healthCheckPath: /health

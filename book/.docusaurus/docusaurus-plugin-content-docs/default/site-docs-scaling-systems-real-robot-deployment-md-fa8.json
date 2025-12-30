@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/real-robot-deployment",
+  "title": "Real Robot Deployment: From Simulation to Production",
+  "description": "The hardest problem in robotics: making simulation work on real robots.",
+  "source": "@site/docs/scaling-systems/real-robot-deployment.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/real-robot-deployment",
+  "permalink": "/docs/scaling-systems/real-robot-deployment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/real-robot-deployment.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fleet Architecture: System Design at Scale",
+    "permalink": "/docs/scaling-systems/fleet-architecture"
+  },
+  "next": {
+    "title": "Exercises: Production Robotics & Scaling Systems",
+    "permalink": "/docs/scaling-systems/exercises"
+  }
+}

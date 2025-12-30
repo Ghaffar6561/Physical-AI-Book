@@ -1,0 +1,26 @@
+{
+  "id": "capstone-deployment/operations-maintenance",
+  "title": "Section 3: Operations & Maintenance",
+  "description": "Running 100+ robots 24/7 without breaking production.",
+  "source": "@site/docs/07-capstone-deployment/operations-maintenance.md",
+  "sourceDirName": "07-capstone-deployment",
+  "slug": "/capstone-deployment/operations-maintenance",
+  "permalink": "/capstone-deployment/operations-maintenance",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/07-capstone-deployment/operations-maintenance.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Section 2: Deployment Strategies",
+    "permalink": "/capstone-deployment/deployment-strategies"
+  },
+  "next": {
+    "title": "Section 4: Real-World Case Studies",
+    "permalink": "/capstone-deployment/case-studies"
+  }
+}

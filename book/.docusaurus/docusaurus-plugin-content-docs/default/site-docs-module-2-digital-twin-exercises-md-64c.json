@@ -1,0 +1,26 @@
+{
+  "id": "module-2-digital-twin/exercises",
+  "title": "Module 2: Exercises & Solutions",
+  "description": "These exercises guide you through using Gazebo to simulate a humanoid robot. You'll load models, inspect sensor output, modify URDFs, and understand sim-to-real transfer challenges.",
+  "source": "@site/docs/module-2-digital-twin/exercises.md",
+  "sourceDirName": "module-2-digital-twin",
+  "slug": "/module-2-digital-twin/exercises",
+  "permalink": "/docs/module-2-digital-twin/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-2-digital-twin/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Unity Integration",
+    "permalink": "/docs/module-2-digital-twin/unity-integration"
+  },
+  "next": {
+    "title": "Module 3: The AI-Robot Brain",
+    "permalink": "/docs/module-3-isaac/intro"
+  }
+}

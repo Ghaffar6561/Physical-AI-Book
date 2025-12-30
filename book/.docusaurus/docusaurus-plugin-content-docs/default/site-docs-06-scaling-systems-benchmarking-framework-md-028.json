@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/benchmarking-framework",
+  "title": "Benchmarking at Scale: Evaluation Framework",
+  "description": "Measuring performance across 150+ tasks fairly and systematically.",
+  "source": "@site/docs/06-scaling-systems/benchmarking-framework.md",
+  "sourceDirName": "06-scaling-systems",
+  "slug": "/scaling-systems/benchmarking-framework",
+  "permalink": "/scaling-systems/benchmarking-framework",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/06-scaling-systems/benchmarking-framework.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Scaling Pipeline: End-to-End Production Workflow",
+    "permalink": "/scaling-systems/scaling-pipeline"
+  },
+  "next": {
+    "title": "Cost Analysis: Economics of Robotic Automation",
+    "permalink": "/scaling-systems/cost-analysis"
+  }
+}

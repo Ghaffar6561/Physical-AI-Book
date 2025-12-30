@@ -1,0 +1,26 @@
+{
+  "id": "capstone-deployment/production-architecture",
+  "title": "Section 1: Production System Architecture",
+  "description": "Complete system design for deploying 100+ robots in real factories.",
+  "source": "@site/docs/capstone-deployment/production-architecture.md",
+  "sourceDirName": "capstone-deployment",
+  "slug": "/capstone-deployment/production-architecture",
+  "permalink": "/docs/capstone-deployment/production-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/capstone-deployment/production-architecture.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 7: Capstone & Real-World Deployment",
+    "permalink": "/docs/capstone-deployment/intro"
+  },
+  "next": {
+    "title": "Section 2: Deployment Strategies",
+    "permalink": "/docs/capstone-deployment/deployment-strategies"
+  }
+}

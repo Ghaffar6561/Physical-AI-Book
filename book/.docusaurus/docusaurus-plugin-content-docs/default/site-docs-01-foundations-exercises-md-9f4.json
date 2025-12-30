@@ -1,0 +1,26 @@
+{
+  "id": "foundations/exercises",
+  "title": "Module 1: Exercises & Solutions",
+  "description": "These exercises reinforce the key concepts from Module 1: embodied intelligence, perception-action loops, and ROS 2 fundamentals.",
+  "source": "@site/docs/01-foundations/exercises.md",
+  "sourceDirName": "01-foundations",
+  "slug": "/foundations/exercises",
+  "permalink": "/foundations/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/01-foundations/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ROS 2 Introduction",
+    "permalink": "/foundations/ros2-intro"
+  },
+  "next": {
+    "title": "Module 2: Digital Twins & Gazebo Simulation",
+    "permalink": "/simulation/intro"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "capstone-deployment/intro",
+  "title": "Module 7: Capstone & Real-World Deployment",
+  "description": "From research lab to production robots in real factories.",
+  "source": "@site/docs/07-capstone-deployment/intro.md",
+  "sourceDirName": "07-capstone-deployment",
+  "slug": "/capstone-deployment/intro",
+  "permalink": "/capstone-deployment/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/07-capstone-deployment/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Exercises: Production Robotics & Scaling Systems",
+    "permalink": "/scaling-systems/exercises"
+  },
+  "next": {
+    "title": "Section 1: Production System Architecture",
+    "permalink": "/capstone-deployment/production-architecture"
+  }
+}

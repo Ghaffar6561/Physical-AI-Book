@@ -1,0 +1,26 @@
+{
+  "id": "module-4-vla/action-grounding",
+  "title": "Action Grounding in Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/module-4-vla/action-grounding.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/action-grounding",
+  "permalink": "/docs/module-4-vla/action-grounding",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/action-grounding.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Conversational Robotics",
+    "permalink": "/docs/module-4-vla/conversational-robotics"
+  },
+  "next": {
+    "title": "Embodied Reasoning in Robotics",
+    "permalink": "/docs/module-4-vla/embodied-reasoning"
+  }
+}

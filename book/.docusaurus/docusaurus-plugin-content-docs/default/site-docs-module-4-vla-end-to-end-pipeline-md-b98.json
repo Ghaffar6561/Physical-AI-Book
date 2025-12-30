@@ -1,0 +1,26 @@
+{
+  "id": "module-4-vla/end-to-end-pipeline",
+  "title": "Vision-Language-Action Systems: End-to-End Pipeline",
+  "description": "Introduction",
+  "source": "@site/docs/module-4-vla/end-to-end-pipeline.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/end-to-end-pipeline",
+  "permalink": "/docs/module-4-vla/end-to-end-pipeline",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/end-to-end-pipeline.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Embodied Reasoning in Robotics",
+    "permalink": "/docs/module-4-vla/embodied-reasoning"
+  },
+  "next": {
+    "title": "Capstone Project",
+    "permalink": "/docs/module-4-vla/capstone-project"
+  }
+}

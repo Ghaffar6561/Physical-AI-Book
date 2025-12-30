@@ -1,0 +1,26 @@
+{
+  "id": "foundations/intro",
+  "title": "Module 1: Physical AI Foundations",
+  "description": "Overview",
+  "source": "@site/docs/foundations/intro.md",
+  "sourceDirName": "foundations",
+  "slug": "/foundations/intro",
+  "permalink": "/docs/foundations/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/foundations/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Physical AI & Humanoid Robotics",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Embodied Intelligence",
+    "permalink": "/docs/foundations/embodied-intelligence"
+  }
+}

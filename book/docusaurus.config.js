@@ -10,11 +10,16 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'A Comprehensive Technical Textbook on Embodied Intelligence',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
 
   // Set the production url of your site here
   url: 'https://ghaffar-physical-ai-book.vercel.app',
   baseUrl: '/',
+
+  // Custom fields for runtime configuration
+  customFields: {
+    apiBaseUrl: process.env.API_BASE_URL || 'https://physical-ai-backend.onrender.com',
+  },
 
   onBrokenLinks: 'warn',
 

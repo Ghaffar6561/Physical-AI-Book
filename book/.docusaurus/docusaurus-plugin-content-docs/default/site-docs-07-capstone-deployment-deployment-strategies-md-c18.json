@@ -1,0 +1,26 @@
+{
+  "id": "capstone-deployment/deployment-strategies",
+  "title": "Section 2: Deployment Strategies",
+  "description": "Safely deploying models to 100+ robots with zero downtime.",
+  "source": "@site/docs/07-capstone-deployment/deployment-strategies.md",
+  "sourceDirName": "07-capstone-deployment",
+  "slug": "/capstone-deployment/deployment-strategies",
+  "permalink": "/capstone-deployment/deployment-strategies",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/07-capstone-deployment/deployment-strategies.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Section 1: Production System Architecture",
+    "permalink": "/capstone-deployment/production-architecture"
+  },
+  "next": {
+    "title": "Section 3: Operations & Maintenance",
+    "permalink": "/capstone-deployment/operations-maintenance"
+  }
+}

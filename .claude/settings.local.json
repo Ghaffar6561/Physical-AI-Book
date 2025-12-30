@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(git -C \"D:/Project2PhysicalAI\" log --oneline -3)",
+      "Bash(git -C \"D:/Project2PhysicalAI\" add book/)",
+      "Bash(git -C \"D:/Project2PhysicalAI\" commit -m \"$\\(cat <<''EOF''\nRestructure book to 4 modules matching curriculum\n\nBREAKING CHANGE: Complete restructure from 7 modules to 4 modules\n\nModule 1: The Robotic Nervous System \\(ROS 2\\)\n- Physical AI foundations, ROS 2 architecture\n- Nodes, topics, services, Python agents \\(rclpy\\)\n- Launch files, parameters, URDF for humanoids\n\nModule 2: The Digital Twin \\(Gazebo & Unity\\)\n- Gazebo physics simulation\n- NEW: Unity integration for photorealistic rendering\n- Sensor simulation\n\nModule 3: The AI-Robot Brain \\(NVIDIA Isaac\\)\n- Isaac Sim for photorealistic simulation\n- NEW: Isaac ROS VSLAM \\(GPU-accelerated\\)\n- NEW: Nav2 for bipedal humanoid navigation\n- NEW: Humanoid kinematics and dynamics\n- NEW: Bipedal locomotion and balance control\n\nModule 4: Vision-Language-Action \\(VLA\\)\n- NEW: Whisper voice-to-action integration\n- NEW: Conversational robotics with GPT\n- VLA architecture and action grounding\n- NEW: Complete capstone project\n\nRemoved modules \\(content merged\\):\n- Module 5: Embodied Learning\n- Module 6: Scaling Systems\n- Module 7: Capstone Deployment\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"D:/Project2PhysicalAI\" push origin main)",
+      "Bash(curl:*)",
+      "Bash(dir:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(exit 0)",
+      "Bash(pip install:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh pr create:*)",
+      "Bash(git -C:*)"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "capstone/extensions",
+  "title": "Capstone Project: Extensions",
+  "description": "The capstone project is designed to be a foundation that you can build upon. This guide provides ideas and code templates for extending the system's capabilities.",
+  "source": "@site/docs/08-capstone/extensions.md",
+  "sourceDirName": "08-capstone",
+  "slug": "/capstone/extensions",
+  "permalink": "/capstone/extensions",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/08-capstone/extensions.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Capstone Project: Running the System",
+    "permalink": "/capstone/running-the-system"
+  },
+  "next": {
+    "title": "Glossary",
+    "permalink": "/glossary"
+  }
+}

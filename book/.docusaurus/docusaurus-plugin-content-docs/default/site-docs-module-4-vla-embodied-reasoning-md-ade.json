@@ -1,0 +1,26 @@
+{
+  "id": "module-4-vla/embodied-reasoning",
+  "title": "Embodied Reasoning in Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/module-4-vla/embodied-reasoning.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/embodied-reasoning",
+  "permalink": "/docs/module-4-vla/embodied-reasoning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/embodied-reasoning.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Action Grounding in Robotics",
+    "permalink": "/docs/module-4-vla/action-grounding"
+  },
+  "next": {
+    "title": "Vision-Language-Action Systems: End-to-End Pipeline",
+    "permalink": "/docs/module-4-vla/end-to-end-pipeline"
+  }
+}

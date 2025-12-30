@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/distributed-training",
+  "title": "Distributed Training: Multi-GPU & Multi-Robot Systems",
+  "description": "Scaling training from single GPU to clusters and robot fleets.",
+  "source": "@site/docs/scaling-systems/distributed-training.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/distributed-training",
+  "permalink": "/docs/scaling-systems/distributed-training",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/distributed-training.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Scaling Pipeline: End-to-End Production Workflow",
+    "permalink": "/docs/scaling-systems/scaling-pipeline"
+  },
+  "next": {
+    "title": "Multi-Task Learning: Training at Scale",
+    "permalink": "/docs/scaling-systems/multi-task-learning"
+  }
+}
