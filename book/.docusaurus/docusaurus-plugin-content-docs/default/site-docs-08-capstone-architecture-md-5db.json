@@ -1,0 +1,26 @@
+{
+  "id": "capstone/architecture",
+  "title": "Capstone Project: System Architecture",
+  "description": "This document outlines the architecture for the full, end-to-end autonomous humanoid system. The goal of this capstone is to integrate all the concepts from the previous modules into a single, runnable project that can accept spoken commands and perform actions in a simulated environment.",
+  "source": "@site/docs/08-capstone/architecture.md",
+  "sourceDirName": "08-capstone",
+  "slug": "/capstone/architecture",
+  "permalink": "/capstone/architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/08-capstone/architecture.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Section 4: Real-World Case Studies",
+    "permalink": "/capstone-deployment/case-studies"
+  },
+  "next": {
+    "title": "Capstone Project: Setup Guide",
+    "permalink": "/capstone/setup"
+  }
+}

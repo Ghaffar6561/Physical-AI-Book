@@ -1,0 +1,26 @@
+{
+  "id": "perception/isaac-workflows",
+  "title": "NVIDIA Isaac: Photorealistic Simulation & Synthetic Data Generation",
+  "description": "You've learned how to bridge sim-to-real transfer using domain randomization. But some tasks—vision-intensive tasks, complex manipulation—need photorealistic rendering. This chapter covers NVIDIA Isaac, the industry-standard platform for photorealistic robot simulation.",
+  "source": "@site/docs/perception/isaac-workflows.md",
+  "sourceDirName": "perception",
+  "slug": "/perception/isaac-workflows",
+  "permalink": "/docs/perception/isaac-workflows",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/perception/isaac-workflows.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sim-to-Real Transfer: Bridging Simulation and Reality",
+    "permalink": "/docs/perception/sim-to-real-transfer"
+  },
+  "next": {
+    "title": "Setting Up NVIDIA Isaac Sim",
+    "permalink": "/docs/perception/setup-isaac"
+  }
+}

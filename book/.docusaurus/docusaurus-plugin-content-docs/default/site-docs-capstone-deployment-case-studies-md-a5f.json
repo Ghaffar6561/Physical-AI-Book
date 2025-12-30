@@ -1,0 +1,26 @@
+{
+  "id": "capstone-deployment/case-studies",
+  "title": "Section 4: Real-World Case Studies",
+  "description": "Learning from 500K+ robots in production.",
+  "source": "@site/docs/capstone-deployment/case-studies.md",
+  "sourceDirName": "capstone-deployment",
+  "slug": "/capstone-deployment/case-studies",
+  "permalink": "/docs/capstone-deployment/case-studies",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/capstone-deployment/case-studies.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766044536000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Section 3: Operations & Maintenance",
+    "permalink": "/docs/capstone-deployment/operations-maintenance"
+  },
+  "next": {
+    "title": "Capstone Project: System Architecture",
+    "permalink": "/docs/capstone/architecture"
+  }
+}

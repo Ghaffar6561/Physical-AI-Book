@@ -1,0 +1,30 @@
+{
+  "id": "module-3-isaac/bipedal-locomotion",
+  "title": "Bipedal Locomotion",
+  "description": "Overview",
+  "source": "@site/docs/module-3-isaac/bipedal-locomotion.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/bipedal-locomotion",
+  "permalink": "/docs/module-3-isaac/bipedal-locomotion",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/bipedal-locomotion.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6,
+    "title": "Bipedal Locomotion"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Humanoid Kinematics",
+    "permalink": "/docs/module-3-isaac/humanoid-kinematics"
+  },
+  "next": {
+    "title": "Setting Up NVIDIA Isaac Sim",
+    "permalink": "/docs/module-3-isaac/setup-isaac"
+  }
+}

@@ -3,10 +3,10 @@
 
 const config = {
   // API base URL - can be overridden by environment variable
-  API_BASE_URL: process.env.REACT_APP_API_BASE_URL || 'http://localhost:8000',
+  API_BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000',
   
   // Development mode
-  IS_DEV: process.env.NODE_ENV === 'development',
+  IS_DEV: import.meta.env.DEV,
   
   // Default settings
   DEFAULT_TOP_K: 5,

@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/diffusion-for-robotics",
+  "title": "Diffusion Models for Robot Control",
+  "description": "Key insight: The same technology that powers DALL-E (image generation) can generate robot trajectories. Instead of generating pixels, we generate smooth, collision-free action sequences.",
+  "source": "@site/docs/05-embodied-learning/diffusion-for-robotics.md",
+  "sourceDirName": "05-embodied-learning",
+  "slug": "/embodied-learning/diffusion-for-robotics",
+  "permalink": "/embodied-learning/diffusion-for-robotics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/05-embodied-learning/diffusion-for-robotics.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Reinforcement Learning for Embodied AI",
+    "permalink": "/embodied-learning/reinforcement-learning"
+  },
+  "next": {
+    "title": "End-to-End Learning: Architectures & Strategies",
+    "permalink": "/embodied-learning/end-to-end-learning"
+  }
+}

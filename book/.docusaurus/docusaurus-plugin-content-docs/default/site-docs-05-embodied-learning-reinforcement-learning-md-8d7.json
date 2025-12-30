@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/reinforcement-learning",
+  "title": "Reinforcement Learning for Embodied AI",
+  "description": "Core idea: Trial-and-error learning. Robot executes action, receives reward signal, learns to maximize cumulative reward.",
+  "source": "@site/docs/05-embodied-learning/reinforcement-learning.md",
+  "sourceDirName": "05-embodied-learning",
+  "slug": "/embodied-learning/reinforcement-learning",
+  "permalink": "/embodied-learning/reinforcement-learning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/05-embodied-learning/reinforcement-learning.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Imitation Learning: Learning from Demonstrations",
+    "permalink": "/embodied-learning/imitation-learning"
+  },
+  "next": {
+    "title": "Diffusion Models for Robot Control",
+    "permalink": "/embodied-learning/diffusion-for-robotics"
+  }
+}

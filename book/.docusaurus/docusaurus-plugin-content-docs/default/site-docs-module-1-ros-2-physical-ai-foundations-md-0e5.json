@@ -1,0 +1,26 @@
+{
+  "id": "module-1-ros2/physical-ai-foundations",
+  "title": "Embodied Intelligence",
+  "description": "What is Embodied Intelligence?",
+  "source": "@site/docs/module-1-ros2/physical-ai-foundations.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/physical-ai-foundations",
+  "permalink": "/docs/module-1-ros2/physical-ai-foundations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-1-ros2/physical-ai-foundations.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 1: The Robotic Nervous System",
+    "permalink": "/docs/module-1-ros2/intro"
+  },
+  "next": {
+    "title": "ROS 2 Introduction",
+    "permalink": "/docs/module-1-ros2/ros2-architecture"
+  }
+}

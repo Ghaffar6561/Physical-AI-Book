@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/vision-language-models",
+  "title": "Vision-Language Models for Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/vla-systems/vision-language-models.md",
+  "sourceDirName": "vla-systems",
+  "slug": "/vla-systems/vision-language-models",
+  "permalink": "/docs/vla-systems/vision-language-models",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/vla-systems/vision-language-models.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 4: Vision-Language-Action Systems & Embodied AI",
+    "permalink": "/docs/vla-systems/intro"
+  },
+  "next": {
+    "title": "VLA System Architecture",
+    "permalink": "/docs/vla-systems/vla-architecture"
+  }
+}

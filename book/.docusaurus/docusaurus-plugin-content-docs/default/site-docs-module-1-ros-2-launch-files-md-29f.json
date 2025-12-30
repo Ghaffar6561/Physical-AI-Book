@@ -1,0 +1,30 @@
+{
+  "id": "module-1-ros2/launch-files",
+  "title": "Launch Files and Parameters",
+  "description": "Overview",
+  "source": "@site/docs/module-1-ros2/launch-files.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/launch-files",
+  "permalink": "/docs/module-1-ros2/launch-files",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-1-ros2/launch-files.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Launch Files and Parameters"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Python Agents with rclpy",
+    "permalink": "/docs/module-1-ros2/rclpy-python-agents"
+  },
+  "next": {
+    "title": "URDF: Describing Humanoid Robots",
+    "permalink": "/docs/module-1-ros2/urdf-humanoids"
+  }
+}

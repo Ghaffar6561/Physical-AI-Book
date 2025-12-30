@@ -1,0 +1,30 @@
+{
+  "id": "module-3-isaac/isaac-ros-vslam",
+  "title": "Isaac ROS VSLAM",
+  "description": "Overview",
+  "source": "@site/docs/module-3-isaac/isaac-ros-vslam.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/isaac-ros-vslam",
+  "permalink": "/docs/module-3-isaac/isaac-ros-vslam",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/isaac-ros-vslam.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Isaac ROS VSLAM"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "NVIDIA Isaac: Photorealistic Simulation & Synthetic Data Generation",
+    "permalink": "/docs/module-3-isaac/isaac-sim"
+  },
+  "next": {
+    "title": "Nav2 for Bipedal Robots",
+    "permalink": "/docs/module-3-isaac/nav2-bipedal"
+  }
+}

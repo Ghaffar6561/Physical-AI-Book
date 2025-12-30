@@ -1,0 +1,30 @@
+{
+  "id": "module-3-isaac/intro",
+  "title": "Module 3: The AI-Robot Brain",
+  "description": "Overview",
+  "source": "@site/docs/module-3-isaac/intro.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/intro",
+  "permalink": "/docs/module-3-isaac/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Module 3: The AI-Robot Brain"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 2: Exercises & Solutions",
+    "permalink": "/docs/module-2-digital-twin/exercises"
+  },
+  "next": {
+    "title": "NVIDIA Isaac: Photorealistic Simulation & Synthetic Data Generation",
+    "permalink": "/docs/module-3-isaac/isaac-sim"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "foundations/embodied-intelligence",
+  "title": "Embodied Intelligence",
+  "description": "What is Embodied Intelligence?",
+  "source": "@site/docs/foundations/embodied-intelligence.md",
+  "sourceDirName": "foundations",
+  "slug": "/foundations/embodied-intelligence",
+  "permalink": "/docs/foundations/embodied-intelligence",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/foundations/embodied-intelligence.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 1: Physical AI Foundations",
+    "permalink": "/docs/foundations/intro"
+  },
+  "next": {
+    "title": "ROS 2 Introduction",
+    "permalink": "/docs/foundations/ros2-intro"
+  }
+}

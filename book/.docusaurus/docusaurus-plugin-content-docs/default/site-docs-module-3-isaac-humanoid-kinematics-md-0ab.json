@@ -1,0 +1,30 @@
+{
+  "id": "module-3-isaac/humanoid-kinematics",
+  "title": "Humanoid Kinematics",
+  "description": "Overview",
+  "source": "@site/docs/module-3-isaac/humanoid-kinematics.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/humanoid-kinematics",
+  "permalink": "/docs/module-3-isaac/humanoid-kinematics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/humanoid-kinematics.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Humanoid Kinematics"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sim-to-Real Transfer: Bridging Simulation and Reality",
+    "permalink": "/docs/module-3-isaac/sim-to-real-transfer"
+  },
+  "next": {
+    "title": "Bipedal Locomotion",
+    "permalink": "/docs/module-3-isaac/bipedal-locomotion"
+  }
+}

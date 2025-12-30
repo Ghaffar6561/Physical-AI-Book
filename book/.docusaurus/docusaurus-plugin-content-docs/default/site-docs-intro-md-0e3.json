@@ -1,0 +1,22 @@
+{
+  "id": "intro",
+  "title": "Physical AI & Humanoid Robotics: A Comprehensive Technical Textbook",
+  "description": "Welcome to the Physical AI & Humanoid Robotics textbook—a comprehensive guide to building autonomous systems that perceive, plan, and act in the physical world.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1765668099000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Module 1: Physical AI Foundations",
+    "permalink": "/foundations/intro"
+  }
+}

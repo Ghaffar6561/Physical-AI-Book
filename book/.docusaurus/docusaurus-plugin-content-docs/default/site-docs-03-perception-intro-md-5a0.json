@@ -1,0 +1,26 @@
+{
+  "id": "perception/intro",
+  "title": "Module 3: Perception & Sim-to-Real Transfer",
+  "description": "Learning Objectives",
+  "source": "@site/docs/03-perception/intro.md",
+  "sourceDirName": "03-perception",
+  "slug": "/perception/intro",
+  "permalink": "/perception/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/03-perception/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 2: Exercises & Solutions",
+    "permalink": "/simulation/exercises"
+  },
+  "next": {
+    "title": "Sensor Fusion & Localization",
+    "permalink": "/perception/sensor-fusion"
+  }
+}

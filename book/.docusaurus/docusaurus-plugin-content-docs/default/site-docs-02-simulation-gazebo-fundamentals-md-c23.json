@@ -1,0 +1,26 @@
+{
+  "id": "simulation/gazebo-fundamentals",
+  "title": "Gazebo Fundamentals",
+  "description": "Gazebo is the industry-standard open-source 3D robotics simulator. It combines:",
+  "source": "@site/docs/02-simulation/gazebo-fundamentals.md",
+  "sourceDirName": "02-simulation",
+  "slug": "/simulation/gazebo-fundamentals",
+  "permalink": "/simulation/gazebo-fundamentals",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/02-simulation/gazebo-fundamentals.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 2: Digital Twins & Gazebo Simulation",
+    "permalink": "/simulation/intro"
+  },
+  "next": {
+    "title": "URDF: Describing Humanoid Robots",
+    "permalink": "/simulation/urdf-humanoid"
+  }
+}

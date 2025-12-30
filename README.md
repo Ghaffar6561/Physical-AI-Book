@@ -1,53 +1,91 @@
-# Physical AI & Humanoid Robotics Textbook
+# Book Content Chat Integration
 
-This project is part of the **AI / Spec-Driven Book Creation Hackathon (Project 1)** and is focused on documentation, not system implementation.
+This project implements a FastAPI backend that exposes HTTP endpoints to interact with the RAG agent, allowing users to ask questions about book content and receive grounded answers with source citations. The backend connects to a Docusaurus frontend via a full-page chatbot UI, supporting both book-wide queries and selected-text mode.
 
+## Prerequisites
 
-This repository contains a **spec-driven technical textbook**
-on Physical AI and humanoid robotics, created using **Spec-Kit Plus**
-as part of the **AI / Spec-Driven Book Creation Hackathon**.
+- Python 3.11+
+- Node.js 16+ (for Docusaurus frontend)
+- Access to Qdrant Cloud instance with populated book data
+- OpenAI API key
 
----
+## Setup Backend
 
-## Project Objective
+1. **Install Python dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-The objective of this project is to demonstrate how **Spec-Kit Plus**
-can be used to design and generate a structured textbook using
-AI-assisted workflows.
+2. **Set environment variables**:
+   ```bash
+   export OPENAI_API_KEY="your-openai-api-key"
+   export QDRANT_URL="your-qdrant-cloud-url"
+   export QDRANT_API_KEY="your-qdrant-api-key"
+   ```
 
-This project focuses on **knowledge design and documentation**.
-It does **not** include runnable robot code, simulations, or hardware implementations.
+3. **Run the backend server**:
+   ```bash
+   uvicorn backend.api:app --reload --port 8000
+   ```
 
----
+4. **Verify the server is running**:
+   - Visit http://localhost:8000/health to check the health status
+   - Visit http://localhost:8000/docs for API documentation
 
-## Spec-Kit Plus Workflow (Evidence)
+## Setup Frontend
 
-The complete Spec-Kit Plus workflow was followed:
+1. **Navigate to the book frontend directory**:
+   ```bash
+   cd book_frontend
+   ```
 
-1. `sp.constitution` – defined scope, tone, and constraints
-2. `sp.specify` – created structured textbook specifications
-3. `sp.plan` – planned modules and chapters
-4. `sp.tasks` – generated content tasks
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-### Evidence Locations
+3. **Run the Docusaurus development server**:
+   ```bash
+   npm run start
+   ```
 
-The following folders are intentionally included for academic verification:
+4. **Access the chat interface**:
+   - The chat interface will be available at http://localhost:3000/chat
 
-- `history/` → Full Spec-Kit Plus prompt execution history
-- `specs/` → Final structured specifications
-- `.specify/` → Spec-Kit Plus templates and command definitions
+## API Usage
 
----
-
-## Textbook Output (Final Deliverable)
-
-The final textbook is implemented as a **Docusaurus site**
-located in the `book/` directory.
-
-### Run Locally
+### Send a question to the chat endpoint
 
 ```bash
-cd book
-npm install
-npm start
+curl -X POST http://localhost:8000/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "What are the main concepts in this book?",
+    "selected_text": "Optional selected text from the page...",
+    "top_k": 5
+  }'
 ```
+
+### Health check
+
+```bash
+curl http://localhost:8000/health
+```
+
+## Features
+
+1. **Interactive Book Chat**: Ask questions about book content and receive answers with source citations
+2. **Selected Text Mode**: Ask questions specifically about selected portions of text
+3. **Error Handling**: Comprehensive error handling with user-friendly messages
+4. **Rate Limiting**: API abuse prevention with rate limiting
+5. **Input Sanitization**: Protection against injection attacks
+6. **Performance Monitoring**: Response time tracking and alerts
+
+## Architecture
+
+- `backend/api.py`: Main FastAPI application with CORS and endpoints
+- `backend/agent.py`: Integration with the existing RAG agent
+- `backend/models/`: Pydantic models for request/response validation
+- `backend/services/`: Business logic for processing questions and responses
+- `book_frontend/src/components/ChatInterface`: React component for the chat UI
+- `book_frontend/src/services/api`: Service for API communication

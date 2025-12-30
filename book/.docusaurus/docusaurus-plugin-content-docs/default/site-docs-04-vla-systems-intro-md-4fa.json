@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/intro",
+  "title": "Module 4: Vision-Language-Action Systems & Embodied AI",
+  "description": "Learning Objectives",
+  "source": "@site/docs/04-vla-systems/intro.md",
+  "sourceDirName": "04-vla-systems",
+  "slug": "/vla-systems/intro",
+  "permalink": "/vla-systems/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/04-vla-systems/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 3: Perception & Sim-to-Real Transfer Exercises",
+    "permalink": "/perception/exercises"
+  },
+  "next": {
+    "title": "LLM-Based Task Planning for Robotics",
+    "permalink": "/vla-systems/llm-planning"
+  }
+}

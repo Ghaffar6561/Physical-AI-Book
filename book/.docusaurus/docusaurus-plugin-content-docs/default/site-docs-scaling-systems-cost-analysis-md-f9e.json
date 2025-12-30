@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/cost-analysis",
+  "title": "Cost Analysis: Economics of Robotic Automation",
+  "description": "When does automation become profitable?",
+  "source": "@site/docs/scaling-systems/cost-analysis.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/cost-analysis",
+  "permalink": "/docs/scaling-systems/cost-analysis",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/cost-analysis.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Benchmarking at Scale: Evaluation Framework",
+    "permalink": "/docs/scaling-systems/benchmarking-framework"
+  },
+  "next": {
+    "title": "Fleet Architecture: System Design at Scale",
+    "permalink": "/docs/scaling-systems/fleet-architecture"
+  }
+}

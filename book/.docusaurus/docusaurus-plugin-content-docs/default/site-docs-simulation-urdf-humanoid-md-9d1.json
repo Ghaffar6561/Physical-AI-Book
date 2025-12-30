@@ -1,0 +1,26 @@
+{
+  "id": "simulation/urdf-humanoid",
+  "title": "URDF: Describing Humanoid Robots",
+  "description": "URDF (Unified Robot Description Format) is an XML language that describes robot structure, kinematics, inertias, and sensors. It's the standard format used across the ROS 2 ecosystem.",
+  "source": "@site/docs/simulation/urdf-humanoid.md",
+  "sourceDirName": "simulation",
+  "slug": "/simulation/urdf-humanoid",
+  "permalink": "/docs/simulation/urdf-humanoid",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/simulation/urdf-humanoid.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Setting Up Gazebo for Humanoid Robotics",
+    "permalink": "/docs/simulation/setup-gazebo"
+  },
+  "next": {
+    "title": "Module 2: Exercises & Solutions",
+    "permalink": "/docs/simulation/exercises"
+  }
+}

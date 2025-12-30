@@ -1,0 +1,26 @@
+{
+  "id": "module-3-isaac/isaac-sim",
+  "title": "NVIDIA Isaac: Photorealistic Simulation & Synthetic Data Generation",
+  "description": "You've learned how to bridge sim-to-real transfer using domain randomization. But some tasks—vision-intensive tasks, complex manipulation—need photorealistic rendering. This chapter covers NVIDIA Isaac, the industry-standard platform for photorealistic robot simulation.",
+  "source": "@site/docs/module-3-isaac/isaac-sim.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/isaac-sim",
+  "permalink": "/docs/module-3-isaac/isaac-sim",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/isaac-sim.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 3: The AI-Robot Brain",
+    "permalink": "/docs/module-3-isaac/intro"
+  },
+  "next": {
+    "title": "Isaac ROS VSLAM",
+    "permalink": "/docs/module-3-isaac/isaac-ros-vslam"
+  }
+}

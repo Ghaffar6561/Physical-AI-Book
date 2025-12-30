@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/intro",
+  "title": "Module 5: End-to-End Learning & Diffusion Models",
+  "description": "Welcome to embodied learning - where robots learn directly from demonstration data instead of being explicitly programmed. This is the bridge between language understanding (Module 4) and real-world robotic execution.",
+  "source": "@site/docs/embodied-learning/intro.md",
+  "sourceDirName": "embodied-learning",
+  "slug": "/embodied-learning/intro",
+  "permalink": "/docs/embodied-learning/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/embodied-learning/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 4 Exercises: Vision-Language-Action Systems",
+    "permalink": "/docs/vla-systems/exercises"
+  },
+  "next": {
+    "title": "The Learning Spectrum: BC vs Diffusion vs RL",
+    "permalink": "/docs/embodied-learning/learning-spectrum"
+  }
+}

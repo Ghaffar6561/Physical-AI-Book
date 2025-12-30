@@ -1,0 +1,26 @@
+{
+  "id": "module-4-vla/vla-architecture",
+  "title": "VLA System Architecture",
+  "description": "Introduction",
+  "source": "@site/docs/module-4-vla/vla-architecture.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/vla-architecture",
+  "permalink": "/docs/module-4-vla/vla-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/vla-architecture.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Vision-Language Models for Robotics",
+    "permalink": "/docs/module-4-vla/vision-language-models"
+  },
+  "next": {
+    "title": "Whisper Voice-to-Action",
+    "permalink": "/docs/module-4-vla/whisper-integration"
+  }
+}

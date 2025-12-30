@@ -1,0 +1,17 @@
+{
+  "id": "module-4-vla/prompting-strategies",
+  "title": "Prompting Strategies for Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/module-4-vla/prompting-strategies.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/prompting-strategies",
+  "permalink": "/docs/module-4-vla/prompting-strategies",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/prompting-strategies.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {}
+}

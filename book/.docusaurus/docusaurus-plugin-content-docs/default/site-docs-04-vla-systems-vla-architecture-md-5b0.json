@@ -1,0 +1,17 @@
+{
+  "id": "vla-systems/vla-architecture",
+  "title": "VLA System Architecture",
+  "description": "Introduction",
+  "source": "@site/docs/04-vla-systems/vla-architecture.md",
+  "sourceDirName": "04-vla-systems",
+  "slug": "/vla-systems/vla-architecture",
+  "permalink": "/vla-systems/vla-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/04-vla-systems/vla-architecture.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {}
+}

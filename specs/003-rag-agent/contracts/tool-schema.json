@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RAG Agent Tool Definitions",
+  "description": "OpenAI function/tool schemas for the RAG agent",
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "search_book_content",
+        "description": "Search the Physical AI book for content relevant to the user's question. Returns chunks of text with source URLs and relevance scores. Use this tool to find information before answering any question about the book.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "description": "The search query to find relevant content. Should be a clear, specific question or topic."
+            },
+            "top_k": {
+              "type": "integer",
+              "description": "Number of results to return. More results provide broader context but may include less relevant content.",
+              "default": 5,
+              "minimum": 1,
+              "maximum": 20
+            },
+            "filter_prefix": {
+              "type": "string",
+              "description": "Optional URL path prefix to filter results (e.g., 'module-1' to search only Module 1)."
+            }
+          },
+          "required": ["query"]
+        }
+      }
+    }
+  ],
+  "tool_responses": {
+    "search_book_content": {
+      "success": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["success"]
+          },
+          "query": {
+            "type": "string",
+            "description": "The original query"
+          },
+          "result_count": {
+            "type": "integer",
+            "description": "Number of results returned"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "description": "Citation index (1-based)"
+                },
+                "score": {
+                  "type": "number",
+                  "description": "Similarity score (0-1)"
+                },
+                "source_url": {
+                  "type": "string",
+                  "description": "URL of the source page"
+                },
+                "content": {
+                  "type": "string",
+                  "description": "The text content of the chunk"
+                }
+              }
+            }
+          }
+        }
+      },
+      "no_results": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["no_results"]
+          },
+          "query": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string",
+            "example": "No relevant content found in the book for this query."
+          }
+        }
+      },
+      "error": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["error"]
+          },
+          "message": {
+            "type": "string",
+            "description": "Error description"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,19 +1,4 @@
-# Node.js / Docusaurus
-node_modules/
-dist/
-build/
-.docusaurus/
-.cache-loader/
-coverage/
-.npm
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# Python / ROS 2 / Capstone
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -31,83 +16,40 @@ parts/
 sdist/
 var/
 wheels/
-pip-wheel-metadata/
-share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 MANIFEST
-.venv/
-venv/
-ENV/
-env/
-.env
-.env.local
-.env.*.local
-
-# ROS 2 / Gazebo
-install/
-build/
-devel/
-log/
-.colcon/
-src/cmake.lock
-src/.cmake.lock
-*.swo
-*.swp
-
-# IDEs and editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
-*.user
-*.iml
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# OS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Temporary files
-*.tmp
-*.temp
-*.log
-*.log.*
-*~
-
-# Build outputs
-dist/
-build/
-.next/
-.gatsby/
-out/
-
-# Test coverage
-coverage/
-.nyc_output/
+.pytest_cache/
 .coverage
 htmlcov/
+.hypothesis/
+.venv/
+venv/
+env/
+ENV/
+.python-version
+.vscode/
 
-# Docker
-.dockerignore
-Dockerfile.bak
-
-# Misc
-.claude/settings.local.json
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+lib-cov
+coverage
+.nyc_output
+.grunt
+bower_components
+.sencha
+node_modules/
+jspm_packages/
+config/
+dist/
+build/
+*.log
+.env*
+.nyc_output/
+coverage/

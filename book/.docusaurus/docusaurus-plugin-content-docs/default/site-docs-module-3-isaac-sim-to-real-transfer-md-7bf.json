@@ -1,0 +1,26 @@
+{
+  "id": "module-3-isaac/sim-to-real-transfer",
+  "title": "Sim-to-Real Transfer: Bridging Simulation and Reality",
+  "description": "This is the core chapter of the Physical AI book. It explains why well-trained policies fail catastrophically on real robots and the systematic methods to fix them.",
+  "source": "@site/docs/module-3-isaac/sim-to-real-transfer.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/sim-to-real-transfer",
+  "permalink": "/docs/module-3-isaac/sim-to-real-transfer",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/sim-to-real-transfer.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sensor Fusion & Localization",
+    "permalink": "/docs/module-3-isaac/sensor-fusion"
+  },
+  "next": {
+    "title": "Humanoid Kinematics",
+    "permalink": "/docs/module-3-isaac/humanoid-kinematics"
+  }
+}

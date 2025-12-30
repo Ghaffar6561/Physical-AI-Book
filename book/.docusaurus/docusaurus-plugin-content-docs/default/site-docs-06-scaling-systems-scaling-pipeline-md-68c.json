@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/scaling-pipeline",
+  "title": "Scaling Pipeline: End-to-End Production Workflow",
+  "description": "Complete pipeline from research prototype to production fleet.",
+  "source": "@site/docs/06-scaling-systems/scaling-pipeline.md",
+  "sourceDirName": "06-scaling-systems",
+  "slug": "/scaling-systems/scaling-pipeline",
+  "permalink": "/scaling-systems/scaling-pipeline",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/06-scaling-systems/scaling-pipeline.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Multi-Task Learning: Training at Scale",
+    "permalink": "/scaling-systems/multi-task-learning"
+  },
+  "next": {
+    "title": "Benchmarking at Scale: Evaluation Framework",
+    "permalink": "/scaling-systems/benchmarking-framework"
+  }
+}

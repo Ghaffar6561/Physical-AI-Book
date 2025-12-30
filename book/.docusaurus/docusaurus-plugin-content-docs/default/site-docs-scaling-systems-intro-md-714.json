@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/intro",
+  "title": "Module 6: Scaling & Production Systems",
+  "description": "Welcome to production robotics - where you take a single robot learning model and scale it to hundreds of tasks, thousands of robots, and real-world deployment challenges.",
+  "source": "@site/docs/scaling-systems/intro.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/intro",
+  "permalink": "/docs/scaling-systems/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 5: End-to-End Learning - Exercises",
+    "permalink": "/docs/embodied-learning/exercises"
+  },
+  "next": {
+    "title": "Scaling Pipeline: End-to-End Production Workflow",
+    "permalink": "/docs/scaling-systems/scaling-pipeline"
+  }
+}

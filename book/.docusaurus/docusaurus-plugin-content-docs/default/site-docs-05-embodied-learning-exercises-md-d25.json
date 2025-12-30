@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/exercises",
+  "title": "Module 5: End-to-End Learning - Exercises",
+  "description": "Practical exercises applying behavioral cloning, diffusion models, and reinforcement learning to robot manipulation.",
+  "source": "@site/docs/05-embodied-learning/exercises.md",
+  "sourceDirName": "05-embodied-learning",
+  "slug": "/embodied-learning/exercises",
+  "permalink": "/embodied-learning/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/05-embodied-learning/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Complete Training Pipeline: From Data to Deployment",
+    "permalink": "/embodied-learning/training-pipeline"
+  },
+  "next": {
+    "title": "Module 6: Scaling & Production Systems",
+    "permalink": "/scaling-systems/intro"
+  }
+}

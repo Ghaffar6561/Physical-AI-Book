@@ -1,0 +1,26 @@
+{
+  "id": "module-2-digital-twin/gazebo-fundamentals",
+  "title": "Gazebo Fundamentals",
+  "description": "Gazebo is the industry-standard open-source 3D robotics simulator. It combines:",
+  "source": "@site/docs/module-2-digital-twin/gazebo-fundamentals.md",
+  "sourceDirName": "module-2-digital-twin",
+  "slug": "/module-2-digital-twin/gazebo-fundamentals",
+  "permalink": "/docs/module-2-digital-twin/gazebo-fundamentals",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-2-digital-twin/gazebo-fundamentals.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 2: The Digital Twin",
+    "permalink": "/docs/module-2-digital-twin/intro"
+  },
+  "next": {
+    "title": "Setting Up Gazebo for Humanoid Robotics",
+    "permalink": "/docs/module-2-digital-twin/setup-gazebo"
+  }
+}

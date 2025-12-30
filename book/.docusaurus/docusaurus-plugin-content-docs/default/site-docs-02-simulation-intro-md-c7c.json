@@ -1,0 +1,26 @@
+{
+  "id": "simulation/intro",
+  "title": "Module 2: Digital Twins & Gazebo Simulation",
+  "description": "Learning Objectives",
+  "source": "@site/docs/02-simulation/intro.md",
+  "sourceDirName": "02-simulation",
+  "slug": "/simulation/intro",
+  "permalink": "/simulation/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/02-simulation/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 1: Exercises & Solutions",
+    "permalink": "/foundations/exercises"
+  },
+  "next": {
+    "title": "Gazebo Fundamentals",
+    "permalink": "/simulation/gazebo-fundamentals"
+  }
+}

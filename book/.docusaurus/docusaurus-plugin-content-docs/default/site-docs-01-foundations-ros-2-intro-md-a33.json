@@ -1,0 +1,26 @@
+{
+  "id": "foundations/ros2-intro",
+  "title": "ROS 2 Introduction",
+  "description": "What is ROS 2?",
+  "source": "@site/docs/01-foundations/ros2-intro.md",
+  "sourceDirName": "01-foundations",
+  "slug": "/foundations/ros2-intro",
+  "permalink": "/foundations/ros2-intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/01-foundations/ros2-intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Embodied Intelligence",
+    "permalink": "/foundations/embodied-intelligence"
+  },
+  "next": {
+    "title": "Module 1: Exercises & Solutions",
+    "permalink": "/foundations/exercises"
+  }
+}

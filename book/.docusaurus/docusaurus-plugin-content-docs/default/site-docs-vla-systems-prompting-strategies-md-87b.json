@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/prompting-strategies",
+  "title": "Prompting Strategies for Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/vla-systems/prompting-strategies.md",
+  "sourceDirName": "vla-systems",
+  "slug": "/vla-systems/prompting-strategies",
+  "permalink": "/docs/vla-systems/prompting-strategies",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/vla-systems/prompting-strategies.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "LLM-Based Task Planning for Robotics",
+    "permalink": "/docs/vla-systems/llm-planning"
+  },
+  "next": {
+    "title": "Action Grounding in Robotics",
+    "permalink": "/docs/vla-systems/action-grounding"
+  }
+}

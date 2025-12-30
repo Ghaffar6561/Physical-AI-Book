@@ -1,0 +1,26 @@
+{
+  "id": "module-2-digital-twin/setup-gazebo",
+  "title": "Setting Up Gazebo for Humanoid Robotics",
+  "description": "This guide covers installing Gazebo 11+, configuring ROS 2 integration, and setting up the development environment for the Physical AI book exercises.",
+  "source": "@site/docs/module-2-digital-twin/setup-gazebo.md",
+  "sourceDirName": "module-2-digital-twin",
+  "slug": "/module-2-digital-twin/setup-gazebo",
+  "permalink": "/docs/module-2-digital-twin/setup-gazebo",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-2-digital-twin/setup-gazebo.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gazebo Fundamentals",
+    "permalink": "/docs/module-2-digital-twin/gazebo-fundamentals"
+  },
+  "next": {
+    "title": "Unity Integration",
+    "permalink": "/docs/module-2-digital-twin/unity-integration"
+  }
+}

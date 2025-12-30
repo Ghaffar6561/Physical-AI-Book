@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/end-to-end-learning",
+  "title": "End-to-End Learning: Architectures & Strategies",
+  "description": "Core principle: Map directly from raw observations (images, proprioception) to motor commands. No intermediate modules.",
+  "source": "@site/docs/embodied-learning/end-to-end-learning.md",
+  "sourceDirName": "embodied-learning",
+  "slug": "/embodied-learning/end-to-end-learning",
+  "permalink": "/docs/embodied-learning/end-to-end-learning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/embodied-learning/end-to-end-learning.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766044536000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Diffusion Models for Robot Control",
+    "permalink": "/docs/embodied-learning/diffusion-for-robotics"
+  },
+  "next": {
+    "title": "Complete Training Pipeline: From Data to Deployment",
+    "permalink": "/docs/embodied-learning/training-pipeline"
+  }
+}

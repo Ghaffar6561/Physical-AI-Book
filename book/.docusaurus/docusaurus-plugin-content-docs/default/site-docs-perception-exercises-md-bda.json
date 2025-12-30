@@ -1,0 +1,26 @@
+{
+  "id": "perception/exercises",
+  "title": "Module 3: Perception & Sim-to-Real Transfer Exercises",
+  "description": "These exercises guide you through applying sensor fusion, sim-to-real transfer, and domain randomization to real robotics challenges. Work through them in order, and compare your solutions with the provided solutions.",
+  "source": "@site/docs/perception/exercises.md",
+  "sourceDirName": "perception",
+  "slug": "/perception/exercises",
+  "permalink": "/docs/perception/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/perception/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sim-to-Real Transfer Gaps Visualization",
+    "permalink": "/docs/perception/diagrams/sim-to-real-gaps"
+  },
+  "next": {
+    "title": "Module 4: Vision-Language-Action Systems & Embodied AI",
+    "permalink": "/docs/vla-systems/intro"
+  }
+}

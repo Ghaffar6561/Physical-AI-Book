@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/fleet-architecture",
+  "title": "Fleet Architecture: System Design at Scale",
+  "description": "Complete system design for 100+ robots learning together.",
+  "source": "@site/docs/scaling-systems/fleet-architecture.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/fleet-architecture",
+  "permalink": "/docs/scaling-systems/fleet-architecture",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/fleet-architecture.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Cost Analysis: Economics of Robotic Automation",
+    "permalink": "/docs/scaling-systems/cost-analysis"
+  },
+  "next": {
+    "title": "Real Robot Deployment: From Simulation to Production",
+    "permalink": "/docs/scaling-systems/real-robot-deployment"
+  }
+}

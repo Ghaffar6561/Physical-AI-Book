@@ -1,0 +1,30 @@
+{
+  "id": "module-4-vla/capstone-project",
+  "title": "Capstone Project",
+  "description": "Overview",
+  "source": "@site/docs/module-4-vla/capstone-project.md",
+  "sourceDirName": "module-4-vla",
+  "slug": "/module-4-vla/capstone-project",
+  "permalink": "/docs/module-4-vla/capstone-project",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-4-vla/capstone-project.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 10,
+  "frontMatter": {
+    "sidebar_position": 10,
+    "title": "Capstone Project"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Vision-Language-Action Systems: End-to-End Pipeline",
+    "permalink": "/docs/module-4-vla/end-to-end-pipeline"
+  },
+  "next": {
+    "title": "Setup Guide: Large Language Models for Robotics",
+    "permalink": "/docs/module-4-vla/setup-llm"
+  }
+}

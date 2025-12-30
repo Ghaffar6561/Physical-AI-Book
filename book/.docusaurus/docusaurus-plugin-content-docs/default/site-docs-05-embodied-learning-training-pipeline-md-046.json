@@ -1,0 +1,26 @@
+{
+  "id": "embodied-learning/training-pipeline",
+  "title": "Complete Training Pipeline: From Data to Deployment",
+  "description": "End-to-end workflow for training robot manipulation policies.",
+  "source": "@site/docs/05-embodied-learning/training-pipeline.md",
+  "sourceDirName": "05-embodied-learning",
+  "slug": "/embodied-learning/training-pipeline",
+  "permalink": "/embodied-learning/training-pipeline",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/05-embodied-learning/training-pipeline.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "End-to-End Learning: Architectures & Strategies",
+    "permalink": "/embodied-learning/end-to-end-learning"
+  },
+  "next": {
+    "title": "Module 5: End-to-End Learning - Exercises",
+    "permalink": "/embodied-learning/exercises"
+  }
+}

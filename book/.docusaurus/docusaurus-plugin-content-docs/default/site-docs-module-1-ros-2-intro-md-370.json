@@ -1,0 +1,30 @@
+{
+  "id": "module-1-ros2/intro",
+  "title": "Module 1: The Robotic Nervous System",
+  "description": "Overview",
+  "source": "@site/docs/module-1-ros2/intro.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/intro",
+  "permalink": "/docs/module-1-ros2/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-1-ros2/intro.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Module 1: The Robotic Nervous System"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Physical AI & Humanoid Robotics",
+    "permalink": "/docs/"
+  },
+  "next": {
+    "title": "Embodied Intelligence",
+    "permalink": "/docs/module-1-ros2/physical-ai-foundations"
+  }
+}

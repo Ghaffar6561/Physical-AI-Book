@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/exercises",
+  "title": "Exercises: Production Robotics & Scaling Systems",
+  "description": "Build and deploy production-quality robotic systems.",
+  "source": "@site/docs/06-scaling-systems/exercises.md",
+  "sourceDirName": "06-scaling-systems",
+  "slug": "/scaling-systems/exercises",
+  "permalink": "/scaling-systems/exercises",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/06-scaling-systems/exercises.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Real Robot Deployment: From Simulation to Production",
+    "permalink": "/scaling-systems/real-robot-deployment"
+  },
+  "next": {
+    "title": "Module 7: Capstone & Real-World Deployment",
+    "permalink": "/capstone-deployment/intro"
+  }
+}

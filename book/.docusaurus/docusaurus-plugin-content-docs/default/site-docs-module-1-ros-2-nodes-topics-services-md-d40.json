@@ -1,0 +1,30 @@
+{
+  "id": "module-1-ros2/nodes-topics-services",
+  "title": "Nodes, Topics, and Services",
+  "description": "Overview",
+  "source": "@site/docs/module-1-ros2/nodes-topics-services.md",
+  "sourceDirName": "module-1-ros2",
+  "slug": "/module-1-ros2/nodes-topics-services",
+  "permalink": "/docs/module-1-ros2/nodes-topics-services",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-1-ros2/nodes-topics-services.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Nodes, Topics, and Services"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "ROS 2 Introduction",
+    "permalink": "/docs/module-1-ros2/ros2-architecture"
+  },
+  "next": {
+    "title": "Python Agents with rclpy",
+    "permalink": "/docs/module-1-ros2/rclpy-python-agents"
+  }
+}

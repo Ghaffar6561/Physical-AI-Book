@@ -1,0 +1,26 @@
+{
+  "id": "scaling-systems/scaling-pipeline",
+  "title": "Scaling Pipeline: End-to-End Production Workflow",
+  "description": "Complete pipeline from research prototype to production fleet.",
+  "source": "@site/docs/scaling-systems/scaling-pipeline.md",
+  "sourceDirName": "scaling-systems",
+  "slug": "/scaling-systems/scaling-pipeline",
+  "permalink": "/docs/scaling-systems/scaling-pipeline",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/scaling-systems/scaling-pipeline.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 6: Scaling & Production Systems",
+    "permalink": "/docs/scaling-systems/intro"
+  },
+  "next": {
+    "title": "Distributed Training: Multi-GPU & Multi-Robot Systems",
+    "permalink": "/docs/scaling-systems/distributed-training"
+  }
+}

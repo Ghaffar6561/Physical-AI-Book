@@ -1,0 +1,26 @@
+{
+  "id": "vla-systems/llm-planning",
+  "title": "LLM-Based Task Planning for Robotics",
+  "description": "Large Language Models (LLMs) have shown remarkable capabilities in understanding and decomposing complex natural language commands into actionable steps. In robotics, this ability is transformative, allowing us to move from rigid, pre-programmed instructions to fluid, goal-oriented interactions.",
+  "source": "@site/docs/04-vla-systems/llm-planning.md",
+  "sourceDirName": "04-vla-systems",
+  "slug": "/vla-systems/llm-planning",
+  "permalink": "/vla-systems/llm-planning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/04-vla-systems/llm-planning.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 4: Vision-Language-Action Systems & Embodied AI",
+    "permalink": "/vla-systems/intro"
+  },
+  "next": {
+    "title": "End-to-End Voice-to-Action Pipeline",
+    "permalink": "/vla-systems/voice-to-action"
+  }
+}

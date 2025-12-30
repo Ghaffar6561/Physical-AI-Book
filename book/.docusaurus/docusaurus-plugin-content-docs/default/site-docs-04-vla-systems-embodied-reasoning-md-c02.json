@@ -1,0 +1,17 @@
+{
+  "id": "vla-systems/embodied-reasoning",
+  "title": "Embodied Reasoning in Robotics",
+  "description": "Introduction",
+  "source": "@site/docs/04-vla-systems/embodied-reasoning.md",
+  "sourceDirName": "04-vla-systems",
+  "slug": "/vla-systems/embodied-reasoning",
+  "permalink": "/vla-systems/embodied-reasoning",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/04-vla-systems/embodied-reasoning.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {}
+}

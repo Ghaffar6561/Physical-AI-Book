@@ -1,0 +1,30 @@
+{
+  "id": "module-3-isaac/nav2-bipedal",
+  "title": "Nav2 for Bipedal Robots",
+  "description": "Overview",
+  "source": "@site/docs/module-3-isaac/nav2-bipedal.md",
+  "sourceDirName": "module-3-isaac",
+  "slug": "/module-3-isaac/nav2-bipedal",
+  "permalink": "/docs/module-3-isaac/nav2-bipedal",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-3-isaac/nav2-bipedal.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "Nav2 for Bipedal Robots"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Isaac ROS VSLAM",
+    "permalink": "/docs/module-3-isaac/isaac-ros-vslam"
+  },
+  "next": {
+    "title": "Sensor Fusion & Localization",
+    "permalink": "/docs/module-3-isaac/sensor-fusion"
+  }
+}

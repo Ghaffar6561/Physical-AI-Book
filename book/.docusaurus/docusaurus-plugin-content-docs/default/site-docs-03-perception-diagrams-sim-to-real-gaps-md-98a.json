@@ -1,0 +1,17 @@
+{
+  "id": "perception/diagrams/sim-to-real-gaps",
+  "title": "Sim-to-Real Transfer Gaps Visualization",
+  "description": "This document describes the diagram showing the four major gaps between simulation and reality.",
+  "source": "@site/docs/03-perception/diagrams/sim-to-real-gaps.md",
+  "sourceDirName": "03-perception/diagrams",
+  "slug": "/perception/diagrams/sim-to-real-gaps",
+  "permalink": "/perception/diagrams/sim-to-real-gaps",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/asad/PhysicalAI-Book/tree/001-physical-ai-book/book/docs/03-perception/diagrams/sim-to-real-gaps.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766002420000,
+  "frontMatter": {}
+}

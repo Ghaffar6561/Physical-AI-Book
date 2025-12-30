@@ -1,0 +1,26 @@
+{
+  "id": "capstone/running-the-system",
+  "title": "Capstone Project: Running the System",
+  "description": "This guide explains how to launch and interact with the complete humanoid robot capstone system in the Gazebo simulation environment.",
+  "source": "@site/docs/capstone/running-the-system.md",
+  "sourceDirName": "capstone",
+  "slug": "/capstone/running-the-system",
+  "permalink": "/docs/capstone/running-the-system",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/capstone/running-the-system.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Capstone Project: Setup Guide",
+    "permalink": "/docs/capstone/setup"
+  },
+  "next": {
+    "title": "Capstone Project: Extensions",
+    "permalink": "/docs/capstone/extensions"
+  }
+}

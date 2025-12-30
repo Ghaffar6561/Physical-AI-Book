@@ -1,0 +1,30 @@
+{
+  "id": "module-2-digital-twin/unity-integration",
+  "title": "Unity Integration",
+  "description": "Overview",
+  "source": "@site/docs/module-2-digital-twin/unity-integration.md",
+  "sourceDirName": "module-2-digital-twin",
+  "slug": "/module-2-digital-twin/unity-integration",
+  "permalink": "/docs/module-2-digital-twin/unity-integration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/module-2-digital-twin/unity-integration.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766381200000,
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "Unity Integration"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Setting Up Gazebo for Humanoid Robotics",
+    "permalink": "/docs/module-2-digital-twin/setup-gazebo"
+  },
+  "next": {
+    "title": "Module 2: Exercises & Solutions",
+    "permalink": "/docs/module-2-digital-twin/exercises"
+  }
+}

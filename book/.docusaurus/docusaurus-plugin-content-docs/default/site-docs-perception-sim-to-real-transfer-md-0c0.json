@@ -1,0 +1,26 @@
+{
+  "id": "perception/sim-to-real-transfer",
+  "title": "Sim-to-Real Transfer: Bridging Simulation and Reality",
+  "description": "This is the core chapter of the Physical AI book. It explains why well-trained policies fail catastrophically on real robots and the systematic methods to fix them.",
+  "source": "@site/docs/perception/sim-to-real-transfer.md",
+  "sourceDirName": "perception",
+  "slug": "/perception/sim-to-real-transfer",
+  "permalink": "/docs/perception/sim-to-real-transfer",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/Ghaffar6561/Physical-AI-Book/tree/main/book/docs/perception/sim-to-real-transfer.md",
+  "tags": [],
+  "version": "current",
+  "lastUpdatedBy": "Ghaffar6561",
+  "lastUpdatedAt": 1766040274000,
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sensor Fusion & Localization",
+    "permalink": "/docs/perception/sensor-fusion"
+  },
+  "next": {
+    "title": "NVIDIA Isaac: Photorealistic Simulation & Synthetic Data Generation",
+    "permalink": "/docs/perception/isaac-workflows"
+  }
+}
