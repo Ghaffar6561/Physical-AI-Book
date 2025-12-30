@@ -57,7 +57,7 @@ class AgentConfig:
     """Configuration specific to the RAG agent."""
     openai_api_key: str
     openai_model: str = "gpt-4o-mini"
-    top_k: int = 5
+    top_k: int = 3  # Reduced for faster responses
     score_threshold: float = 0.0
     max_conversation_turns: int = 50
 

@@ -58,7 +58,7 @@ class RAGService:
             try:
                 result = await asyncio.wait_for(
                     self._process_question_internal(message, selected_text, top_k),
-                    timeout=30.0  # 30 second timeout
+                    timeout=15.0  # 15 second timeout
                 )
                 return result
             except asyncio.TimeoutError:
@@ -100,36 +100,55 @@ class RAGService:
 
     def _run_real_agent(self, message: str, selected_text: Optional[str], top_k: int) -> Dict:
         """
-        Run the real RAG agent synchronously (called from executor)
+        Fast direct RAG without agent overhead - searches and generates in one pass
         """
-        from backend.agent import run_agent_query, _last_retrieval_results
+        from backend.agent import search_book_content, init_retrieval_clients
+        from openai import OpenAI
+        import os
+
+        init_retrieval_clients()
 
         # Construct query with selected text context if provided
         if selected_text:
-            query = f"Based on this text: \"{selected_text[:500]}\"\n\nQuestion: {message}"
+            query = f"{selected_text[:300]} {message}"
         else:
             query = message
 
-        # Run the agent
-        response = run_agent_query(self._agent, query, self._config, verbose=False)
+        # Direct search (faster than agent tool call)
+        search_results = search_book_content(query, top_k)
 
-        # Extract sources from the last retrieval results
         sources = []
-        try:
-            from backend.agent import _last_retrieval_results
-            for i, r in enumerate(_last_retrieval_results[:top_k]):
+        context_text = ""
+
+        if search_results.get("status") == "success" and search_results.get("results"):
+            results = search_results["results"]
+            for r in results:
                 sources.append(SourceCitation(
-                    content=r.content[:200] + "..." if len(r.content) > 200 else r.content,
-                    page_number=i + 1,
-                    section_title=self._extract_section_title(r.source_url),
-                    url=r.source_url,
-                    confidence_score=r.score
+                    content=r["content"][:200] + "..." if len(r["content"]) > 200 else r["content"],
+                    page_number=r["index"],
+                    section_title=self._extract_section_title(r["source_url"]),
+                    url=r["source_url"],
+                    confidence_score=r["score"]
                 ))
-        except Exception as e:
-            logger.warning(f"Could not extract sources: {e}")
+                context_text += f"\n\n{r['content'][:500]}"
+
+        # Direct OpenAI completion (faster than agent)
+        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant answering questions about a Physical AI and Robotics book. Answer based only on the provided context. Be concise and direct. Do not include citations or source references."},
+                {"role": "user", "content": f"Context from the book:\n{context_text}\n\nQuestion: {message}"}
+            ],
+            max_tokens=500,
+            temperature=0.3
+        )
+
+        answer = response.choices[0].message.content
 
         return {
-            "answer": response,
+            "answer": answer,
             "sources": sources,
             "question_id": f"rag-{hash(message) % 10000}"
         }
