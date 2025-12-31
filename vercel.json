@@ -1,3 +1,15 @@
 {
-  "rootDirectory": "book"
+  "buildCommand": "cd book && npm install && npm run build",
+  "outputDirectory": "book/build",
+  "installCommand": "cd book && npm install",
+  "framework": null,
+  "functions": {
+    "book/api/*.py": {
+      "runtime": "python3.11",
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/book/api/:path*" }
+  ]
 }
