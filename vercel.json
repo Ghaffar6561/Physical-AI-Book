@@ -4,9 +4,17 @@
   "installCommand": "cd book && npm install",
   "framework": null,
   "functions": {
-    "api/*.py": {
+    "api/chat.py": {
       "runtime": "python3.11",
       "maxDuration": 30
+    },
+    "api/health.py": {
+      "runtime": "python3.11",
+      "maxDuration": 10
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/api/health", "destination": "/api/health" },
+    { "source": "/api/chat", "destination": "/api/chat" }
+  ]
 }
