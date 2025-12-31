@@ -160,6 +160,15 @@ def process_chat_request(message: str, selected_text: Optional[str] = None, top_
     # Search for relevant content
     search_results = search_book_content(query, top_k)
 
+    # Debug: Return error details if search failed
+    if search_results.get("status") == "error":
+        return {
+            "answer": f"Search error: {search_results.get('message', 'Unknown error')}",
+            "sources": [],
+            "question_id": "error",
+            "debug": search_results.get("debug", {})
+        }
+
     sources = []
     context_text = ""
 
