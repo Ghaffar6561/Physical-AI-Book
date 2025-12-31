@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
 export default function ChatWidget() {
-  const { siteConfig } = useDocusaurusContext();
-  const API_BASE_URL = siteConfig.customFields?.apiBaseUrl || 'http://localhost:8001';
+  // Use relative URL for Vercel serverless function (same origin)
+  const API_BASE_URL = '/api';
 
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);

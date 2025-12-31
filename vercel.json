@@ -2,5 +2,11 @@
   "buildCommand": "cd book && npm install && npm run build",
   "outputDirectory": "book/build",
   "installCommand": "cd book && npm install",
-  "framework": null
+  "framework": null,
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.11",
+      "maxDuration": 30
+    }
+  }
 }

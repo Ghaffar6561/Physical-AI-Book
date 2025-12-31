@@ -18,7 +18,7 @@ const config = {
 
   // Custom fields for runtime configuration
   customFields: {
-    apiBaseUrl: process.env.API_BASE_URL || 'https://physical-ai-backend.onrender.com',
+    // API is now served from the same origin via Vercel serverless functions
   },
 
   onBrokenLinks: 'warn',
