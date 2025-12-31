@@ -32,9 +32,14 @@ allowed_origins = [
 if os.getenv("ALLOWED_ORIGINS"):
     allowed_origins.extend(os.getenv("ALLOWED_ORIGINS").split(","))
 
+# Regex pattern to allow all Vercel preview deployments
+# Matches: https://*.vercel.app and https://*-ghaffar-ahmeds-projects.vercel.app
+vercel_origin_regex = r"https://.*\.vercel\.app"
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
+    allow_origin_regex=vercel_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
