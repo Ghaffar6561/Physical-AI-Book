@@ -33,15 +33,6 @@ export default function ChatWidget() {
     return () => document.removeEventListener('mouseup', handleSelection);
   }, []);
 
-  // Generate a unique session ID for this browser session
-  const [sessionId] = useState(() => {
-    const stored = typeof window !== 'undefined' ? sessionStorage.getItem('chat_session_id') : null;
-    if (stored) return stored;
-    const newId = `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    if (typeof window !== 'undefined') sessionStorage.setItem('chat_session_id', newId);
-    return newId;
-  });
-
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
@@ -56,15 +47,15 @@ export default function ChatWidget() {
 
     try {
       const requestBody = {
-        query: inputValue,
-        session_id: sessionId,
+        message: inputValue,
+        top_k: 5,
       };
 
       if (selectedText) {
         requestBody.selected_text = selectedText;
       }
 
-      const response = await fetch(`${API_BASE_URL}/api/chat/query`, {
+      const response = await fetch(`${API_BASE_URL}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -77,31 +68,13 @@ export default function ChatWidget() {
         throw new Error(errorData.detail || 'Failed to get response');
       }
 
-      // Handle streaming response (SSE format)
-      const text = await response.text();
-      const lines = text.split('\n').filter(line => line.startsWith('data: '));
-
-      let answer = '';
-      let sources = [];
-
-      for (const line of lines) {
-        try {
-          const data = JSON.parse(line.replace('data: ', ''));
-          if (data.type === 'answer') {
-            answer = data.content;
-          } else if (data.type === 'sources') {
-            sources = data.sources || [];
-          }
-        } catch (e) {
-          // Skip malformed lines
-        }
-      }
+      const data = await response.json();
 
       const botMessage = {
         id: Date.now() + 1,
-        text: answer || 'I received your question but could not generate a response.',
+        text: data.answer || 'I received your question but could not generate a response.',
         sender: 'bot',
-        sources: sources,
+        sources: data.sources || [],
       };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
