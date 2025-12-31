@@ -44,11 +44,21 @@ def search_book_content(query: str, top_k: int = 5) -> dict:
     qdrant_api_key = os.getenv('QDRANT_API_KEY')
     collection_name = os.getenv('QDRANT_COLLECTION_NAME', 'physical-ai-book')
 
-    if not all([cohere_api_key, qdrant_url, qdrant_api_key]):
+    # Debug: Check which env vars are missing
+    missing = []
+    if not cohere_api_key:
+        missing.append('COHERE_API_KEY')
+    if not qdrant_url:
+        missing.append('QDRANT_URL')
+    if not qdrant_api_key:
+        missing.append('QDRANT_API_KEY')
+
+    if missing:
         return {
             "status": "error",
-            "message": "Missing API credentials",
-            "results": []
+            "message": f"Missing env vars: {', '.join(missing)}",
+            "results": [],
+            "debug": {"collection": collection_name}
         }
 
     try:
@@ -101,7 +111,8 @@ def search_book_content(query: str, top_k: int = 5) -> dict:
         return {
             "status": "error",
             "message": str(e),
-            "results": []
+            "results": [],
+            "debug": {"collection": collection_name, "qdrant_url": qdrant_url[:30] + "..." if qdrant_url else None}
         }
 
 
