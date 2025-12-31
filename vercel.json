@@ -1,20 +1,20 @@
 {
-  "buildCommand": "cd book && npm install && npm run build",
-  "outputDirectory": "book/build",
-  "installCommand": "cd book && npm install",
-  "framework": null,
-  "functions": {
-    "api/chat.py": {
-      "runtime": "python3.11",
-      "maxDuration": 30
+  "version": 2,
+  "builds": [
+    {
+      "src": "book/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
     },
-    "api/health.py": {
-      "runtime": "python3.11",
-      "maxDuration": 10
+    {
+      "src": "api/*.py",
+      "use": "@vercel/python"
     }
-  },
-  "rewrites": [
-    { "source": "/api/health", "destination": "/api/health" },
-    { "source": "/api/chat", "destination": "/api/chat" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/book/$1" }
   ]
 }
